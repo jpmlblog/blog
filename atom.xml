@@ -5,9 +5,9 @@
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://jpmlblog.github.io/"/>
   <updated>2020-01-06T10:01:05.401Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://jpmlblog.github.io/</id>
   
   <author>
     <name>jpmlblog</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>FAQ</title>
-    <link href="http://yoursite.com/2020/01/06/FAQ/"/>
-    <id>http://yoursite.com/2020/01/06/FAQ/</id>
+    <link href="https://jpmlblog.github.io/2020/01/06/FAQ/"/>
+    <id>https://jpmlblog.github.io/2020/01/06/FAQ/</id>
     <published>2020-01-06T09:59:39.000Z</published>
     <updated>2020-01-06T10:01:05.401Z</updated>
     
@@ -40,8 +40,8 @@
   
   <entry>
     <title>jpmlblog について</title>
-    <link href="http://yoursite.com/2020/01/01/about-jpmlblog/"/>
-    <id>http://yoursite.com/2020/01/01/about-jpmlblog/</id>
+    <link href="https://jpmlblog.github.io/2020/01/01/about-jpmlblog/"/>
+    <id>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
     <updated>2020-01-05T14:20:03.502Z</updated>
     
