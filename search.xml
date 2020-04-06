@@ -4,23 +4,23 @@
   
     
     <entry>
-      <title>テンプレート</title>
-      <link href="/blog/9999/12/31/AML-limitation-of-AutoML-concurrency/"/>
-      <url>/blog/9999/12/31/AML-limitation-of-AutoML-concurrency/</url>
+      <title>AutoML の同時実行数制限について</title>
+      <link href="/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
+      <url>/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/</url>
       
-        <content type="html"><![CDATA[<p>テンプレート</p><a id="more"></a><br><hr><h1 id="テンプレート"><a href="#テンプレート" class="headerlink" title="テンプレート"></a>テンプレート</h1><h2 id="テンプレートファイルについて"><a href="#テンプレートファイルについて" class="headerlink" title="テンプレートファイルについて"></a>テンプレートファイルについて</h2><p>これはテンプレートファイルです。このファイルはサイトから参照されません。</p><p><img src="https://jpmlblog.github.io/images/template.png" alt="Template" title="ファイルの説明"></p><hr>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://ml.azure.com/" target="_blank" rel="noopener">Microsoft Azure Machine Learning ポータル</a> より Automated Machine Learninig (以降、AutoML と記載) を複数同時実行する際の制限事項について紹介します。  </p><a id="more"></a><br><hr><p>AutoML の実行にはワークスペース単位で同時実行できる数に制限が存在ます。具体的な同時実行数で制限を行っているものではなく、処理を実行するリソースへの負荷が一定値を上回った場合に実行が制限される動作となります。サービス側内部構造上、主にリソース間のコミュニケーションを中継するネットワーク リソースに負荷が集中する仕組みとなっています。</p><p>以下図はトレーニング実行時のデータ フローの例です。Training Compute はサイズ変更が可能ですが、それ以外のリソースの処理能力をスケール アップすることができないため、いずれかの処理の負荷による制限がかかった場合、全体的に処理がストップする可能性もあります。  </p><p><img src="https://docs.microsoft.com/ja-jp/azure/machine-learning/media/concept-enterprise-security/training-and-metrics.png" alt="トレーニング時のデータフロー例"></p><p>現在、リソース間の不要なポーリング等を減らして同時実行数の向上を計るなど対応を検討中であり、将来的に 100 程度の同時実行が許容できる見込みです。推奨としては、1 ワークスペース 50 の同時実行を目安に運用をご検討ください。  </p><blockquote><p>注意<br>データセンター側の物理的なリソース不足に起因する場合もございますので、タイミングによっては許容される同時実行数が少なくなる場合がございますこと、ご留意頂けますと幸いです。  </p></blockquote><hr>]]></content>
       
       
       <categories>
           
-          <category> template </category>
+          <category> Azure Machine Learning </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> テンプレ </tag>
+            <tag> AutoML </tag>
             
         </tags>
       
