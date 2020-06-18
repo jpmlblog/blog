@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmlblog.github.io/"/>
-  <updated>2020-06-16T07:03:39.571Z</updated>
+  <updated>2020-06-18T00:49:08.230Z</updated>
   <id>https://jpmlblog.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Azure Machine Learning のコスト見積もりについて</title>
+    <link href="https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/"/>
+    <id>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</id>
+    <published>2020-06-18T00:00:00.000Z</published>
+    <updated>2020-06-18T00:49:08.230Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Azure Machine Learning のコスト見積もりについて、参考となる情報を紹介します。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+    
+    
+      <category term="価格" scheme="https://jpmlblog.github.io/tags/%E4%BE%A1%E6%A0%BC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Azure Machine Learning Studio (Classic) ワークスペースを削除できない事象について</title>
     <link href="https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/"/>
     <id>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2020-06-16T07:03:39.571Z</updated>
+    <updated>2020-06-18T00:49:08.242Z</updated>
     
     <summary type="html">
     
@@ -42,7 +63,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/reference-websites/"/>
     <id>https://jpmlblog.github.io/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2020-06-16T07:03:39.604Z</updated>
+    <updated>2020-06-18T00:49:08.276Z</updated>
     
     <summary type="html">
     
@@ -63,7 +84,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/FAQ/"/>
     <id>https://jpmlblog.github.io/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2020-06-16T07:03:39.587Z</updated>
+    <updated>2020-06-18T00:49:08.259Z</updated>
     
     <summary type="html">
     
@@ -84,7 +105,7 @@
     <link href="https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
     <id>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2020-06-16T07:03:39.556Z</updated>
+    <updated>2020-06-18T00:49:08.235Z</updated>
     
     <summary type="html">
     
@@ -105,7 +126,7 @@
     <link href="https://jpmlblog.github.io/2020/01/01/about-jpmlblog/"/>
     <id>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-06-16T07:03:39.551Z</updated>
+    <updated>2020-06-18T00:49:08.215Z</updated>
     
     <summary type="html">
     

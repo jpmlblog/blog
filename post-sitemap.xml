@@ -9,7 +9,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/2020/04/22/reference-websites/</loc>
-        <lastmod>2020-06-16T07:03:39.604Z</lastmod>
+        <lastmod>2020-06-18T00:49:08.276Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/2020/04/22/FAQ/</loc>
-        <lastmod>2020-06-16T07:03:39.587Z</lastmod>
+        <lastmod>2020-06-18T00:49:08.259Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</loc>
-        <lastmod>2020-06-16T07:03:39.571Z</lastmod>
+        <lastmod>2020-06-18T00:49:08.242Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +33,15 @@
 
     <url>
         <loc>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</loc>
-        <lastmod>2020-06-16T07:03:39.556Z</lastmod>
+        <lastmod>2020-06-18T00:49:08.235Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</loc>
+        <lastmod>2020-06-18T00:49:08.230Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,7 +49,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</loc>
-        <lastmod>2020-06-16T07:03:39.551Z</lastmod>
+        <lastmod>2020-06-18T00:49:08.215Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
