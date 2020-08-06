@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmlblog.github.io/"/>
-  <updated>2020-06-30T05:00:25.343Z</updated>
+  <updated>2020-08-06T06:23:24.459Z</updated>
   <id>https://jpmlblog.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/"/>
     <id>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</id>
     <published>2020-06-18T00:00:00.000Z</published>
-    <updated>2020-06-30T05:00:25.343Z</updated>
+    <updated>2020-08-06T06:23:24.459Z</updated>
     
     <summary type="html">
     
@@ -42,7 +42,7 @@
     <link href="https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/"/>
     <id>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2020-06-30T05:00:25.355Z</updated>
+    <updated>2020-08-06T06:23:24.467Z</updated>
     
     <summary type="html">
     
@@ -59,11 +59,11 @@
   </entry>
   
   <entry>
-    <title>参考となる公開情報について</title>
+    <title>Azure Machine Learning の参考となる公開情報について</title>
     <link href="https://jpmlblog.github.io/2020/04/22/reference-websites/"/>
     <id>https://jpmlblog.github.io/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2020-06-30T05:00:25.381Z</updated>
+    <updated>2020-08-06T06:23:24.486Z</updated>
     
     <summary type="html">
     
@@ -84,7 +84,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/FAQ/"/>
     <id>https://jpmlblog.github.io/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2020-06-30T05:00:25.368Z</updated>
+    <updated>2020-08-06T06:23:24.477Z</updated>
     
     <summary type="html">
     
@@ -105,7 +105,7 @@
     <link href="https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
     <id>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2020-06-30T05:00:25.349Z</updated>
+    <updated>2020-08-06T06:23:24.463Z</updated>
     
     <summary type="html">
     
@@ -126,7 +126,7 @@
     <link href="https://jpmlblog.github.io/2020/01/01/about-jpmlblog/"/>
     <id>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-06-30T05:00:25.338Z</updated>
+    <updated>2020-08-06T06:23:24.453Z</updated>
     
     <summary type="html">
     
