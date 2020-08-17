@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmlblog.github.io/"/>
-  <updated>2020-08-17T16:39:41.777Z</updated>
+  <updated>2020-08-17T16:41:21.131Z</updated>
   <id>https://jpmlblog.github.io/</id>
   
   <author>
@@ -17,34 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>モデルを仮想ネットワーク上の Azure Container Instances (ACI) にデプロイする方法について</title>
-    <link href="https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/"/>
-    <id>https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/</id>
-    <published>2020-08-18T03:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.777Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;モデルを仮想ネットワーク上の ACI にデプロイする方法について紹介します。  &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
-    
-    
-      <category term="Azure Container Instances" scheme="https://jpmlblog.github.io/tags/Azure-Container-Instances/"/>
-    
-      <category term="仮想ネットワーク" scheme="https://jpmlblog.github.io/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Azure Machine Learning のコスト見積もりについて</title>
     <link href="https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/"/>
     <id>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</id>
     <published>2020-06-18T00:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.781Z</updated>
+    <updated>2020-08-17T16:41:21.131Z</updated>
     
     <summary type="html">
     
@@ -65,7 +42,7 @@
     <link href="https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/"/>
     <id>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.788Z</updated>
+    <updated>2020-08-17T16:41:21.139Z</updated>
     
     <summary type="html">
     
@@ -86,7 +63,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/reference-websites/"/>
     <id>https://jpmlblog.github.io/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.801Z</updated>
+    <updated>2020-08-17T16:41:21.159Z</updated>
     
     <summary type="html">
     
@@ -107,7 +84,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/FAQ/"/>
     <id>https://jpmlblog.github.io/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.791Z</updated>
+    <updated>2020-08-17T16:41:21.144Z</updated>
     
     <summary type="html">
     
@@ -128,7 +105,7 @@
     <link href="https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
     <id>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.785Z</updated>
+    <updated>2020-08-17T16:41:21.139Z</updated>
     
     <summary type="html">
     
@@ -149,7 +126,7 @@
     <link href="https://jpmlblog.github.io/2020/01/01/about-jpmlblog/"/>
     <id>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-08-17T16:39:41.767Z</updated>
+    <updated>2020-08-17T16:41:21.124Z</updated>
     
     <summary type="html">
     
