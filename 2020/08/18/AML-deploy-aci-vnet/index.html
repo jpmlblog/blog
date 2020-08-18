@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-change-nsg.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-compute.png">
 <meta property="article:published_time" content="2020-08-18T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-18T01:24:06.585Z">
+<meta property="article:modified_time" content="2020-08-18T01:28:03.805Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Azure Container Instances">
 <meta property="article:tag" content="仮想ネットワーク">
@@ -177,26 +177,26 @@
 <h2 id="仮想ネットワークの作成例"><a href="#仮想ネットワークの作成例" class="headerlink" title="仮想ネットワークの作成例"></a>仮想ネットワークの作成例</h2><p>「<a href="https://docs.microsoft.com/ja-jp/azure/virtual-network/manage-subnet-delegation#create-the-virtual-network" target="_blank" rel="noopener">サブネットの委任を追加または削除する - 仮想ネットワークの作成</a>」 の手順に従って進めます。  </p>
 <ul>
 <li><p>[基本] タブの設定例です。仮想ネットワークはワークスペースと同じリソースグループに作成します。同じリソースグル―プの既存の仮想ネットワークでも使用可能です。名前、地域は任意です。  </p>
- <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet1.png" width=500px>  
+ <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet1.png" width=600px>  
 </li>
 <li><p>[IP アドレス] タブの設定例です。仮想ネットワークの IP アドレス帯は任意で変更可能です。サブネットはそのままで進めます。  </p>
- <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet2.png" width=500px>  
+ <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet2.png" width=600px>  
 
 </li>
 </ul>
 <p>[セキュリティ]、[タグ] タブも既定のまま進めると下記の画面に進みます。手順例では、リソースグループ amlrg に amlvnet1 という仮想ネットワークが作成されます。  </p>
-   <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet3.png" width=300px>  
+   <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet3.png" width=350px>  
 <br>
 
 <hr>
 <h2 id="サブネットの作成例"><a href="#サブネットの作成例" class="headerlink" title="サブネットの作成例"></a>サブネットの作成例</h2><p>作成した仮想ネットワークにサブネットを作成します。「<a href="https://docs.microsoft.com/ja-jp/azure/virtual-network/manage-subnet-delegation#delegate-a-subnet-to-an-azure-service" target="_blank" rel="noopener">サブネットの委任を追加または削除する - サブネットを Azure サービスに委任する</a>」 の手順に従って進めます。  </p>
 <ul>
 <li><p>サブネットの作成例です。名前、アドレス範囲は任意です。サブネットの委任に <code>Microsoft.ContainerInstance/containerGroups</code> を指定します。  </p>
- <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-subnet1.png" width=200px>  
+ <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-subnet1.png" width=250px>  
 
 </li>
 </ul>
-<p>ここまで進めると、amlvnet1 配下に default と amlsubnet1 サブネットが存在し、amlsubnet1 には委任先に Microsoft.ContainerInstance/containerGroups が設定されていることが確認できます。  </p>
+<p>ここまで進めると、amlvnet1 配下に default と amlsubnet1 サブネットが存在し、amlsubnet1 には委任先に <code>Microsoft.ContainerInstance/containerGroups</code> が設定されていることが確認できます。  </p>
 <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-subnet2.png" width=800px>  
 <br>
 
@@ -212,7 +212,7 @@
 </li>
 </ul>
 <p>作成された REST エンドポイントは、Azure Machine Learning ポータルの [エンドポイント] から確認できます。以下画像では REST エンドポイントは <code>http://10.0.1.4/score</code> となっています。  </p>
-<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-aci.png" width=500px>  
+<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-aci.png" width=600px>  
 <br>
 
 <hr>
