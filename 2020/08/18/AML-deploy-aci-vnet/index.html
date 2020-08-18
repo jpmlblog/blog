@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-change-nsg.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-compute.png">
 <meta property="article:published_time" content="2020-08-18T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-18T01:17:17.995Z">
+<meta property="article:modified_time" content="2020-08-18T01:24:06.585Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Azure Container Instances">
 <meta property="article:tag" content="仮想ネットワーク">
@@ -184,8 +184,9 @@
 
 </li>
 </ul>
-<p>[セキュリティ]、[タグ] タブも既定のまま進めると下記の画面に進みます。手順例では、リソースグル―プ amlrg に amlvnet1 という仮想ネットワークが作成されます。  </p>
+<p>[セキュリティ]、[タグ] タブも既定のまま進めると下記の画面に進みます。手順例では、リソースグループ amlrg に amlvnet1 という仮想ネットワークが作成されます。  </p>
    <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-vnet3.png" width=300px>  
+<br>
 
 <hr>
 <h2 id="サブネットの作成例"><a href="#サブネットの作成例" class="headerlink" title="サブネットの作成例"></a>サブネットの作成例</h2><p>作成した仮想ネットワークにサブネットを作成します。「<a href="https://docs.microsoft.com/ja-jp/azure/virtual-network/manage-subnet-delegation#delegate-a-subnet-to-an-azure-service" target="_blank" rel="noopener">サブネットの委任を追加または削除する - サブネットを Azure サービスに委任する</a>」 の手順に従って進めます。  </p>
@@ -197,6 +198,7 @@
 </ul>
 <p>ここまで進めると、amlvnet1 配下に default と amlsubnet1 サブネットが存在し、amlsubnet1 には委任先に Microsoft.ContainerInstance/containerGroups が設定されていることが確認できます。  </p>
 <img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-subnet2.png" width=800px>  
+<br>
 
 <hr>
 <h2 id="仮想ネットワークへのモデル-デプロイ例"><a href="#仮想ネットワークへのモデル-デプロイ例" class="headerlink" title="仮想ネットワークへのモデル デプロイ例"></a>仮想ネットワークへのモデル デプロイ例</h2><p>SDK を使用して作成する必要があります。<a href="https://docs.microsoft.com/ja-jp/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-" target="_blank" rel="noopener">AciWebservice.deploy_configuration()</a> 関数の引数 vnet_name、subnet_name に作成した仮想ネットワークとサブネットを指定して deployment_config を作成し、<a href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-" target="_blank" rel="noopener">Model.deploy()</a> に指定して実行します。具体的な手順は以下を参照ください。  </p>
@@ -209,21 +211,23 @@
 
 </li>
 </ul>
-<p>作成された REST エンドポイントは、Azure Machine Learning ポータルの [エンドポイント] から確認できます。  </p>
-<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-aci.png" width=600px>  
+<p>作成された REST エンドポイントは、Azure Machine Learning ポータルの [エンドポイント] から確認できます。以下画像では REST エンドポイントは <code>http://10.0.1.4/score</code> となっています。  </p>
+<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-aci.png" width=500px>  
+<br>
 
 <hr>
 <h2 id="参考-Web-サービスの動作確認例"><a href="#参考-Web-サービスの動作確認例" class="headerlink" title="参考: Web サービスの動作確認例"></a>参考: Web サービスの動作確認例</h2><p>Web サービスと同じ仮想ネットワーク上にあるコンピュート インスタンスから Web リクエストを実行する方法を紹介します。まず、<a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-virtual-network#compute-clusters--instances" target="_blank" rel="noopener">こちらのサイト</a> を参照し、ネットワーク セキュリティ グループ (NSG) を作成します。下記画像ではリージョンの指定を省略しています。  </p>
-<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-nsg.png" width=700px>  
+<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-nsg.png" width=800px>  
 
 <p>作成した NSG を amlvnet1 の default サブネットに設定します。  </p>
-<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-change-nsg.png" width=600px>  
+<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-change-nsg.png" width=500px>  
 
 <p>amlvnet1 の default サブネットに Compute Instance を作成します。  </p>
-<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-compute.png" width=600px>  
+<img src="https://jpmlblog.github.io/images/AML-deploy-aci-vnet/AML-create-compute.png" width=500px>  
 
 <p>作成したコンピュート インスタンス上で以下のコードを実行します。<a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-consume-web-service#call-the-service-python" target="_blank" rel="noopener">こちら</a> のサイトの手順が参考になります。  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">scoring_uri = <span class="string">'http://10.0.1.4/score'</span></span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">"data"</span>:</span><br><span class="line">       [[ *** モデルに併せてデータを設定ください *** ]]</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">input_data  = json.dumps(rawdata)</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>&#125;</span><br><span class="line">resp = requests.post(scoring_uri, input_data , headers=headers)</span><br><span class="line">print(resp.text)</span><br></pre></td></tr></table></figure>
+<br>
 
 <hr>
 <p><code>変更履歴</code><br><code>2020/08/18 created by Mochizuki</code>  </p>
