@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Azure Machine Learning Studio でモデル登録およびデプロイする場合の留意点について</title>
+      <link href="/blog/2020/08/25/AML-register-and-deploy-model/"/>
+      <url>/blog/2020/08/25/AML-register-and-deploy-model/</url>
+      
+        <content type="html"><![CDATA[<p>Azure Machine Learning Studio でモデル登録する場合の留意点についてお纏めします。</p><a id="more"></a><br><hr><p>Azure Machine Learning Studio (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) のユーザー インターフェイスでは、モデル登録およびデプロイを行うことができます。この時、設定方法が誤っているとモデルのデプロイ操作が長時間完了せず、結果として登録が失敗する場合があります。  </p><p>本記事では、具体的な例を挙げて手順を詳細させていただきます。  </p><hr><h2 id="モデルの登録"><a href="#モデルの登録" class="headerlink" title="モデルの登録"></a>モデルの登録</h2><p>Azure Machine Learning Studio (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) の [アセット] - [モデル] の [+ モデルの登録] をクリックします。  </p><img src="https://jpmlblog.github.io/images/AML-model-register-and-deploy/Register-model-button.png" width=600px>  <p>表示された入力項目のうち、* マークのある項目を全て埋めて [登録] ボタンをクリックします。  </p><img src="https://jpmlblog.github.io/images/AML-model-register-and-deploy/Register-model-config.png" width=500px>  <p>この時、以下の点に留意ください。</p><ul><li>モデル フレームワークを誤って選択するとデプロイに失敗します。不明な場合には、[その他] を選択し、フレーム ワーク名、バージョンは空欄にします。指定するとデプロイが簡略化されますが、指定しなくても登録可能です。  <ul><li><a href="https://docs.microsoft.com/ja-jp/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py" target="_blank" rel="noopener">Model class</a>  <blockquote><p>The framework of the registered model. Using the system-supported constants from the Framework class allows for simplified deployment for some popular frameworks.</p></blockquote></li></ul></li></ul><hr><h2 id="モデルのデプロイ"><a href="#モデルのデプロイ" class="headerlink" title="モデルのデプロイ"></a>モデルのデプロイ</h2><p>Azure Machine Learning Studio (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) の [アセット] - [モデル] より、登録されているモデルをクリックします。  </p><img src="https://jpmlblog.github.io/images/AML-model-register-and-deploy/Deploy-model-button.png" width=500px>  <p>表示された入力項目のうち、* マークのある項目を全て埋めて [登録] ボタンをクリックします。  </p><img src="https://jpmlblog.github.io/images/AML-model-register-and-deploy/Deploy-model-config.png" width=500px>  <p>この時、以下の点に留意ください。  </p><ul><li>エントリ スクリプト ファイルおよび Conda 依存関係ファイルは下記サイトを参考にご準備ください。  <ul><li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=python#define-an-entry-script" target="_blank" rel="noopener">エントリ スクリプトを定義する</a>  </li><li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=python#define-an-inference-configuration" target="_blank" rel="noopener">推論構成を定義する</a></li></ul></li><li>エントリ スクリプト ファイルのモデル指定に誤りがあったり、Conda 依存関係ファイルが誤っていると、デプロイ操作がエラーの表示なく長時間完了しない場合があります。デプロイ先のリソースにエラーが記録されている場合がありますので、厳密な調査が必要となりましたら、モデルファイル、エントリ スクリプト ファイル、Conda 依存関係ファイルと共にサポート リクエストを発行ください。  <br></li></ul><h3 id="自動-ML-Automated-Machine-Learning-のモデルのデプロイ"><a href="#自動-ML-Automated-Machine-Learning-のモデルのデプロイ" class="headerlink" title="自動 ML (Automated Machine Learning) のモデルのデプロイ"></a>自動 ML (Automated Machine Learning) のモデルのデプロイ</h3><p>自動 ML の実行結果からモデルをデプロイする場合、エントリ スクリプト ファイルおよび Conda 依存関係ファイルを指定する必要はありません。具体的な操作内容は、下記サイトを参照ください。</p><ul><li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-use-automated-ml-for-ml-models#deploy-your-model" target="_blank" rel="noopener">モデルをデプロイする</a></li></ul><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> Azure Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Studio </tag>
+            
+            <tag> モデル登録 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>モデルを仮想ネットワーク上の Azure Container Instances (ACI) にデプロイする方法について</title>
       <link href="/blog/2020/08/18/AML-deploy-aci-vnet/"/>
       <url>/blog/2020/08/18/AML-deploy-aci-vnet/</url>
