@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
 <meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-30T16:31:44.942Z">
+<meta property="article:modified_time" content="2020-08-30T16:36:29.118Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
@@ -169,13 +169,19 @@
 <p>※ CollectInfo_AzureConnection.bat のコマンド プロンプトは起動したままにしておきます。  </p>
 <p>(4) Microsoft Edge (Chromium) または Chrome を起動します。  </p>
 <p>※ (5) ～ (11) の手順は 「<a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace" target="_blank" rel="noopener">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
-<p>(5) F12 キーを押下し、デベロッパー ツールを起動します。<br>(6) [Network]タブを選択し、[Preserve log] を選択します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png" alt="chromium-network-preserve-log.png">  </p>
-<p>(7) [Console] タブを選択し、[Console settings] を選択してから、[Preserve Log] を選択します。[Console settings] をもう一度選択して、設定ペインを閉じます。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-preserve-log.png" alt="chromium-console-preserve-log.png">  </p>
-<p>(8) [Network] タブを選択し、 [Stop recording network log] と [Clear] を選択します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-stop-clear-session.png" alt="chromium-stop-clear-session.png">  </p>
-<p>(9) [Record network log] を選択して、問題を再現します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-start-session.png" alt="chromium-start-session.png">  </p>
+<p>(5) F12 キーを押下し、デベロッパー ツールを起動します。<br>(6) [Network]タブを選択し、[Preserve log] を選択します。  </p>
+<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png" alt="chromium-network-preserve-log.png">  </p>
+<p>(7) [Console] タブを選択し、[Console settings] を選択してから、[Preserve Log] を選択します。[Console settings] をもう一度選択して、設定ペインを閉じます。  </p>
+<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-preserve-log.png" alt="chromium-console-preserve-log.png">  </p>
+<p>(8) [Network] タブを選択し、 [Stop recording network log] と [Clear] を選択します。  </p>
+<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-stop-clear-session.png" alt="chromium-stop-clear-session.png">  </p>
+<p>(9) [Record network log] を選択して、問題を再現します。  </p>
+<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-start-session.png" alt="chromium-start-session.png">  </p>
 <p>※ 事象の再現を確認、そのまま十数秒ほど待ちます。  </p>
-<p>(10) [Stop recording network log] を選択し、 [Export HAR] を選択して任意の場所に .har ファイルを保存します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png" alt="chromium-network-export-har.png">  </p>
-<p>(11) <a href="コンソール">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png" alt="chromium-console-select.png">  </p>
+<p>(10) [Stop recording network log] を選択し、 [Export HAR] を選択して任意の場所に .har ファイルを保存します。  </p>
+<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png" alt="chromium-network-export-har.png">  </p>
+<p>(11) <a href="コンソール">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。  </p>
+<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png" alt="chromium-console-select.png">  </p>
 <p>※ 以下、CollectInfo_AzureConnection.bat のコマンド プロンプトにて再度操作を実施します。  </p>
 <p>(12) “実行したい番号を入力ください” メッセージに 2 を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(13) “実行したい番号を入力ください” メッセージに 3 を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(14) “実行したい番号を入力ください” メッセージに q を入力、リターン キーを押下してツールを終了します。<br>(15) 手順 (10) および (11) で保存したファイルと、デスクトップ上 &lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info フォルダーをまとめて ZIP 圧縮し、お問い合わせいただく際にご提供ください。  </p>
 <hr>
