@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: Azure Machine Learning | Japan Machine Learning Support Blog</title>
+  <title>情報採取手順 | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,13 +19,25 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Machine Learning Support Blog">
-<meta property="og:url" content="https://jpmlblog.github.io/categories/Azure-Machine-Learning/index.html">
+  <meta name="description" content="Azure Machine Learning のポータル (https:&#x2F;&#x2F;ml.azure.com&#x2F;) 利用時に、HTTP エラーなどネットワーク関連のエラーが発生した場合の、情報採取手順を紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="情報採取手順">
+<meta property="og:url" content="https://jpmlblog.github.io/2020/08/31/Collectinfo_AzureConnection/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
+<meta property="og:description" content="Azure Machine Learning のポータル (https:&#x2F;&#x2F;ml.azure.com&#x2F;) 利用時に、HTTP エラーなどネットワーク関連のエラーが発生した場合の、情報採取手順を紹介します。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png">
+<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-preserve-log.png">
+<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-stop-clear-session.png">
+<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-start-session.png">
+<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
+<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
+<meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-30T16:31:44.942Z">
 <meta property="article:author" content="jpmlblog">
+<meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -120,260 +132,84 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Category : Azure Machine Learning'}
-  </script>
-
-<section class="post-list">
+        <article id="post-Collectinfo_AzureConnection"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2020/08/31/Collectinfo_AzureConnection/">
+    	情報採取手順
+    </a>
+  </h2>
+	<time>
+	  8月 31, 2020
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/08/31/Collectinfo_AzureConnection/">
-        情報採取手順
-      </a>
-    </h2>
-    
-    <time>
-      8月 31, 2020
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>Azure Machine Learning のポータル (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) 利用時に、HTTP エラーなどネットワーク関連のエラーが発生した場合の、情報採取手順を紹介します。  </p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#対象"><span class="toc-number">1.</span> <span class="toc-text">対象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事前準備"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#影響"><span class="toc-number">3.</span> <span class="toc-text">影響</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#実行手順"><span class="toc-number">4.</span> <span class="toc-text">実行手順</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Azure Machine Learning のポータル (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) 利用時に、HTTP エラーなどネットワーク関連のエラーが発生した場合の、情報採取手順を紹介します。  </p>
+<a id="more"></a>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/08/31/Collectinfo_AzureConnection/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h2 id="対象"><a href="#対象" class="headerlink" title="対象"></a>対象</h2><p>事象の再現が可能な端末 (OS: Windows 10 の各バージョン)</p>
+<h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p><a href="https://jpmlblog.github.io//files/CollectInfo_AzureConnection.txt" title="CollectInfo_AzureConnection.txt">こちら</a> から CollectInfo_AzureConnection.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  </p>
+<p>&lt;実施対象に以下が存在する状態&gt;<br>・ [任意の場所]\CollectInfo_AzureConnection.bat ファイル</p>
+<h2 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h2><p>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。 </p>
+<h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。<br>(3) “実行したい番号を入力ください” メッセージに 1 を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
+<p>※ CollectInfo_AzureConnection.bat のコマンド プロンプトは起動したままにしておきます。  </p>
+<p>(4) Microsoft Edge (Chromium) または Chrome を起動します。  </p>
+<p>※ (5) ～ (11) の手順は 「<a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace" target="_blank" rel="noopener">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
+<p>(5) F12 キーを押下し、デベロッパー ツールを起動します。<br>(6) [Network]タブを選択し、[Preserve log] を選択します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png" alt="chromium-network-preserve-log.png">  </p>
+<p>(7) [Console] タブを選択し、[Console settings] を選択してから、[Preserve Log] を選択します。[Console settings] をもう一度選択して、設定ペインを閉じます。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-preserve-log.png" alt="chromium-console-preserve-log.png">  </p>
+<p>(8) [Network] タブを選択し、 [Stop recording network log] と [Clear] を選択します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-stop-clear-session.png" alt="chromium-stop-clear-session.png">  </p>
+<p>(9) [Record network log] を選択して、問題を再現します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-start-session.png" alt="chromium-start-session.png">  </p>
+<p>※ 事象の再現を確認、そのまま十数秒ほど待ちます。  </p>
+<p>(10) [Stop recording network log] を選択し、 [Export HAR] を選択して任意の場所に .har ファイルを保存します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png" alt="chromium-network-export-har.png">  </p>
+<p>(11) <a href="コンソール">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。<br><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png" alt="chromium-console-select.png">  </p>
+<p>※ 以下、CollectInfo_AzureConnection.bat のコマンド プロンプトにて再度操作を実施します。  </p>
+<p>(12) “実行したい番号を入力ください” メッセージに 2 を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(13) “実行したい番号を入力ください” メッセージに 3 を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(14) “実行したい番号を入力ください” メッセージに q を入力、リターン キーを押下してツールを終了します。<br>(15) 手順 (10) および (11) で保存したファイルと、デスクトップ上 &lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info フォルダーをまとめて ZIP 圧縮し、お問い合わせいただく際にご提供ください。  </p>
+<hr>
+<p>本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。  </p>
+<p><code>変更履歴</code><br><code>9999/12/31 created by ******</code></p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
         <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/">情報採取手順</a>
       
 	  </div>
     
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/08/31/AML_IE11/">
-        Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する
-      </a>
-    </h2>
-    
-    <time>
-      8月 31, 2020
-    </time>
 		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>Internet Explorer 11 利用時に確認できている現象について紹介します。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/08/31/AML_IE11/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/Internet-Explorer-11/">Internet Explorer 11</a>
-      
-	  </div>
-    
-  </section>
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/08/31/AML_IE11/" rel="next"  title="Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する">
+						Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/08/25/AML-register-and-deploy-model/">
-        Azure Machine Learning Studio でモデル登録およびデプロイする場合の留意点について
-      </a>
-    </h2>
-    
-    <time>
-      8月 25, 2020
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>Azure Machine Learning Studio でモデル登録する場合の留意点についてお纏めします。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/08/25/AML-register-and-deploy-model/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/Studio/">Studio</a>
-      
-        <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/">モデル登録</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/08/18/AML-deploy-aci-vnet/">
-        モデルを仮想ネットワーク上の Azure Container Instances (ACI) にデプロイする方法について
-      </a>
-    </h2>
-    
-    <time>
-      8月 18, 2020
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>モデルを仮想ネットワーク上の ACI にデプロイする方法について紹介します。  </p>
-<p>Azure Machine Learning に仮想ネットワーク (Azure Virtual Network: VNET) を使用することで、機械学習のライフサイクルをセキュリティで保護することが可能になります。例えば、ACI を仮想ネットワークに置くことで、Web エンドポイントをパブリック インターネットから保護することができます。  </p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/08/18/AML-deploy-aci-vnet/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/Azure-Container-Instances/">Azure Container Instances</a>
-      
-        <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/">仮想ネットワーク</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/06/18/AML-estimate-costs/">
-        Azure Machine Learning のコスト見積もりについて
-      </a>
-    </h2>
-    
-    <time>
-      6月 18, 2020
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>Azure Machine Learning のコスト見積もりについて、参考となる情報を紹介します。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/06/18/AML-estimate-costs/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/">価格</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/">
-        AutoML の同時実行数制限について
-      </a>
-    </h2>
-    
-    <time>
-      4月 6, 2020
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p><a href="https://ml.azure.com/" target="_blank" rel="noopener">Microsoft Azure Machine Learning ポータル</a> より Automated Machine Learninig (以降、AutoML と記載) を複数同時実行する際の制限事項について紹介します。  </p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/AutoML/">AutoML</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: '情報採取手順',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>

@@ -27,7 +27,7 @@
 <meta property="og:description" content="よくあるご質問とその回答をまとめております。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-04-22T01:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-26T00:01:54.143Z">
+<meta property="article:modified_time" content="2020-08-30T16:31:44.957Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="FAQ">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#製品を理解するために参考となる公開情報を教えて欲しい"><span class="toc-number">1.</span> <span class="toc-text">製品を理解するために参考となる公開情報を教えて欲しい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Machine-Learning-ワークスペースを別のリソース-グル―プまたは別のサブスクリプションに移動することは可能か"><span class="toc-number">2.</span> <span class="toc-text">Machine Learning ワークスペースを別のリソース グル―プまたは別のサブスクリプションに移動することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#セキュリティ要件のため各リソースへのアクセスを制限することは可能か"><span class="toc-number">3.</span> <span class="toc-text">セキュリティ要件のため各リソースへのアクセスを制限することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#機能の説明にある-「プレビュー」-とは何か"><span class="toc-number">4.</span> <span class="toc-text">機能の説明にある 「プレビュー」 とは何か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#コストの見積もり方を知りたい"><span class="toc-number">5.</span> <span class="toc-text">コストの見積もり方を知りたい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Azure-Machine-Learning-Studio-Classic-と-Azure-Machine-Learning-のデザイナー機能はどのような違いがあるか"><span class="toc-number">6.</span> <span class="toc-text">Azure Machine Learning Studio (Classic) と Azure Machine Learning のデザイナー機能はどのような違いがあるか</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#製品を理解するために参考となる公開情報を教えて欲しい"><span class="toc-number">1.</span> <span class="toc-text">製品を理解するために参考となる公開情報を教えて欲しい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Machine-Learning-ワークスペースを別のリソース-グル―プまたは別のサブスクリプションに移動することは可能か"><span class="toc-number">2.</span> <span class="toc-text">Machine Learning ワークスペースを別のリソース グル―プまたは別のサブスクリプションに移動することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#セキュリティ要件のため各リソースへのアクセスを制限することは可能か"><span class="toc-number">3.</span> <span class="toc-text">セキュリティ要件のため各リソースへのアクセスを制限することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#機能の説明にある-「プレビュー」-とは何か"><span class="toc-number">4.</span> <span class="toc-text">機能の説明にある 「プレビュー」 とは何か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#コストの見積もり方を知りたい"><span class="toc-number">5.</span> <span class="toc-text">コストの見積もり方を知りたい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Azure-Machine-Learning-Studio-Classic-と-Azure-Machine-Learning-のデザイナー機能はどのような違いがあるか"><span class="toc-number">6.</span> <span class="toc-text">Azure Machine Learning Studio (Classic) と Azure Machine Learning のデザイナー機能はどのような違いがあるか</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#リソース名に平仮名や漢字を使用可能か"><span class="toc-number">7.</span> <span class="toc-text">リソース名に平仮名や漢字を使用可能か</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -251,7 +251,42 @@
 </li>
 </ul>
 <hr>
-<p><code>変更履歴</code><br><code>2020/04/22 created by Mochizuki</code><br><code>2020/06/18 modified by Mochizuki</code><br><br><br>※ 適宜追加更新します。  </p>
+<h4 id="リソース名に平仮名や漢字を使用可能か"><a href="#リソース名に平仮名や漢字を使用可能か" class="headerlink" title="リソース名に平仮名や漢字を使用可能か"></a>リソース名に平仮名や漢字を使用可能か</h4><details><summary style="font-size: 10pt">回答</summary>
+使用可能な文字はありますが、予期せぬエラーが発生しリソース作成が失敗する場合があるため、推奨しません。  
+
+<p>リソース グループ名やリソース名には、有効な文字を指定させていただいております。下記情報に従い、リソース グループ名を英数字とハイフンのみを使用して作成ください。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/azure-resource-manager/management/resource-name-rules#microsoftmachinelearningservices" target="_blank" rel="noopener">Microsoft.MachineLearningServices</a><blockquote>
+<p>Microsoft.MachineLearningServices  </p>
+<table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Scope</th>
+<th align="left">長さ</th>
+<th align="left">有効な文字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">workspaces</td>
+<td align="left">resource group</td>
+<td align="left">3-33</td>
+<td align="left">英数字とハイフン。</td>
+</tr>
+<tr>
+<td align="left">workspaces / computes</td>
+<td align="left">ワークスペース</td>
+<td align="left">2-16</td>
+<td align="left">英数字とハイフン。</td>
+</tr>
+</tbody></table>
+</blockquote>
+</details>
+
+</li>
+</ul>
+<hr>
+<p><code>変更履歴</code><br><code>2020/04/22 created by Mochizuki</code><br><code>2020/06/18 modified by Mochizuki</code><br><code>2020/08/26 modified by Mochizuki</code><br><br><br>※ 適宜追加更新します。  </p>
 
   	</div>
 	  
@@ -333,7 +368,7 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>4</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>6</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-Studio-Classic/"><div class='name'>Azure Machine Learning Studio (Classic)</div><div class='badget'>1</div></a></li>
     
@@ -348,7 +383,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/AutoML/" style="font-size: 14px; color: #808080">AutoML</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Studio/" style="font-size: 14px; color: #808080">Studio</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 14px; color: #808080">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a>
+        <a href="/blog/tags/AutoML/" style="font-size: 14px; color: #808080">AutoML</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Studio/" style="font-size: 14px; color: #808080">Studio</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 14px; color: #808080">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a>
     </div>
 </div>
 
