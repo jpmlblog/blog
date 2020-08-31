@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
 <meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-31T00:26:05.799Z">
+<meta property="article:modified_time" content="2020-08-31T00:31:16.470Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
@@ -165,7 +165,7 @@
 <h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p><a href="https://jpmlblog.github.io//files/CollectInfo_AzureConnection.txt" title="CollectInfo_AzureConnection.txt">こちら</a> から CollectInfo_AzureConnection.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  </p>
 <p>&lt;実施対象に以下が存在する状態&gt;<br>・ [任意の場所]\CollectInfo_AzureConnection.bat ファイル</p>
 <h2 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h2><p>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。 </p>
-<h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。<br>(3) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに 1 を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
+<h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。<br>(3) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>1</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
 <p>※ CollectInfo_AzureConnection.bat のコマンド プロンプトは起動したままにしておきます。  </p>
 <p>(4) Microsoft Edge (Chromium) または Chrome を起動し、問題が再現する操作の直前まで画面を進めます。  </p>
 <p>※ (5) ～ (11) の手順は 「<a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace" target="_blank" rel="noopener">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
@@ -183,11 +183,11 @@
 <p>(11) <a href="コンソール">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。  </p>
 <p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png" alt="chromium-console-select.png">  </p>
 <p>※ 以下、CollectInfo_AzureConnection.bat のコマンド プロンプトにて再度操作を実施します。  </p>
-<p>(12) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに 2 を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(13) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに 3 を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(14) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに q を入力、リターン キーを押下してツールを終了します。<br>(15) 手順 (10) および (11) で保存したファイル (拡張子 .har および .log のファイル) と、デスクトップ上 &lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info フォルダーをまとめて ZIP 圧縮し、お問い合わせいただく際にご提供ください。  </p>
+<p>(12) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>2</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(13) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>3</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(14) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>q</code> を入力、リターン キーを押下してツールを終了します。<br>(15) 手順 (10) および (11) で保存したファイル (拡張子 .har および .log のファイル) と、デスクトップ上 <code>&lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info</code> フォルダーをまとめて ZIP 圧縮し、お問い合わせいただく際にご提供ください。  </p>
 <p>※ サポート リクエストに関する参考情報<br>・ <a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request" target="_blank" rel="noopener">Azure サポート要求を作成する</a><br>・ <a href="https://azure.microsoft.com/ja-jp/support/create-ticket/" target="_blank" rel="noopener">サポート チケットの作成</a></p>
 <hr>
 <p>本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。  </p>
-<p><code>変更履歴</code><br>`2020/08/31 created by Mochizuki</p>
+<p><code>変更履歴</code><br><code>2020/08/31 created by Mochizuki</code></p>
 
   	</div>
 	  
