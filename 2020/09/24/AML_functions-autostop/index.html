@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_functions-autostop/confirmation-funcapp-1.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_functions-autostop/confirmation-funcapp-2.png">
 <meta property="article:published_time" content="2020-09-24T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-25T11:51:14.490Z">
+<meta property="article:modified_time" content="2020-09-25T12:35:46.473Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Azure Functions">
 <meta name="twitter:card" content="summary">
@@ -171,7 +171,7 @@
 <hr>
 <p>Azure Machine Learning のコンピューティング インスタンスは、一度起動すると停止操作を行わない限り起動し続けます。起動時間に比例して課金が発生しますので、停止忘れてしまった時の損失が思いのほか大きいこともあります。  </p>
 <p>本記事では、Azure Functions のタイマー トリガーを使用して、Azure Machine Learning SDK (AzureML SDK) のコードを決まった時刻に実行させることで、コンピューティング インスタンスを自動停止させる方法を紹介します。  </p>
-<p>(補足)<br>Azure Automation は Azure CLI および Python 3 の実行をサポートしていないため、本記事では触れておりません。 </p>
+<p>(補足)<br>Azure Automation は Azure Machine Learning CLI および Python 3 の実行をサポートしていないため、本記事では振れておりません。  </p>
 <p>(参考情報)</p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/developer/python/tutorial-vs-code-serverless-python-01" target="_blank" rel="noopener">チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする</a>  </li>
@@ -210,7 +210,7 @@
 
 <h3 id="Azure-Functions-プロジェクトの作成"><a href="#Azure-Functions-プロジェクトの作成" class="headerlink" title="Azure Functions プロジェクトの作成"></a>Azure Functions プロジェクトの作成</h3><p>Visual Studio Code を起動し、新しいプロジェクトを作成します。</p>
 <ul>
-<li>アクティビティ バーの Azure アイコンを選択、 [Functions] 領域で [Create NCreate New Project New Project (新しいプロジェクトの作成)] アイコンを選択します。  </li>
+<li>アクティビティ バーの Azure アイコンを選択、 [Functions] 領域で [Create New Project (新しいプロジェクトの作成)] アイコンを選択します。  </li>
 </ul>
 <img src="https://jpmlblog.github.io/images/AML_functions-autostop/create-new-project-1.png" width=400px>  
 
@@ -225,7 +225,7 @@
 <img src="https://jpmlblog.github.io/images/AML_functions-autostop/create-new-project-3.png" width=400px>  
 
 <ul>
-<li>「Select a Python alias to create a virtual environment (仮想環境を作成する Python エイリアスを選択してください)」 では Python インタープリターの場所を選択します。場所 (以下画像の py 3.7.5 のようなパス) が表示されない場合、[Skip virtual environment] を選択ください。</li>
+<li>「Select a Python alias to create a virtual environment (仮想環境を作成する Python エイリアスを選択してください)」 では Python インタープリターの場所を選択します。<br>場所 (以下画像の py 3.7.5 のようなパス) が表示されない場合、[Skip virtual environment] を選択ください。</li>
 </ul>
 <img src="https://jpmlblog.github.io/images/AML_functions-autostop/create-new-project-4.png" width=400px>  
 
@@ -235,12 +235,12 @@
 <img src="https://jpmlblog.github.io/images/AML_functions-autostop/create-new-project-5.png" width=400px>  
 
 <ul>
-<li>「Provide a function name (関数名を指定してください)」 では任意の名前を指定します。本手順では既定値 [TimerTrigger1] を使用します。</li>
+<li>「Provide a function name (関数名を指定してください)」 では任意の名前を指定します。<br>本手順では既定値 [TimerTrigger1] を使用します。</li>
 </ul>
 <img src="https://jpmlblog.github.io/images/AML_functions-autostop/create-new-project-6.png" width=400px>  
 
 <ul>
-<li>「Enter a cron expression … (cron 式を入力してください)」 では、自動停止を実行したい時刻を指定します。後から変更可能なので、既定値のままスキップください。  </li>
+<li>「Enter a cron expression … (cron 式を入力してください)」 では、自動停止を実行したい時刻を指定します。<br>後から変更可能なので、既定値のままスキップください。  </li>
 </ul>
 <img src="https://jpmlblog.github.io/images/AML_functions-autostop/create-new-project-7.png" width=400px>  
 
