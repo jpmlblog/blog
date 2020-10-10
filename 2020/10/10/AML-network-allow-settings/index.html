@@ -27,7 +27,7 @@
 <meta property="og:description" content="オンプレミスの環境から Azure Machine Learning のサービスを利用する際、外部ネットワーク宛の通信をファイアウォールやプロキシ サーバー等によって制御している場合に、許可すべきホスト名等の情報をご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-10-10T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-10T16:06:50.993Z">
+<meta property="article:modified_time" content="2020-10-10T16:09:48.279Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Network">
 <meta property="article:tag" content="Firewall">
@@ -160,90 +160,7 @@
 <ul>
 <li><p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#microsoft-hosts" target="_blank" rel="noopener">ファイアウォールの内側で Azure Machine Learning のワークスペースを使用する - # Microsoft のホスト</a></p>
 <blockquote>
-<table>
-<thead>
-<tr>
-<th align="left">ホスト名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th align="left">目的</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">login.microsoftonline.com</td>
-<td align="left">認証</td>
-</tr>
-<tr>
-<td align="left">management.azure.com</td>
-<td align="left">ワークスペース情報を取得するために使用されます</td>
-</tr>
-<tr>
-<td align="left">*.batchai.core.windows.net</td>
-<td align="left">クラスターをトレーニングします</td>
-</tr>
-<tr>
-<td align="left">ml.azure.com</td>
-<td align="left">Azure Machine Learning Studio</td>
-</tr>
-<tr>
-<td align="left">default.exp-tas.com</td>
-<td align="left">Azure Machine Learning スタジオによって使用されます</td>
-</tr>
-<tr>
-<td align="left">*.azureml.ms</td>
-<td align="left">Azure Machine Learning API によって使用されます</td>
-</tr>
-<tr>
-<td align="left">*.experiments.azureml.net</td>
-<td align="left">Azure Machine Learning で実行される実験で使用されます</td>
-</tr>
-<tr>
-<td align="left">*.modelmanagement.azureml.net</td>
-<td align="left">モデルを登録してデプロイするために使用されます</td>
-</tr>
-<tr>
-<td align="left">mlworkspace.azure.ai</td>
-<td align="left">ワークスペースを表示するときに Azure portal によって使用されます</td>
-</tr>
-<tr>
-<td align="left">*.aether.ms</td>
-<td align="left">Azure Machine Learning パイプラインを実行するときに使用されます</td>
-</tr>
-<tr>
-<td align="left">*.instances.azureml.net</td>
-<td align="left">Azure Machine Learning のコンピューティング インスタンスです</td>
-</tr>
-<tr>
-<td align="left">*.instances.azureml.ms</td>
-<td align="left">ワークスペースで Private Link が有効な場合の Azure Machine Learning のコンピューティング インスタンスです</td>
-</tr>
-<tr>
-<td align="left">windows.net</td>
-<td align="left">Azure Blob Storage</td>
-</tr>
-<tr>
-<td align="left">vault.azure.net</td>
-<td align="left">Azure Key Vault</td>
-</tr>
-<tr>
-<td align="left">azurecr.io</td>
-<td align="left">Azure Container Registry</td>
-</tr>
-<tr>
-<td align="left">mcr.microsoft.com</td>
-<td align="left">基本 Docker イメージ用の Microsoft Container Registry</td>
-</tr>
-<tr>
-<td align="left">&lt;your-acr-server-name&gt;.azurecr.io</td>
-<td align="left">Azure Container Registry が仮想ネットワークの背後にある場合にのみ必要です。 この構成では、Microsoft 環境からサブスクリプションの ACR インスタンスへのプライベート リンクが作成されます。 Azure Machine Learning ワークスペースの ACR サーバー名を使用します。</td>
-</tr>
-<tr>
-<td align="left">*.notebooks.azure.net</td>
-<td align="left">Azure Machine Learning studio のノートブックで必要です。</td>
-</tr>
-<tr>
-<td align="left">graph.windows.net</td>
-<td align="left">ノートブックに必要です</td>
-</tr>
-</tbody></table>
+<p>login.microsoftonline.com<br>management.azure.com<br>*.batchai.core.windows.net<br>ml.azure.com<br>default.exp-tas.com<br>*.azureml.ms<br>*.experiments.azureml.net<br>*.modelmanagement.azureml.net<br>mlworkspace.azure.ai<br>*.aether.ms<br>*.instances.azureml.net<br>*.instances.azureml.ms<br>windows.net<br>vault.azure.net<br>azurecr.io<br>mcr.microsoft.com<br>&lt;your-acr-server-name&gt;.azurecr.io<br>*.notebooks.azure.net<br>graph.windows.net  </p>
 </blockquote>
 </li>
 </ul>
