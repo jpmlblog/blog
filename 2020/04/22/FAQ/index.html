@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>FAQ | Japan Machine Learning Support Blog</title>
+  <title>Azure Machine Learning (AzureML, AML) の FAQ | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,15 +19,15 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="よくあるご質問とその回答をまとめております。">
+  <meta name="description" content="よくあるご質問とその回答をまとめております。併せて 本サイトについて 、 ホームページ および 記事一覧 もご参照いただければ幸いです。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FAQ">
+<meta property="og:title" content="Azure Machine Learning (AzureML, AML) の FAQ">
 <meta property="og:url" content="https://jpmlblog.github.io/2020/04/22/FAQ/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
-<meta property="og:description" content="よくあるご質問とその回答をまとめております。">
+<meta property="og:description" content="よくあるご質問とその回答をまとめております。併せて 本サイトについて 、 ホームページ および 記事一覧 もご参照いただければ幸いです。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-04-22T01:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-29T06:13:56.291Z">
+<meta property="article:modified_time" content="2020-10-10T16:01:49.686Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="FAQ">
 <meta name="twitter:card" content="summary">
@@ -131,7 +131,7 @@
 	<section class='meta'>
 	<h2 class="title">
   	<a href="/blog/2020/04/22/FAQ/">
-    	FAQ
+    	Azure Machine Learning (AzureML, AML) の FAQ
     </a>
   </h2>
 	<time>
@@ -145,33 +145,36 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#製品を理解するために参考となる公開情報を教えて欲しい"><span class="toc-number">1.</span> <span class="toc-text">製品を理解するために参考となる公開情報を教えて欲しい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Machine-Learning-ワークスペースを別のリソース-グル―プまたは別のサブスクリプションに移動することは可能か"><span class="toc-number">2.</span> <span class="toc-text">Machine Learning ワークスペースを別のリソース グル―プまたは別のサブスクリプションに移動することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#セキュリティ要件のため各リソースへのアクセスを制限することは可能か"><span class="toc-number">3.</span> <span class="toc-text">セキュリティ要件のため各リソースへのアクセスを制限することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#機能の説明にある-「プレビュー」-とは何か"><span class="toc-number">4.</span> <span class="toc-text">機能の説明にある 「プレビュー」 とは何か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#コストの見積もり方を知りたい"><span class="toc-number">5.</span> <span class="toc-text">コストの見積もり方を知りたい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Azure-Machine-Learning-Studio-Classic-と-Azure-Machine-Learning-のデザイナー機能はどのような違いがあるか"><span class="toc-number">6.</span> <span class="toc-text">Azure Machine Learning Studio (Classic) と Azure Machine Learning のデザイナー機能はどのような違いがあるか</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#リソース名に平仮名や漢字を使用可能か"><span class="toc-number">7.</span> <span class="toc-text">リソース名に平仮名や漢字を使用可能か</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#製品を理解するために参考となる公開情報を教えて欲しい"><span class="toc-number">1.</span> <span class="toc-text">製品を理解するために参考となる公開情報を教えて欲しい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Machine-Learning-ワークスペースを別のリソース-グル―プまたは別のサブスクリプションに移動することは可能か"><span class="toc-number">2.</span> <span class="toc-text">Machine Learning ワークスペースを別のリソース グル―プまたは別のサブスクリプションに移動することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#セキュリティ要件のため各リソースへのアクセスを制限することは可能か"><span class="toc-number">3.</span> <span class="toc-text">セキュリティ要件のため各リソースへのアクセスを制限することは可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#機能の説明にある-「プレビュー」-とは何か"><span class="toc-number">4.</span> <span class="toc-text">機能の説明にある 「プレビュー」 とは何か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#コストの見積もり方を知りたい"><span class="toc-number">5.</span> <span class="toc-text">コストの見積もり方を知りたい</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Azure-Machine-Learning-Studio-Classic-と-Azure-Machine-Learning-のデザイナー機能はどのような違いがあるか"><span class="toc-number">6.</span> <span class="toc-text">Azure Machine Learning Studio (Classic) と Azure Machine Learning のデザイナー機能はどのような違いがあるか</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#リソース名に平仮名や漢字を使用可能か"><span class="toc-number">7.</span> <span class="toc-text">リソース名に平仮名や漢字を使用可能か</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#コンピューティング-インスタンスを自動で停止させたい"><span class="toc-number">8.</span> <span class="toc-text">コンピューティング インスタンスを自動で停止させたい</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>よくあるご質問とその回答をまとめております。</p>
+    	<p>よくあるご質問とその回答をまとめております。<br>併せて <a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">本サイトについて</a> 、 <a href="https://jpmlblog.github.io/blog/">ホームページ</a> および <a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a> もご参照いただければ幸いです。  </p>
 <a id="more"></a>
 <br>
 
 <hr>
 <h4 id="製品を理解するために参考となる公開情報を教えて欲しい"><a href="#製品を理解するために参考となる公開情報を教えて欲しい" class="headerlink" title="製品を理解するために参考となる公開情報を教えて欲しい"></a>製品を理解するために参考となる公開情報を教えて欲しい</h4><details><summary style="font-size: 10pt">回答</summary>
 別途ブログ記事として掲載しております。以下リンクより参照ください。  
-[参考となる公開情報について](https://jpmlblog.github.io/blog/2020/04/22/reference-websites/)  
+
+<p><a href="https://jpmlblog.github.io/blog/2020/04/22/reference-websites/">参考となる公開情報について</a>  </p>
 </details>
 
 <hr>
 <h4 id="Machine-Learning-ワークスペースを別のリソース-グル―プまたは別のサブスクリプションに移動することは可能か"><a href="#Machine-Learning-ワークスペースを別のリソース-グル―プまたは別のサブスクリプションに移動することは可能か" class="headerlink" title="Machine Learning ワークスペースを別のリソース グル―プまたは別のサブスクリプションに移動することは可能か"></a>Machine Learning ワークスペースを別のリソース グル―プまたは別のサブスクリプションに移動することは可能か</h4><details><summary style="font-size: 10pt">回答</summary>
 不可能です。参考となる情報を紹介します。  
-[Azure Machine Learning ワークスペースとは (#workspace-management)](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-workspace#workspace-management)  
-> ! 警告  
-Azure Machine Learning ワークスペースを別のサブスクリプションに移動したり、所有するサブスクリプションを新しいテナントに移動したりすることは、サポートされていません。 エラーの原因になります。
+
+<p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-workspace#workspace-management" target="_blank" rel="noopener">Azure Machine Learning ワークスペースとは (#workspace-management)</a>  </p>
+<blockquote>
+<p>! 警告<br>Azure Machine Learning ワークスペースを別のサブスクリプションに移動したり、所有するサブスクリプションを新しいテナントに移動したりすることは、サポートされていません。 エラーの原因になります。</p>
+</blockquote>
 </details>
 
 <hr>
 <h4 id="セキュリティ要件のため各リソースへのアクセスを制限することは可能か"><a href="#セキュリティ要件のため各リソースへのアクセスを制限することは可能か" class="headerlink" title="セキュリティ要件のため各リソースへのアクセスを制限することは可能か"></a>セキュリティ要件のため各リソースへのアクセスを制限することは可能か</h4><details><summary style="font-size: 10pt">回答</summary>
 認証やアクセス権の付与、ネットワーク的な隔離、監視など、Azure Machine Learning で利用できるセキュリティ機能について、以下サイトにて纏めております。  
-[Azure Machine Learning のエンタープライズ セキュリティ](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-enterprise-security)  
 
+<p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-enterprise-security" target="_blank" rel="noopener">Azure Machine Learning のエンタープライズ セキュリティ</a>  </p>
 <p>一部抜粋を紹介します。  </p>
 <ul>
 <li><p><strong>ストレージ サービスへのアクセスを制限する</strong><br> 以下サイトに記載の認証方法をサポートしています。<br> <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-data#supported-data-storage-service-types" target="_blank" rel="noopener">Azure Storage サービスに接続する (#supported-data-storage-service-types)</a></p>
@@ -188,8 +191,8 @@ Azure Machine Learning ワークスペースを別のサブスクリプション
 <h4 id="機能の説明にある-「プレビュー」-とは何か"><a href="#機能の説明にある-「プレビュー」-とは何か" class="headerlink" title="機能の説明にある 「プレビュー」 とは何か"></a>機能の説明にある 「プレビュー」 とは何か</h4><details><summary style="font-size: 10pt">回答</summary>
 Azure には、マイクロソフトがお客様のご意見を収集するために提供する、プレビュー版、ベータ版、またはその他のプレリリース版の機能、サービス、ソフトウェア、またはリージョン (以下、「プレビュー」といいます) が含まれる場合があります。以下サイトの使用条件に合意することを条件に、プレビューを使用することができます。  
 
-<p><a href="https://azure.microsoft.com/ja-jp/support/legal/preview-supplemental-terms/" target="_blank" rel="noopener">Microsoft Azure プレビューの追加使用条件</a>    </p>
-<blockquote>
+<ul>
+<li><a href="https://azure.microsoft.com/ja-jp/support/legal/preview-supplemental-terms/" target="_blank" rel="noopener">Microsoft Azure プレビューの追加使用条件</a>    <blockquote>
 <ol>
 <li>「現状有姿のまま」「瑕疵を問わない条件」「提供可能な場合に限り提供しうる形で」提供される  </li>
 <li>サービス レベル契約および限定的保証の対象とはならない</li>
@@ -198,6 +201,8 @@ Azure には、マイクロソフトがお客様のご意見を収集するた�
 <li>「一般向け提供製品」でリリースしないことを選択する場合がある</li>
 </ol>
 </blockquote>
+</li>
+</ul>
 <p>プレビューは開発段階のサービス・機能でもあるため、公開中のドキュメントと異なる仕様があったり、メンテナンスに伴い使用できなくなることがあります。以下のようなご質問につきましては、基本的に Azure サポートから回答を提供することが難しいことをご理解ください。  </p>
 <ul>
 <li>一般サービス提供開始予定</li>
@@ -228,13 +233,9 @@ Azure には、マイクロソフトがお客様のご意見を収集するた�
 </ul>
 <hr>
 <h4 id="Azure-Machine-Learning-Studio-Classic-と-Azure-Machine-Learning-のデザイナー機能はどのような違いがあるか"><a href="#Azure-Machine-Learning-Studio-Classic-と-Azure-Machine-Learning-のデザイナー機能はどのような違いがあるか" class="headerlink" title="Azure Machine Learning Studio (Classic) と Azure Machine Learning のデザイナー機能はどのような違いがあるか"></a>Azure Machine Learning Studio (Classic) と Azure Machine Learning のデザイナー機能はどのような違いがあるか</h4><details><summary style="font-size: 10pt">回答</summary>
-それぞれ GUI ベースで機械学習を行うサービスとなりますが、新・旧という形では分けられておらず、データの移行にも対応していません。    
+それぞれ GUI ベースで機械学習を行うサービスとなりますが、新・旧という形では分けられておらず、データの移行にも対応していません。  
+具体的な差異は以下サイトに纏められております。  
 
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/service/context/ml-context#azure-machine-learning" target="_blank" rel="noopener">Azure Machine Learning</a>  </li>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/service/context/ml-context#azure-ml-studio-classic" target="_blank" rel="noopener">Azure ML Studio (クラシック)</a>  </li>
-</ul>
-<p>具体的な差異は以下サイトに纏められております。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/compare-azure-ml-to-studio-classic" target="_blank" rel="noopener">Azure Machine Learning と Machine Learning Studio (classic) の違い</a></details>
 
@@ -276,6 +277,15 @@ Azure には、マイクロソフトがお客様のご意見を収集するた�
 </li>
 </ul>
 <hr>
+<h4 id="コンピューティング-インスタンスを自動で停止させたい"><a href="#コンピューティング-インスタンスを自動で停止させたい" class="headerlink" title="コンピューティング インスタンスを自動で停止させたい"></a>コンピューティング インスタンスを自動で停止させたい</h4><details><summary style="font-size: 10pt">回答</summary>
+Azure Functions を使用して、特定の時間に停止させる方法を以下記事にて公開しております。  
+
+<ul>
+<li><a href="https://jpmlblog.github.io/blog/2020/09/24/AML_functions-autostop/">Azure Functions を使用してコンピューティング インスタンスを自動停止する方法について</a>  </details>
+
+</li>
+</ul>
+<hr>
 <p><code>変更履歴</code><br><code>2020/04/22 created by Mochizuki</code><br><code>2020/06/18 modified by Mochizuki</code><br><code>2020/08/26 modified by Mochizuki</code><br><br><br>※ 適宜追加更新します。  </p>
 
   	</div>
@@ -306,7 +316,7 @@ Azure には、マイクロソフトがお客様のご意見を収集するた�
 </article>
 <script>
 	window.subData = {
-		title: 'FAQ',
+		title: 'Azure Machine Learning (AzureML, AML) の FAQ',
 		tools: true
 	}
 </script>
@@ -358,7 +368,7 @@ Azure には、マイクロソフトがお客様のご意見を収集するた�
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>7</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>8</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-Studio-Classic/"><div class='name'>Azure Machine Learning Studio (Classic)</div><div class='badget'>1</div></a></li>
     
@@ -373,7 +383,7 @@ Azure には、マイクロソフトがお客様のご意見を収集するた�
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/AutoML/" style="font-size: 14px; color: #808080">AutoML</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 14px; color: #808080">Azure Functions</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Studio/" style="font-size: 14px; color: #808080">Studio</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 14px; color: #808080">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a>
+        <a href="/blog/tags/AutoML/" style="font-size: 14px; color: #808080">AutoML</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 14px; color: #808080">Azure Functions</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Firewall/" style="font-size: 14px; color: #808080">Firewall</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Network/" style="font-size: 14px; color: #808080">Network</a> <a href="/blog/tags/Proxy/" style="font-size: 14px; color: #808080">Proxy</a> <a href="/blog/tags/Studio/" style="font-size: 14px; color: #808080">Studio</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 14px; color: #808080">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a>
     </div>
 </div>
 
