@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png">
 <meta property="article:published_time" content="2020-10-19T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-18T13:17:37.480Z">
+<meta property="article:modified_time" content="2020-10-18T13:20:09.167Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="名前付け規則">
 <meta property="article:tag" content="Dataset">
@@ -194,30 +194,33 @@
 <br>
 
 <p>また、Azure Machine Learning スタジオ上でコンピューティング リソースを作成する場合には、下記画像のように有効な文字の情報が表示され、名前の検証が行われますので、これに従い名前を指定下さい。  </p>
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-rule-of-compute-instance.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-rule-of-compute-instance.png">  
 
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error1-compute-instance.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error1-compute-instance.png">  
 
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error2-compute-instance.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error2-compute-instance.png">  
 
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error3-compute-instance.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error3-compute-instance.png">  
 
 <hr>
 <h2 id="データセットの名前の場合"><a href="#データセットの名前の場合" class="headerlink" title="データセットの名前の場合"></a>データセットの名前の場合</h2><p>データセットを登録する際に指定する名前には、上述のような公開情報や、機械的な名前検証が行われません。しかしながら、UTF-8 の 1 バイト コード以外の文字 (漢字などの全角文字や異なる言語の文字) を使用した場合、登録後に Azure Machine Learning スタジオで参照できなくなるといった現象が報告されています。  </p>
 <p>例えば、下記の通り全角の “Ｄａｔａｓｅｔ” という名前で登録するとします。  </p>
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset.png">  
 
 <p>これをクリックすると、以下の通り HTTP 404 エラーが表示されます。  </p>
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png">  
 
-<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png" width=300px>  
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png">  
 
 <p>なお、このデータセットを Azure Machine Learning スタジオ上で登録解除しようとしても、正常に処理が進まず失敗します。回避策として、Azure Machine Learning の CLI 拡張機能をすることでこれを登録解除することが出来ます。下記公開情報に従い Azure Machine Learning </p>
 <p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/reference-azure-machine-learning-cli" target="_blank" rel="noopener">Azure Machine Learning の CLI 拡張機能のインストールと使用</a>  </p>
+<p>Azure CLI がインストール済みの環境では以下の実行します。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">az extension add -n azure-cli-ml</span><br><span class="line">az extension update -n azure-cli-ml</span><br></pre></td></tr></table></figure>
 
+<p>初回アクセス時には、以下のコマンドでワークスペースにアタッチします。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">az ml folder attach -w &quot;ワークスペース名&quot; -g &quot;リソース グル―プ名&quot;</span><br></pre></td></tr></table></figure>
 
+<p>以下のコマンドでデータセットの登録を解除します。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> az ml dataset unregister -n &quot;データセット名&quot;</span><br></pre></td></tr></table></figure>
 
 <hr>
