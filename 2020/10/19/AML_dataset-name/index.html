@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる | Japan Machine Learning Support Blog</title>
+  <title>Azure Machine Learning の名前付け規則について | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる">
+<meta property="og:title" content="Azure Machine Learning の名前付け規則について">
 <meta property="og:url" content="https://jpmlblog.github.io/2020/10/19/AML_dataset-name/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
 <meta property="og:description" content="データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png">
 <meta property="article:published_time" content="2020-10-19T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-18T13:26:47.650Z">
+<meta property="article:modified_time" content="2020-10-18T13:44:20.463Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="名前付け規則">
 <meta property="article:tag" content="Dataset">
@@ -140,7 +140,7 @@
 	<section class='meta'>
 	<h2 class="title">
   	<a href="/blog/2020/10/19/AML_dataset-name/">
-    	データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる
+    	Azure Machine Learning の名前付け規則について
     </a>
   </h2>
 	<time>
@@ -154,7 +154,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#名前付け規則について"><span class="toc-number">1.</span> <span class="toc-text">名前付け規則について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#データセットの名前の場合"><span class="toc-number">2.</span> <span class="toc-text">データセットの名前の場合</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#名前付け規則について"><span class="toc-number">1.</span> <span class="toc-text">名前付け規則について</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#データセットの名前付けで発生する事象について"><span class="toc-number">1.1.</span> <span class="toc-text">データセットの名前付けで発生する事象について</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#対処方法について"><span class="toc-number">1.2.</span> <span class="toc-text">対処方法について</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -209,18 +209,20 @@
 </li>
 </ul>
 <hr>
-<h2 id="データセットの名前の場合"><a href="#データセットの名前の場合" class="headerlink" title="データセットの名前の場合"></a>データセットの名前の場合</h2><p>データセットを登録する際に指定する名前には、上述のような公開情報や、機械的な名前検証が行われません。しかしながら、UTF-8 の 1 バイト コード以外の文字 (漢字などの全角文字や異なる言語の文字) を使用した場合、登録後に Azure Machine Learning スタジオで参照できなくなるといった現象が報告されています。  </p>
+<h3 id="データセットの名前付けで発生する事象について"><a href="#データセットの名前付けで発生する事象について" class="headerlink" title="データセットの名前付けで発生する事象について"></a>データセットの名前付けで発生する事象について</h3><p>データセットを登録する際に指定する名前には、上述のような公開情報や、機械的な名前検証が行われません。しかしながら、UTF-8 の 1 バイト コード以外の文字 (漢字などの全角文字や異なる言語の文字) を使用した場合、登録後に Azure Machine Learning スタジオで参照できなくなるといった現象が報告されています。  </p>
 <p>例えば、下記の通り全角の “Ｄａｔａｓｅｔ” という名前で登録するとします。  </p>
 <img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset.png" width=800px>  
 
 <p>これをクリックすると、以下の通り HTTP 404 エラーが表示されます。  </p>
 <img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png" width=400px>  
 
-<br>
 <img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png" width=350px>  
 
-<p>なお、このデータセットを Azure Machine Learning スタジオ上で登録解除しようとしても、正常に処理が進まず失敗します。回避策として、Azure Machine Learning の CLI 拡張機能をすることでこれを登録解除することが出来ます。下記公開情報に従い Azure Machine Learning </p>
-<p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/reference-azure-machine-learning-cli" target="_blank" rel="noopener">Azure Machine Learning の CLI 拡張機能のインストールと使用</a>  </p>
+<h3 id="対処方法について"><a href="#対処方法について" class="headerlink" title="対処方法について"></a>対処方法について</h3><p>この事象は、現在弊社開発部門にフィードバックを行い調査中となります。なお、このデータセットを Azure Machine Learning スタジオ上で登録解除しようとしても、正常に処理が進まず失敗します。  </p>
+<p>回避策として、Azure Machine Learning の CLI 拡張機能をすることでこれを登録解除することが出来ます。下記公開情報に従い、拡張機能のインストールおよびデータセットの登録解除をお試しください。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/reference-azure-machine-learning-cli" target="_blank" rel="noopener">Azure Machine Learning の CLI 拡張機能のインストールと使用</a>  </li>
+</ul>
 <p>Azure CLI がインストール済みの環境では以下の実行します。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">az extension add -n azure-cli-ml</span><br><span class="line">az extension update -n azure-cli-ml</span><br></pre></td></tr></table></figure>
 
@@ -260,7 +262,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる',
+		title: 'Azure Machine Learning の名前付け規則について',
 		tools: true
 	}
 </script>
