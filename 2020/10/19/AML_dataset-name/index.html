@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 9999/12 | Japan Machine Learning Support Blog</title>
+  <title>データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,13 +19,27 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Machine Learning Support Blog">
-<meta property="og:url" content="https://jpmlblog.github.io/archives/9999/12/index.html">
+  <meta name="description" content="データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる">
+<meta property="og:url" content="https://jpmlblog.github.io/2020/10/19/AML_dataset-name/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
+<meta property="og:description" content="データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/naming-rule-of-compute-instance.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/naming-error1-compute-instance.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/naming-error2-compute-instance.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/naming-error3-compute-instance.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png">
+<meta property="article:published_time" content="2020-10-19T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-10-18T13:17:37.480Z">
 <meta property="article:author" content="jpmlblog">
+<meta property="article:tag" content="名前付け規則">
+<meta property="article:tag" content="Dataset">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML_dataset-name/naming-rule-of-compute-instance.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -120,45 +134,99 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-AML_dataset-name"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2020/10/19/AML_dataset-name/">
+    	データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる
+    </a>
+  </h2>
+	<time>
+	  10月 19, 2020
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 9999.12'}
-  </script>
-
-<section class="post-list">
-	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/9999/12/31/AML_dataset-name/">
-        データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる
-      </a>
-    </h2>
-    
-    <time>
-      12月 31, 9999
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。  </p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#名前付け規則について"><span class="toc-number">1.</span> <span class="toc-text">名前付け規則について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#データセットの名前の場合"><span class="toc-number">2.</span> <span class="toc-text">データセットの名前の場合</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。  </p>
+<a id="more"></a>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/9999/12/31/AML_dataset-name/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h2 id="名前付け規則について"><a href="#名前付け規則について" class="headerlink" title="名前付け規則について"></a>名前付け規則について</h2><p>Azure Machine Learning で使用するリソースの名前付け規則として、下記公開情報をのとおり、ワークスペースのリソースと、これを作成するリソース グループに名前付けの規則がございます。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/azure-resource-manager/management/resource-name-rules#microsoftmachinelearningservices" target="_blank" rel="noopener">Azure リソースの名前付け規則と制限事項 #Microsoft.MachineLearningServices</a><blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Scope</th>
+<th align="left">長さ</th>
+<th align="left">有効な文字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">workspaces</td>
+<td align="left">resource group</td>
+<td align="left">3-33</td>
+<td align="left">英数字とハイフン</td>
+</tr>
+<tr>
+<td align="left">workspaces / computes</td>
+<td align="left">ワークスペース</td>
+<td align="left">2-16</td>
+<td align="left">英数字とハイフン</td>
+</tr>
+</tbody></table>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<p>また、Azure Machine Learning スタジオ上でコンピューティング リソースを作成する場合には、下記画像のように有効な文字の情報が表示され、名前の検証が行われますので、これに従い名前を指定下さい。  </p>
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-rule-of-compute-instance.png" width=300px>  
+
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error1-compute-instance.png" width=300px>  
+
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error2-compute-instance.png" width=300px>  
+
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/naming-error3-compute-instance.png" width=300px>  
+
+<hr>
+<h2 id="データセットの名前の場合"><a href="#データセットの名前の場合" class="headerlink" title="データセットの名前の場合"></a>データセットの名前の場合</h2><p>データセットを登録する際に指定する名前には、上述のような公開情報や、機械的な名前検証が行われません。しかしながら、UTF-8 の 1 バイト コード以外の文字 (漢字などの全角文字や異なる言語の文字) を使用した場合、登録後に Azure Machine Learning スタジオで参照できなくなるといった現象が報告されています。  </p>
+<p>例えば、下記の通り全角の “Ｄａｔａｓｅｔ” という名前で登録するとします。  </p>
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset.png" width=300px>  
+
+<p>これをクリックすると、以下の通り HTTP 404 エラーが表示されます。  </p>
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error.png" width=300px>  
+
+<img src="https://jpmlblog.github.io/images/AML_dataset-name/name-of-dataset-error-detail.png" width=300px>  
+
+<p>なお、このデータセットを Azure Machine Learning スタジオ上で登録解除しようとしても、正常に処理が進まず失敗します。回避策として、Azure Machine Learning の CLI 拡張機能をすることでこれを登録解除することが出来ます。下記公開情報に従い Azure Machine Learning </p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/reference-azure-machine-learning-cli" target="_blank" rel="noopener">Azure Machine Learning の CLI 拡張機能のインストールと使用</a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">az extension add -n azure-cli-ml</span><br><span class="line">az extension update -n azure-cli-ml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">az ml folder attach -w &quot;ワークスペース名&quot; -g &quot;リソース グル―プ名&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> az ml dataset unregister -n &quot;データセット名&quot;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>変更履歴</code><br><code>2020/10/19 created by Mochiszuki</code></p>
+<p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
         <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/">名前付け規則</a>
       
@@ -166,13 +234,26 @@
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/10/10/AML-network-allow-settings/" rel="next"  title="Azure Machine Learning サービス宛の通信を許可する設定について">
+						Azure Machine Learning サービス宛の通信を許可する設定について
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: 'データセット名に UTF-8 の 1 バイト コード文字以外を使用すると参照できなくなる',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
