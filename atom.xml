@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmlblog.github.io/"/>
-  <updated>2020-10-18T15:29:06.162Z</updated>
+  <updated>2020-10-19T00:52:44.880Z</updated>
   <id>https://jpmlblog.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://jpmlblog.github.io/2020/10/19/AML-dataset-name/"/>
     <id>https://jpmlblog.github.io/2020/10/19/AML-dataset-name/</id>
     <published>2020-10-19T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.162Z</updated>
+    <updated>2020-10-19T00:52:44.880Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。具体的な事象について紹介いたします。  &lt;/p&gt;
+      &lt;p&gt;データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。Azure Machine Learning の利用における名前付け規則などを踏まえ、現在確認されている事象について紹介いたします。  &lt;/p&gt;
     
     </summary>
     
@@ -44,7 +44,7 @@
     <link href="https://jpmlblog.github.io/2020/10/10/AML-network-allow-settings/"/>
     <id>https://jpmlblog.github.io/2020/10/10/AML-network-allow-settings/</id>
     <published>2020-10-10T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.238Z</updated>
+    <updated>2020-10-19T00:52:44.934Z</updated>
     
     <summary type="html">
     
@@ -69,7 +69,7 @@
     <link href="https://jpmlblog.github.io/2020/09/24/AML-functions-autostop/"/>
     <id>https://jpmlblog.github.io/2020/09/24/AML-functions-autostop/</id>
     <published>2020-09-24T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.205Z</updated>
+    <updated>2020-10-19T00:52:44.918Z</updated>
     
     <summary type="html">
     
@@ -90,7 +90,7 @@
     <link href="https://jpmlblog.github.io/2020/08/31/Collectinfo_AzureConnection/"/>
     <id>https://jpmlblog.github.io/2020/08/31/Collectinfo_AzureConnection/</id>
     <published>2020-08-31T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.258Z</updated>
+    <updated>2020-10-19T00:52:44.949Z</updated>
     
     <summary type="html">
     
@@ -111,7 +111,7 @@
     <link href="https://jpmlblog.github.io/2020/08/31/AML-IE11/"/>
     <id>https://jpmlblog.github.io/2020/08/31/AML-IE11/</id>
     <published>2020-08-31T00:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.219Z</updated>
+    <updated>2020-10-19T00:52:44.934Z</updated>
     
     <summary type="html">
     
@@ -132,7 +132,7 @@
     <link href="https://jpmlblog.github.io/2020/08/25/AML-register-and-deploy-model/"/>
     <id>https://jpmlblog.github.io/2020/08/25/AML-register-and-deploy-model/</id>
     <published>2020-08-25T08:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.245Z</updated>
+    <updated>2020-10-19T00:52:44.949Z</updated>
     
     <summary type="html">
     
@@ -155,7 +155,7 @@
     <link href="https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/"/>
     <id>https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/</id>
     <published>2020-08-18T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.178Z</updated>
+    <updated>2020-10-19T00:52:44.896Z</updated>
     
     <summary type="html">
     
@@ -179,7 +179,7 @@
     <link href="https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/"/>
     <id>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</id>
     <published>2020-06-18T00:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.190Z</updated>
+    <updated>2020-10-19T00:52:44.896Z</updated>
     
     <summary type="html">
     
@@ -200,7 +200,7 @@
     <link href="https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/"/>
     <id>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.251Z</updated>
+    <updated>2020-10-19T00:52:44.949Z</updated>
     
     <summary type="html">
     
@@ -221,7 +221,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/reference-websites/"/>
     <id>https://jpmlblog.github.io/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.288Z</updated>
+    <updated>2020-10-19T00:52:44.965Z</updated>
     
     <summary type="html">
     
@@ -242,7 +242,7 @@
     <link href="https://jpmlblog.github.io/2020/04/22/FAQ/"/>
     <id>https://jpmlblog.github.io/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.274Z</updated>
+    <updated>2020-10-19T00:52:44.965Z</updated>
     
     <summary type="html">
     
@@ -263,7 +263,7 @@
     <link href="https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
     <id>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.231Z</updated>
+    <updated>2020-10-19T00:52:44.934Z</updated>
     
     <summary type="html">
     
@@ -284,7 +284,7 @@
     <link href="https://jpmlblog.github.io/2020/01/01/about-jpmlblog/"/>
     <id>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-10-18T15:29:06.148Z</updated>
+    <updated>2020-10-19T00:52:44.865Z</updated>
     
     <summary type="html">
     
