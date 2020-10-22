@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Japan Machine Learning Support Blog</title>
-  <icon>https://jpmlblog.github.io/icon.png</icon>
+  <icon>https://jpmlblog.github.io/blog/icon.png</icon>
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://jpmlblog.github.io/"/>
-  <updated>2020-10-20T07:43:31.290Z</updated>
-  <id>https://jpmlblog.github.io/</id>
+  <link href="https://jpmlblog.github.io/blog/"/>
+  <updated>2020-10-22T10:10:39.294Z</updated>
+  <id>https://jpmlblog.github.io/blog/</id>
   
   <author>
     <name>jpmlblog</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Azure Machine Learning の名前付け規則について</title>
-    <link href="https://jpmlblog.github.io/2020/10/19/AML-dataset-name/"/>
-    <id>https://jpmlblog.github.io/2020/10/19/AML-dataset-name/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/"/>
+    <id>https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/</id>
     <published>2020-10-19T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.290Z</updated>
+    <updated>2020-10-22T10:10:39.294Z</updated>
     
     <summary type="html">
     
@@ -30,21 +30,21 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="名前付け規則" scheme="https://jpmlblog.github.io/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/"/>
+      <category term="名前付け規則" scheme="https://jpmlblog.github.io/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/"/>
     
-      <category term="Dataset" scheme="https://jpmlblog.github.io/tags/Dataset/"/>
+      <category term="Dataset" scheme="https://jpmlblog.github.io/blog/tags/Dataset/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning サービス宛の通信を許可する設定について</title>
-    <link href="https://jpmlblog.github.io/2020/10/10/AML-network-allow-settings/"/>
-    <id>https://jpmlblog.github.io/2020/10/10/AML-network-allow-settings/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/"/>
+    <id>https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/</id>
     <published>2020-10-10T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.340Z</updated>
+    <updated>2020-10-22T10:10:39.374Z</updated>
     
     <summary type="html">
     
@@ -53,23 +53,23 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="Network" scheme="https://jpmlblog.github.io/tags/Network/"/>
+      <category term="Network" scheme="https://jpmlblog.github.io/blog/tags/Network/"/>
     
-      <category term="Firewall" scheme="https://jpmlblog.github.io/tags/Firewall/"/>
+      <category term="Firewall" scheme="https://jpmlblog.github.io/blog/tags/Firewall/"/>
     
-      <category term="Proxy" scheme="https://jpmlblog.github.io/tags/Proxy/"/>
+      <category term="Proxy" scheme="https://jpmlblog.github.io/blog/tags/Proxy/"/>
     
   </entry>
   
   <entry>
     <title>Azure Functions を使用してコンピューティング インスタンスを自動停止する方法について</title>
-    <link href="https://jpmlblog.github.io/2020/09/24/AML-functions-autostop/"/>
-    <id>https://jpmlblog.github.io/2020/09/24/AML-functions-autostop/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/"/>
+    <id>https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/</id>
     <published>2020-09-24T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.314Z</updated>
+    <updated>2020-10-22T10:10:39.339Z</updated>
     
     <summary type="html">
     
@@ -78,19 +78,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="Azure Functions" scheme="https://jpmlblog.github.io/tags/Azure-Functions/"/>
+      <category term="Azure Functions" scheme="https://jpmlblog.github.io/blog/tags/Azure-Functions/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について</title>
-    <link href="https://jpmlblog.github.io/2020/08/31/Collectinfo_AzureConnection/"/>
-    <id>https://jpmlblog.github.io/2020/08/31/Collectinfo_AzureConnection/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/"/>
+    <id>https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/</id>
     <published>2020-08-31T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.350Z</updated>
+    <updated>2020-10-22T10:10:39.390Z</updated>
     
     <summary type="html">
     
@@ -99,19 +99,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="情報採取手順" scheme="https://jpmlblog.github.io/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/"/>
+      <category term="情報採取手順" scheme="https://jpmlblog.github.io/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する</title>
-    <link href="https://jpmlblog.github.io/2020/08/31/AML-IE11/"/>
-    <id>https://jpmlblog.github.io/2020/08/31/AML-IE11/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/"/>
+    <id>https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/</id>
     <published>2020-08-31T00:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.330Z</updated>
+    <updated>2020-10-22T10:10:39.362Z</updated>
     
     <summary type="html">
     
@@ -120,19 +120,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="Internet Explorer 11" scheme="https://jpmlblog.github.io/tags/Internet-Explorer-11/"/>
+      <category term="Internet Explorer 11" scheme="https://jpmlblog.github.io/blog/tags/Internet-Explorer-11/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning Studio でモデル登録およびデプロイする場合の留意点について</title>
-    <link href="https://jpmlblog.github.io/2020/08/25/AML-register-and-deploy-model/"/>
-    <id>https://jpmlblog.github.io/2020/08/25/AML-register-and-deploy-model/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/"/>
+    <id>https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/</id>
     <published>2020-08-25T08:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.344Z</updated>
+    <updated>2020-10-22T10:10:39.379Z</updated>
     
     <summary type="html">
     
@@ -141,21 +141,21 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="Studio" scheme="https://jpmlblog.github.io/tags/Studio/"/>
+      <category term="Studio" scheme="https://jpmlblog.github.io/blog/tags/Studio/"/>
     
-      <category term="モデル登録" scheme="https://jpmlblog.github.io/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/"/>
+      <category term="モデル登録" scheme="https://jpmlblog.github.io/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/"/>
     
   </entry>
   
   <entry>
     <title>モデルを仮想ネットワーク上の Azure Container Instances (ACI) にデプロイする方法について</title>
-    <link href="https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/"/>
-    <id>https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/"/>
+    <id>https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/</id>
     <published>2020-08-18T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.294Z</updated>
+    <updated>2020-10-22T10:10:39.308Z</updated>
     
     <summary type="html">
     
@@ -165,21 +165,21 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="Azure Container Instances" scheme="https://jpmlblog.github.io/tags/Azure-Container-Instances/"/>
+      <category term="Azure Container Instances" scheme="https://jpmlblog.github.io/blog/tags/Azure-Container-Instances/"/>
     
-      <category term="仮想ネットワーク" scheme="https://jpmlblog.github.io/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/"/>
+      <category term="仮想ネットワーク" scheme="https://jpmlblog.github.io/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning のコスト見積もりについて</title>
-    <link href="https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/"/>
-    <id>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/"/>
+    <id>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</id>
     <published>2020-06-18T00:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.309Z</updated>
+    <updated>2020-10-22T10:10:39.323Z</updated>
     
     <summary type="html">
     
@@ -188,19 +188,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="価格" scheme="https://jpmlblog.github.io/tags/%E4%BE%A1%E6%A0%BC/"/>
+      <category term="価格" scheme="https://jpmlblog.github.io/blog/tags/%E4%BE%A1%E6%A0%BC/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning Studio (Classic) ワークスペースを削除できない事象について</title>
-    <link href="https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/"/>
-    <id>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/"/>
+    <id>https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.347Z</updated>
+    <updated>2020-10-22T10:10:39.384Z</updated>
     
     <summary type="html">
     
@@ -209,19 +209,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning Studio (Classic)" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning-Studio-Classic/"/>
+      <category term="Azure Machine Learning Studio (Classic)" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning-Studio-Classic/"/>
     
     
-      <category term="リソース削除" scheme="https://jpmlblog.github.io/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/"/>
+      <category term="リソース削除" scheme="https://jpmlblog.github.io/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning の参考となる公開情報について</title>
-    <link href="https://jpmlblog.github.io/2020/04/22/reference-websites/"/>
-    <id>https://jpmlblog.github.io/2020/04/22/reference-websites/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/04/22/reference-websites/"/>
+    <id>https://jpmlblog.github.io/blog/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.365Z</updated>
+    <updated>2020-10-22T10:10:39.417Z</updated>
     
     <summary type="html">
     
@@ -230,19 +230,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
+      <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
     
     
-      <category term="参考情報" scheme="https://jpmlblog.github.io/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/"/>
+      <category term="参考情報" scheme="https://jpmlblog.github.io/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/"/>
     
   </entry>
   
   <entry>
     <title>Azure Machine Learning (AzureML, AML) の FAQ</title>
-    <link href="https://jpmlblog.github.io/2020/04/22/FAQ/"/>
-    <id>https://jpmlblog.github.io/2020/04/22/FAQ/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/04/22/FAQ/"/>
+    <id>https://jpmlblog.github.io/blog/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.355Z</updated>
+    <updated>2020-10-22T10:10:39.403Z</updated>
     
     <summary type="html">
     
@@ -251,19 +251,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
+      <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
     
     
-      <category term="FAQ" scheme="https://jpmlblog.github.io/tags/FAQ/"/>
+      <category term="FAQ" scheme="https://jpmlblog.github.io/blog/tags/FAQ/"/>
     
   </entry>
   
   <entry>
     <title>AutoML の同時実行数制限について</title>
-    <link href="https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
-    <id>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
+    <id>https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.334Z</updated>
+    <updated>2020-10-22T10:10:39.368Z</updated>
     
     <summary type="html">
     
@@ -272,19 +272,19 @@
     </summary>
     
     
-      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning/"/>
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
     
     
-      <category term="AutoML" scheme="https://jpmlblog.github.io/tags/AutoML/"/>
+      <category term="AutoML" scheme="https://jpmlblog.github.io/blog/tags/AutoML/"/>
     
   </entry>
   
   <entry>
     <title>jpmlblog について</title>
-    <link href="https://jpmlblog.github.io/2020/01/01/about-jpmlblog/"/>
-    <id>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</id>
+    <link href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/"/>
+    <id>https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-10-20T07:43:31.287Z</updated>
+    <updated>2020-10-22T10:10:39.277Z</updated>
     
     <summary type="html">
     
@@ -300,10 +300,10 @@
     </summary>
     
     
-      <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
+      <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
     
     
-      <category term="はじめに" scheme="https://jpmlblog.github.io/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
+      <category term="はじめに" scheme="https://jpmlblog.github.io/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
     
   </entry>
   

@@ -2,110 +2,110 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://jpmlblog.github.io</loc>
+        <loc>https://jpmlblog.github.io/blog</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/04/22/reference-websites/</loc>
-        <lastmod>2020-10-20T07:43:31.365Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/04/22/reference-websites/</loc>
+        <lastmod>2020-10-22T10:10:39.417Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/04/22/FAQ/</loc>
-        <lastmod>2020-10-20T07:43:31.355Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/04/22/FAQ/</loc>
+        <lastmod>2020-10-22T10:10:39.403Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/08/31/Collectinfo_AzureConnection/</loc>
-        <lastmod>2020-10-20T07:43:31.350Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/</loc>
+        <lastmod>2020-10-22T10:10:39.390Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/06/09/AMLSC-cannot-delete/</loc>
-        <lastmod>2020-10-20T07:43:31.347Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/</loc>
+        <lastmod>2020-10-22T10:10:39.384Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/08/25/AML-register-and-deploy-model/</loc>
-        <lastmod>2020-10-20T07:43:31.344Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/</loc>
+        <lastmod>2020-10-22T10:10:39.379Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/10/10/AML-network-allow-settings/</loc>
-        <lastmod>2020-10-20T07:43:31.340Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/</loc>
+        <lastmod>2020-10-22T10:10:39.374Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/04/06/AML-limitation-of-AutoML-concurrency/</loc>
-        <lastmod>2020-10-20T07:43:31.334Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/</loc>
+        <lastmod>2020-10-22T10:10:39.368Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/08/31/AML-IE11/</loc>
-        <lastmod>2020-10-20T07:43:31.330Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/</loc>
+        <lastmod>2020-10-22T10:10:39.362Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/09/24/AML-functions-autostop/</loc>
-        <lastmod>2020-10-20T07:43:31.314Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/</loc>
+        <lastmod>2020-10-22T10:10:39.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/06/18/AML-estimate-costs/</loc>
-        <lastmod>2020-10-20T07:43:31.309Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</loc>
+        <lastmod>2020-10-22T10:10:39.323Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/08/18/AML-deploy-aci-vnet/</loc>
-        <lastmod>2020-10-20T07:43:31.294Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/</loc>
+        <lastmod>2020-10-22T10:10:39.308Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/10/19/AML-dataset-name/</loc>
-        <lastmod>2020-10-20T07:43:31.290Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/</loc>
+        <lastmod>2020-10-22T10:10:39.294Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpmlblog.github.io/2020/01/01/about-jpmlblog/</loc>
-        <lastmod>2020-10-20T07:43:31.287Z</lastmod>
+        <loc>https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/</loc>
+        <lastmod>2020-10-22T10:10:39.277Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
