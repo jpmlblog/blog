@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する | Japan Machine Learning Support Blog</title>
+  <title>仮想ネットワーク上で Azure Machine Learnining を使用する方法について | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,20 +19,19 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Internet Explorer 11 (IE11) 利用時に発生する現象について紹介します。">
+  <meta name="description" content="Azure Machine Learning を仮想ネットワーク環境で使用する場合に、参考となる情報を列記いたします。また、具体的な作成方法などを本記事にて紹介させていただきます。    仮想ネットワークの分離とプライバシーの概要   仮想ネットワークを使用して Azure Machine Learning ワークスペースをセキュリティで保護する   Azure 仮想ネットワークで Azure M">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する">
-<meta property="og:url" content="https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/index.html">
+<meta property="og:title" content="仮想ネットワーク上で Azure Machine Learnining を使用する方法について">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/2020/10/28/AMS-use-behind-vnet/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
-<meta property="og:description" content="Internet Explorer 11 (IE11) 利用時に発生する現象について紹介します。">
+<meta property="og:description" content="Azure Machine Learning を仮想ネットワーク環境で使用する場合に、参考となる情報を列記いたします。また、具体的な作成方法などを本記事にて紹介させていただきます。    仮想ネットワークの分離とプライバシーの概要   仮想ネットワークを使用して Azure Machine Learning ワークスペースをセキュリティで保護する   Azure 仮想ネットワークで Azure M">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://jpmlblog.github.io/images/AML-IE11/Create-workspace-error.png">
-<meta property="article:published_time" content="2020-08-31T00:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-27T16:21:32.500Z">
+<meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-10-27T16:21:32.531Z">
 <meta property="article:author" content="jpmlblog">
-<meta property="article:tag" content="Internet Explorer 11">
+<meta property="article:tag" content="仮想ネットワーク">
+<meta property="article:tag" content="Private Link">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-IE11/Create-workspace-error.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -127,17 +126,17 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-AML-IE11"
+        <article id="post-AMS-use-behind-vnet"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/08/31/AML-IE11/">
-    	Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する
+  	<a href="/blog/2020/10/28/AMS-use-behind-vnet/">
+    	仮想ネットワーク上で Azure Machine Learnining を使用する方法について
     </a>
   </h2>
 	<time>
-	  8月 31, 2020
+	  10月 28, 2020
 	</time>
 	
     
@@ -147,40 +146,115 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IE11-関連事例について"><span class="toc-number">1.</span> <span class="toc-text">IE11 関連事例について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#その他のブラウザーの事例について"><span class="toc-number">2.</span> <span class="toc-text">その他のブラウザーの事例について</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#作成方法について"><span class="toc-number">1.</span> <span class="toc-text">作成方法について</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>Internet Explorer 11 (IE11) 利用時に発生する現象について紹介します。</p>
+    	<p>Azure Machine Learning を仮想ネットワーク環境で使用する場合に、参考となる情報を列記いたします。また、具体的な作成方法などを本記事にて紹介させていただきます。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-network-security-overview" target="_blank" rel="noopener">仮想ネットワークの分離とプライバシーの概要</a>  </li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-secure-workspace-vnet" target="_blank" rel="noopener">仮想ネットワークを使用して Azure Machine Learning ワークスペースをセキュリティで保護する</a>  </li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する</a>  </li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-configure-private-link?tabs=azure-resource-manager" target="_blank" rel="noopener">Azure Machine Learning ワークスペース用に Azure Private Link を構成する</a>  </li>
+</ul>
 <a id="more"></a>
 <br>
 
 <hr>
-<h2 id="IE11-関連事例について"><a href="#IE11-関連事例について" class="headerlink" title="IE11 関連事例について"></a>IE11 関連事例について</h2><p>Azure ポータルで Azure Machine Learning ワークスペースの作成が失敗するといった報告が複数件寄せられております。この事象は、Azure ポータルを Internet Explorer 11 で開いてリソース作成を行った場合に発生することが確認できております。  </p>
-<div style="text-align: center;">
-(再現時、下記表示のまま状態が遷移しません)
-<img src="https://jpmlblog.github.io/images/AML-IE11/Create-workspace-error.png" width=600px>
-</div>    
+<h2 id="作成方法について"><a href="#作成方法について" class="headerlink" title="作成方法について"></a>作成方法について</h2><p>ここでは新しく仮想ネットワークを作成し、その配下に各リソースを作成する手順を紹介します。主に以下サイトの手順に従っております。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-create-workspace-template?wt.mc_id=ignite2020_presentations&tabs=azpowershell#deploy-workspace-behind-a-virtual-network" target="_blank" rel="noopener">仮想ネットワークの背後にワークスペースをデプロイする</a>  </li>
+</ul>
+<p>まずは各リソースを作成するリソース グループを作成します。基本パラメータおよび実行コマンドは以下の通りです。  </p>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">パラメータ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">リージョン</td>
+<td align="left"><code>eastus</code> (米国東部)</td>
+</tr>
+<tr>
+<td align="left">リソースグル―プ</td>
+<td align="left"><code>amlvnetrg</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-AzResourceGroup</span> <span class="literal">-Name</span> amlvnetrg <span class="literal">-Location</span> eastus</span><br></pre></td></tr></table></figure>
 
-<p>また、Azure Machine Learning ポータル (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) の操作においても予期しないエラーが発生するといった報告もございます。これらの事象は、別のブラウザ (Microsoft Edge または Chrome) を使用することで回避できる可能性があります。  </p>
-<p>Internet Explorer 11 は弊社サービスに限らず幅広い Web サービスで、順次サポート対象外になる予定です。恐れ入りますが、現段階で Microsoft Edge などへの移行をご検討ください。  </p>
-<ul>
-<li><a href="https://blogs.windows.com/japan/2020/08/18/microsoft-365-apps-say-farewell-to-internet-explorer-11/" target="_blank" rel="noopener">Microsoft 365 アプリの Internet Explorer 11 のサポート終了と Windows 10 での Microsoft Edge レガシー版のサービス終了</a></li>
-</ul>
+<p>次に、以下のような構成で各リソースを作成します。指定可能なパラメータは、テンプレート ファイル 「<a href="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json" target="_blank" rel="noopener">201-machine-learning-advanced/azuredeploy.json</a>」 より参照頂けます。それぞれ用途に応じてカスタイマイズください。  </p>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">パラメータ</th>
+<th align="left">仮想ネットワーク化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">リージョン</td>
+<td align="left"><code>eastus</code> (米国東部)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">リソースグル―プ</td>
+<td align="left"><code>amlvnetrg</code></td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">仮想ネットワーク</td>
+<td align="left"><code>amlvnet</code></td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">サブネットワーク</td>
+<td align="left"><code>amlvsubnet</code></td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">ワークスペース</td>
+<td align="left"><code>amlvnetworkspace</code></td>
+<td align="left">Private Link</td>
+</tr>
+<tr>
+<td align="left">ストレージ アカウント</td>
+<td align="left"><code>amlvnetstorage</code></td>
+<td align="left">Vnet</td>
+</tr>
+<tr>
+<td align="left">Key Vault</td>
+<td align="left"><code>amlvnetkeyvault</code></td>
+<td align="left">Vnet</td>
+</tr>
+<tr>
+<td align="left">Application Insights</td>
+<td align="left"><code>amlvnetappinsights</code></td>
+<td align="left">- (未サポート)</td>
+</tr>
+<tr>
+<td align="left">Container Registry</td>
+<td align="left"><code>amlvnetconreg</code></td>
+<td align="left">- (クォータ拡張要)</td>
+</tr>
+</tbody></table>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-AzResourceGroupDeployment</span> `</span><br><span class="line">  <span class="literal">-Name</span> <span class="string">"amlvnetdeployment"</span> `</span><br><span class="line">  <span class="literal">-ResourceGroupName</span> <span class="string">"amlvnetrg"</span> `</span><br><span class="line">  <span class="literal">-TemplateUri</span> <span class="string">"https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json"</span> `</span><br><span class="line">  <span class="literal">-location</span> <span class="string">"eastus"</span> `</span><br><span class="line">  <span class="literal">-vnetOption</span> <span class="string">"new"</span> `</span><br><span class="line">  <span class="literal">-vnetName</span> <span class="string">"amlvnet"</span> `</span><br><span class="line">  <span class="literal">-subnetName</span> <span class="string">"amlvsubnet"</span> `</span><br><span class="line">  <span class="literal">-privateEndpointType</span> <span class="string">"AutoApproval"</span> `</span><br><span class="line">  <span class="literal">-workspaceName</span> <span class="string">"amlvnetworkspace"</span> `</span><br><span class="line">  <span class="literal">-storageAccountBehindVNet</span> <span class="string">"true"</span> `</span><br><span class="line">  <span class="literal">-storageAccountName</span> <span class="string">"amlvnetstorage"</span> `</span><br><span class="line">  <span class="literal">-keyVaultName</span> <span class="string">"amlvnetkeyvault"</span> `</span><br><span class="line">  <span class="literal">-keyVaultBehindVNet</span> <span class="string">"true"</span> `</span><br><span class="line">  <span class="literal">-applicationInsightsName</span> <span class="string">"amlvnetappinsights"</span> `</span><br><span class="line">  <span class="literal">-containerRegistryName</span> <span class="string">"amlvnetconreg"</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意:<br>10/28 現在、Application Insights は仮想ネットワーク背後へのデプロイをサポートしていません。また、Container Registry には幾つか<a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-secure-workspace-vnet#enable-azure-container-registry-acr" target="_blank" rel="noopener">条件</a>があり、既定では仮想ネットワークに配置できません。</p>
+</blockquote>
 <hr>
-<h2 id="その他のブラウザーの事例について"><a href="#その他のブラウザーの事例について" class="headerlink" title="その他のブラウザーの事例について"></a>その他のブラウザーの事例について</h2><p>Microsoft Edge および Chrome のご利用環境において、Azure Machine Learning ポータルの一部のメニューが表示されなかったり、機能の実行が失敗するなどといった事象が報告されています。こうした事象は古いバージョンのブラウザーを使用していることに起因している可能性があるため、原因の切り分けとして以下の対処の実施をご検討ください。</p>
-<ul>
-<li>ブラウザーを最新バージョンにアップデートする</li>
-<li>別のブラウザーを使用する</li>
-</ul>
-<hr>
-<p><code>変更履歴</code><br><code>2020-08-31 created by Mochizuki</code></p>
+<p><code>変更履歴</code><br><code>2020/10/28 created by Mochizuki</code></p>
+<p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/Internet-Explorer-11/">Internet Explorer 11</a>
+        <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/">仮想ネットワーク</a>
+      
+        <a href="/blog/tags/Private-Link/">Private Link</a>
       
 	  </div>
     
@@ -188,13 +262,9 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/08/31/Collectinfo_AzureConnection/" rel="prev"  title="Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について">
-						Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について 
-					</a></span>
 				
-				
-					<span class="art-item-right">next：<a href="/blog/2020/08/25/AML-register-and-deploy-model/" rel="next"  title="Azure Machine Learning Studio でモデル登録およびデプロイする場合の留意点について">
-						Azure Machine Learning Studio でモデル登録およびデプロイする場合の留意点について
+					<span class="art-item-right">next：<a href="/blog/2020/10/19/AML-dataset-name/" rel="next"  title="Azure Machine Learning の名前付け規則について">
+						Azure Machine Learning の名前付け規則について
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -204,7 +274,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する',
+		title: '仮想ネットワーク上で Azure Machine Learnining を使用する方法について',
 		tools: true
 	}
 </script>
