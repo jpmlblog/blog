@@ -27,7 +27,7 @@
 <meta property="og:description" content="Azure Machine Learning を仮想ネットワーク環境で使用する場合に、参考となる情報を列記いたします。また、具体的な作成方法などを本記事にて紹介させていただきます。    仮想ネットワークの分離とプライバシーの概要   仮想ネットワークを使用して Azure Machine Learning ワークスペースをセキュリティで保護する   Azure 仮想ネットワークで Azure M">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-27T16:21:32.531Z">
+<meta property="article:modified_time" content="2020-10-27T16:32:47.276Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -242,8 +242,20 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">New-AzResourceGroupDeployment</span> `</span><br><span class="line">  <span class="literal">-Name</span> <span class="string">"amlvnetdeployment"</span> `</span><br><span class="line">  <span class="literal">-ResourceGroupName</span> <span class="string">"amlvnetrg"</span> `</span><br><span class="line">  <span class="literal">-TemplateUri</span> <span class="string">"https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-machine-learning-advanced/azuredeploy.json"</span> `</span><br><span class="line">  <span class="literal">-location</span> <span class="string">"eastus"</span> `</span><br><span class="line">  <span class="literal">-vnetOption</span> <span class="string">"new"</span> `</span><br><span class="line">  <span class="literal">-vnetName</span> <span class="string">"amlvnet"</span> `</span><br><span class="line">  <span class="literal">-subnetName</span> <span class="string">"amlvsubnet"</span> `</span><br><span class="line">  <span class="literal">-privateEndpointType</span> <span class="string">"AutoApproval"</span> `</span><br><span class="line">  <span class="literal">-workspaceName</span> <span class="string">"amlvnetworkspace"</span> `</span><br><span class="line">  <span class="literal">-storageAccountBehindVNet</span> <span class="string">"true"</span> `</span><br><span class="line">  <span class="literal">-storageAccountName</span> <span class="string">"amlvnetstorage"</span> `</span><br><span class="line">  <span class="literal">-keyVaultName</span> <span class="string">"amlvnetkeyvault"</span> `</span><br><span class="line">  <span class="literal">-keyVaultBehindVNet</span> <span class="string">"true"</span> `</span><br><span class="line">  <span class="literal">-applicationInsightsName</span> <span class="string">"amlvnetappinsights"</span> `</span><br><span class="line">  <span class="literal">-containerRegistryName</span> <span class="string">"amlvnetconreg"</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>注意:<br>10/28 現在、Application Insights は仮想ネットワーク背後へのデプロイをサポートしていません。また、Container Registry には幾つか<a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-secure-workspace-vnet#enable-azure-container-registry-acr" target="_blank" rel="noopener">条件</a>があり、既定では仮想ネットワークに配置できません。</p>
+<p>注意 1 :<br>10/28 現在、Application Insights は仮想ネットワーク背後へのデプロイをサポートしていません。また、Container Registry には幾つか<a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-secure-workspace-vnet#enable-azure-container-registry-acr" target="_blank" rel="noopener">条件</a>があり、既定では仮想ネットワークに配置できません。</p>
 </blockquote>
+<blockquote>
+<p>注意 2 :<br>key vault リソースは一度削除してから同名で作り直すと soft-delete のエラーが発生します。    </p>
+<pre><code>New-AzResourceGroupDeployment : xx:xx:xx - Resource &gt;Microsoft.KeyVault/vaults &apos;amlvnetkeyvault&apos; failed with message &apos;{  
+ &quot;error&quot;: {  
+   &quot;code&quot;: &quot;ConflictError&quot;,  
+   &quot;message&quot;: &quot;Exist soft deleted vault with the same name. &quot;  
+ }  
+}&apos;</code></pre><p>これは、<a href="https://docs.microsoft.com/ja-jp/azure/key-vault/general/soft-delete-overview" target="_blank" rel="noopener">Key Vault の論理的な削除</a>が働いているためです。<a href="https://docs.microsoft.com/ja-jp/azure/key-vault/general/key-vault-recovery?tabs=azure-portal#list-recover-or-purge-a-soft-deleted-key-vault" target="_blank" rel="noopener">こちら</a>の手順に従い、完全に削除ください。</p>
+</blockquote>
+<br>
+※ 順次追加予定です。
+
 <hr>
 <p><code>変更履歴</code><br><code>2020/10/28 created by Mochizuki</code></p>
 <p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
