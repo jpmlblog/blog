@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-05T10:44:34.754Z">
+<meta property="article:modified_time" content="2020-11-05T11:02:27.480Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -272,12 +272,12 @@
 <hr>
 <h2 id="利用上の留意点"><a href="#利用上の留意点" class="headerlink" title="利用上の留意点"></a>利用上の留意点</h2><p>仮想ネットワーク上のマシンからアクセスしない場合、下記の通りエラーが発生します。</p>
 <ul>
-<li><p>Home<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<li><p>Home アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>REQUEST_SEND_ERROR: Your request for data wasn’t sent. Here are some things to try: Check your network and internet connection, make sure a proxy server is not blocking your connection, follow our guidelines if you’re using a private link, and check if you have AdBlock turned on.</p>
 </blockquote>
 </li>
-<li><p>Notebooks<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<li><p>Notebooks アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
@@ -286,11 +286,14 @@
 </blockquote>
 <p>後者のエラーは、ワークスペースで Private Link を有効にしていなくても、ストレージ アカウントが VNET 背後にある場合に発生します。  </p>
 </li>
-<li><p>Compute<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<li><p>Compute アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
-<p>上述のエラーは出力されますが、各コンピューティング リソースの操作は可能です。</p>
+<p>上述のエラーは出力されますが、各コンピューティング リソースの操作は可能です。<br>必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
+</ul>
 </li>
 </ul>
 <br>
