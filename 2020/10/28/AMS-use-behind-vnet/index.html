@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-06T03:41:48.726Z">
+<meta property="article:modified_time" content="2020-11-06T03:44:19.604Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -151,7 +151,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-アクセス時"><span class="toc-number">2.1.</span> <span class="toc-text">Home アクセス時</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-アクセス時"><span class="toc-number">2.2.</span> <span class="toc-text">Notebooks アクセス時</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-アクセス時"><span class="toc-number">2.3.</span> <span class="toc-text">Compute アクセス時</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -276,21 +276,18 @@
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する</a>  </li>
 </ul>
 <p>仮想ネットワーク上のリソースからアクセスしない場合、下記の通りエラーが発生してほとんどの操作は行えません。ただし、Compute の操作は行えるため、RBAC などでアカウントへのアクセス制御を実施いただくことをお勧めいたします。  </p>
-<ul>
-<li><p>Home アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<h3 id="Home-アクセス時"><a href="#Home-アクセス時" class="headerlink" title="Home アクセス時"></a>Home アクセス時</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>REQUEST_SEND_ERROR: Your request for data wasn’t sent. Here are some things to try: Check your network and internet connection, make sure a proxy server is not blocking your connection, follow our guidelines if you’re using a private link, and check if you have AdBlock turned on.</p>
 </blockquote>
-</li>
-<li><p>Notebooks アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<h3 id="Notebooks-アクセス時"><a href="#Notebooks-アクセス時" class="headerlink" title="Notebooks アクセス時"></a>Notebooks アクセス時</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
 <blockquote>
 <p>Request authorization to storage account failed. Storage account might be behind a VNET. Please go to the Compute tab, create a compute instance, and launch Jupyter or Jupyter Lab to use your files and notebooks.</p>
 </blockquote>
-</li>
-<li><p>Compute アクセス時<br>エラーは出力されますが、各コンピューティング リソースの操作は可能です。<br>必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
+<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p>エラーは出力されますが、各コンピューティング リソースの操作は可能です。<br>  必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
 </ul>
@@ -298,8 +295,6 @@
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
-</li>
-</ul>
 <br>
 ※ 順次追加予定です。
 
