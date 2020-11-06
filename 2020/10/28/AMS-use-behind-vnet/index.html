@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-05T11:02:27.480Z">
+<meta property="article:modified_time" content="2020-11-06T03:41:48.726Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -151,7 +151,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#作成方法について"><span class="toc-number">1.</span> <span class="toc-text">作成方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -161,12 +161,13 @@
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-secure-workspace-vnet" target="_blank" rel="noopener">仮想ネットワークを使用して Azure Machine Learning ワークスペースをセキュリティで保護する</a>  </li>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する</a>  </li>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-configure-private-link?tabs=azure-resource-manager" target="_blank" rel="noopener">Azure Machine Learning ワークスペース用に Azure Private Link を構成する</a>  </li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-create-workspace-template?wt.mc_id=ignite2020_presentations&tabs=azpowershell#deploy-workspace-behind-a-virtual-network" target="_blank" rel="noopener">仮想ネットワークの背後にワークスペースをデプロイする</a>  </li>
 </ul>
 <a id="more"></a>
 <br>
 
 <hr>
-<h2 id="作成方法について"><a href="#作成方法について" class="headerlink" title="作成方法について"></a>作成方法について</h2><p>ここでは新しく仮想ネットワークを作成し、その配下に各リソースを作成する手順を紹介します。主に以下サイトの手順に従っております。  </p>
+<h2 id="構築方法について"><a href="#構築方法について" class="headerlink" title="構築方法について"></a>構築方法について</h2><p>ここでは新しく仮想ネットワークを作成し、その配下に各リソースを作成する手順を紹介します。主に以下サイトの手順に従っております。  </p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-create-workspace-template?wt.mc_id=ignite2020_presentations&tabs=azpowershell#deploy-workspace-behind-a-virtual-network" target="_blank" rel="noopener">仮想ネットワークの背後にワークスペースをデプロイする</a>  </li>
 </ul>
@@ -270,7 +271,11 @@
 <p><img src="https://docs.microsoft.com/ja-jp/azure/machine-learning/media/how-to-network-security-overview/secure-workspace-resources.png" width=500px align="left" border="1"><br clear="left"></p>
 </blockquote>
 <hr>
-<h2 id="利用上の留意点"><a href="#利用上の留意点" class="headerlink" title="利用上の留意点"></a>利用上の留意点</h2><p>仮想ネットワーク上のマシンからアクセスしない場合、下記の通りエラーが発生します。</p>
+<h2 id="利用上の留意点"><a href="#利用上の留意点" class="headerlink" title="利用上の留意点"></a>利用上の留意点</h2><p>Azure Machine Learning スタジオ利用に関しましては以下サイトに情報が纏められております。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する</a>  </li>
+</ul>
+<p>仮想ネットワーク上のリソースからアクセスしない場合、下記の通りエラーが発生してほとんどの操作は行えません。ただし、Compute の操作は行えるため、RBAC などでアカウントへのアクセス制御を実施いただくことをお勧めいたします。  </p>
 <ul>
 <li><p>Home アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
@@ -284,16 +289,15 @@
 <blockquote>
 <p>Request authorization to storage account failed. Storage account might be behind a VNET. Please go to the Compute tab, create a compute instance, and launch Jupyter or Jupyter Lab to use your files and notebooks.</p>
 </blockquote>
-<p>後者のエラーは、ワークスペースで Private Link を有効にしていなくても、ストレージ アカウントが VNET 背後にある場合に発生します。  </p>
 </li>
-<li><p>Compute アクセス時<br><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
-<blockquote>
-<p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
-</blockquote>
-<p>上述のエラーは出力されますが、各コンピューティング リソースの操作は可能です。<br>必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
+<li><p>Compute アクセス時<br>エラーは出力されますが、各コンピューティング リソースの操作は可能です。<br>必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
 </ul>
+<p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<blockquote>
+<p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
+</blockquote>
 </li>
 </ul>
 <br>
