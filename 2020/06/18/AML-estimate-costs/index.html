@@ -27,7 +27,7 @@
 <meta property="og:description" content="Azure Machine Learning のコスト見積もりについて、参考となる情報を紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-06-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-18T10:19:38.128Z">
+<meta property="article:modified_time" content="2020-11-18T13:30:09.437Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="価格">
 <meta name="twitter:card" content="summary">
@@ -164,15 +164,31 @@
 <p>※ Enterprise エディションの追加料金は発生しないため、考慮を省略します。  </p>
 <p>※ ご利用方法によって試算より誤差が生じる場合がありますので、予めご留意ください。</p>
 <ul>
-<li><p>開発環境として Azure Machine Learning コンピューティング インスタンス (東日本リージョン、STANDARD_DS3_V2) を 1 日 10 時間、20 日間使用する場合  </p>
-<p> → <code>45.808 [円/時間] x 10 [時間/日] x 20 [日] = 9161.6 [円]</code></p>
+<li><p>開発環境として Azure Machine Learning コンピューティング インスタンス (東日本リージョン、STANDARD_D11_V2) を 1 日 10 時間、20 日間使用する場合  </p>
+<p> → <code>25.648 [円/時間] x 10 [時間/日] x 20 [日] = 5129.6 [円]</code></p>
 <ul>
 <li><p>参考サイト<br><a href="https://azure.microsoft.com/ja-jp/pricing/details/machine-learning/" target="_blank" rel="noopener">Azure Machine Learning の価格</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/calculator/?service=machine-learning-service" target="_blank" rel="noopener">料金計算ツール (+Azure Machine Learning)</a> </p>
-<p><font color="#FF0000"><strong>注意:<br>コンピューティング インスタンス停止時にもロードバランサーやディスク、ネットワーク利用の料金が発生することが確認できております。公開情報への反映を含めて現在調整中となります。</strong>  </p>
+<p><font color="#FF0000"><strong>注意:</strong><br>上記金額に加え、定常的に下記のリソースの課金が発生いたします。これは、コンピューティング インスタンスで使用する VMSS (仮想マシン スケール セット) に紐づいており、コンピューティング インスタンスを停止しても VMSS は削除されないため、課金も継続いたします。  </p>
+</li>
+<li><p>Load Balancers (約 42.336 [円/日])  </p>
+</li>
+<li><p>Public IP Addresses (約 8.467 [円/日])  </p>
+</li>
+<li><p>Managed Disks (VM に依って異なります 例: Standard_D11_v2 で約 4.268 [円/日])  </p>
 </font>
+
+<p>上記を合計すると以下の通りです。  </p>
+<p>→ <code>(42.336 + 8.467 + 4.268 [円/日]) x 30 [日] = 1652.13 [円]</code></p>
+</li>
+<li><p>参考サイト<br><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-compute-instance#managing-a-compute-instance" target="_blank" rel="noopener">Managing a compute instance</a></p>
+<blockquote>
+<p>Start, stop, and restart a compute instance. You do pay for the instance whenever it is running. Stop the compute instance when you are not using it to reduce cost. Stopping a compute instance deallocates it. Then start it again when you need it. <strong>Please note stopping the compute instance stops the billing for compute hours but you will still be billed for disk, public IP, and standard load balancer.</strong></p>
+</blockquote>
 </li>
 </ul>
 </li>
+</ul>
+<ul>
 <li><p>トレーニング ターゲットとして Azure Machine Learning コンピューティング クラスター (東日本リージョン、STANDARD_DS3_V2) を最小 0 ノード、最大 2 ノードで作成し、2 ノードで 1 日 4 時間、20 日間使用する場合  </p>
 <p> → <code>45.808 [円/時間/ノード] x 2 [ノード] x 4 [時間/日] x 20 [日] = 7329.28 [円]</code></p>
 <ul>
