@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Studio-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-18T00:15:27.169Z">
+<meta property="article:modified_time" content="2020-11-18T10:19:38.191Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -151,7 +152,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-アクセス時"><span class="toc-number">2.1.</span> <span class="toc-text">Home アクセス時</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-アクセス時"><span class="toc-number">2.2.</span> <span class="toc-text">Notebooks アクセス時</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-アクセス時"><span class="toc-number">2.3.</span> <span class="toc-text">Compute アクセス時</span></a></li></ol></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-アクセス時のエラー"><span class="toc-number">2.1.</span> <span class="toc-text">Home アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-アクセス時のエラー"><span class="toc-number">2.2.</span> <span class="toc-text">Notebooks アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-アクセス時"><span class="toc-number">2.3.</span> <span class="toc-text">Compute アクセス時</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-ブラウザのアクセス自体が失敗する場合"><span class="toc-number">2.4.</span> <span class="toc-text">Web ブラウザのアクセス自体が失敗する場合</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -271,23 +272,27 @@
 <p><img src="https://docs.microsoft.com/ja-jp/azure/machine-learning/media/how-to-network-security-overview/secure-workspace-resources.png" width=500px align="left" border="1"><br clear="left"></p>
 </blockquote>
 <hr>
-<h2 id="利用上の留意点"><a href="#利用上の留意点" class="headerlink" title="利用上の留意点"></a>利用上の留意点</h2><p>Azure Machine Learning スタジオ利用に関しましては以下サイトに情報が纏められております。  </p>
+<h2 id="利用上の留意点"><a href="#利用上の留意点" class="headerlink" title="利用上の留意点"></a>利用上の留意点</h2><p>ワークスペースの Private Link を有効化することで、パブリック インターネット経由のアクセスが制限され、仮想ネットワーク上のリソースからのみアクセスが可能になります。また、Mozilla Firefox を使用した場合には別の問題も報告されておりますので、Microsoft Edge または Google Chrome のご利用をお勧めいたします。  </p>
 <ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する</a>  </li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-configure-private-link?tabs=python" target="_blank" rel="noopener">Azure Machine Learning ワークスペース用に Azure Private Link を構成する</a><blockquote>
+<p>重要<br>Azure Private Link は、ワークスペースの削除やコンピューティング リソースの管理などの Azure コントロール プレーン (管理操作) には影響しません。 たとえば、コンピューティング先の作成、更新、削除などです。 これらの操作は、通常どおりパブリック インターネット経由で実行されます。 Azure Machine Learning Studio を使用するなどのデータ プレーン操作、API (公開されたパイプラインを含む)、または SDK では、プライベート エンドポイントが使用されます。  </p>
+<p>Mozilla Firefox を使用している場合、ワークスペースのプライベート エンドポイントにアクセスしようとしたときに問題が発生することがあります。 この問題は、Mozilla の DNS over HTTPS に関連している可能性があります。 回避策として、Microsoft Edge または Google Chrome を使用することをお勧めします。</p>
+</blockquote>
+</li>
 </ul>
-<p>仮想ネットワーク上のリソースからアクセスしない場合、下記の通りエラーが発生してほとんどの操作は行えません。ただし、Compute の操作は行えるため、RBAC などでアカウントへのアクセス制御を実施いただくことをお勧めいたします。  </p>
-<h3 id="Home-アクセス時"><a href="#Home-アクセス時" class="headerlink" title="Home アクセス時"></a>Home アクセス時</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<p>パブリック インターネット経由でアクセスした際に表示されるエラーメッセージを以下に紹介します。  </p>
+<h3 id="Home-アクセス時のエラー"><a href="#Home-アクセス時のエラー" class="headerlink" title="Home アクセス時のエラー"></a>Home アクセス時のエラー</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>REQUEST_SEND_ERROR: Your request for data wasn’t sent. Here are some things to try: Check your network and internet connection, make sure a proxy server is not blocking your connection, follow our guidelines if you’re using a private link, and check if you have AdBlock turned on.</p>
 </blockquote>
-<h3 id="Notebooks-アクセス時"><a href="#Notebooks-アクセス時" class="headerlink" title="Notebooks アクセス時"></a>Notebooks アクセス時</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<h3 id="Notebooks-アクセス時のエラー"><a href="#Notebooks-アクセス時のエラー" class="headerlink" title="Notebooks アクセス時のエラー"></a>Notebooks アクセス時のエラー</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
 <blockquote>
 <p>Request authorization to storage account failed. Storage account might be behind a VNET. Please go to the Compute tab, create a compute instance, and launch Jupyter or Jupyter Lab to use your files and notebooks.</p>
 </blockquote>
-<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p>エラーは出力されますが、各コンピューティング リソースの作成、起動、停止、削除などの操作は可能です。<br>必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
+<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p>エラーは出力されますが、各コンピューティング リソースの作成、起動、停止、削除などの操作は可能です。必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
 </ul>
@@ -295,11 +300,20 @@
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
-<p>なお、Vnet に配置した Compute Instance のアプリケーション URI (Jupyter および Jupyter Lab のリンク) へアクセスしても、以下のメッセージが表示されアクセスはできません。  </p>
+<p>Vnet に配置した Compute Instance のアプリケーション URI (Jupyter および Jupyter Lab のリンク) へのアクセスも、以下のメッセージが表示され失敗します。  </p>
 <blockquote>
 <p>User &lt;User Name&gt; does not have access to compute instance &lt;Compute Instance Name&gt;.</p>
 <p>Only the creator can access a compute instance.</p>
 </blockquote>
+<h3 id="Web-ブラウザのアクセス自体が失敗する場合"><a href="#Web-ブラウザのアクセス自体が失敗する場合" class="headerlink" title="Web ブラウザのアクセス自体が失敗する場合"></a>Web ブラウザのアクセス自体が失敗する場合</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Studio-error.png" width=400px align="left" border="1"><br clear="left"> </p>
+<p>NSG を使用してインターネット接続を制限している場合、仮想ネットワーク上のリソースからであっても Azure Machine Learning Studio へのアクセスが出来ない場合があります。下記サイトに記載されております通り、AzureFrontDoor.Frontend のサービス タグ宛の通信を許可する必要がある点についてご留意ください。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network#access-the-studio-from-a-resource-inside-the-vnet" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する #VNet 内のリソースから Studio にアクセスする</a>  <blockquote>
+<p>仮想ネットワーク内のリソース (コンピューティング インスタンスや仮想マシンなど) からスタジオにアクセスする場合は、仮想ネットワークからスタジオへの送信トラフィックを許可する必要があります。  </p>
+<p>たとえば、ネットワーク セキュリティ グループ (NSG) を使用して送信トラフィックを制限している場合は、 AzureFrontDoor.Frontend の サービス タグ 宛先に規則を追加します。</p>
+</blockquote>
+</li>
+</ul>
 <br>
 ※ 順次追加予定です。
 
