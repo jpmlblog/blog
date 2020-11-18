@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-06T04:00:32.213Z">
+<meta property="article:modified_time" content="2020-11-18T00:10:32.477Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -287,13 +287,18 @@
 <blockquote>
 <p>Request authorization to storage account failed. Storage account might be behind a VNET. Please go to the Compute tab, create a compute instance, and launch Jupyter or Jupyter Lab to use your files and notebooks.</p>
 </blockquote>
-<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p>エラーは出力されますが、各コンピューティング リソースの操作は可能です。<br>  必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
+<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p>エラーは出力されますが、各コンピューティング リソースの作成、起動、停止、削除などの操作は可能です。<br>必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
 </ul>
 <p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
+</blockquote>
+<p>なお、Vnet に配置した Compute Instance のアプリケーション URI (Jupyter および Jupyter Lab のリンク) へアクセスしても、以下のメッセージが表示されアクセスはできません。  </p>
+<blockquote>
+<p>User &lt;User Name&gt; does not have access to compute instance &lt;Compute Instance Name&gt;.</p>
+<p>Only the creator can access a compute instance.</p>
 </blockquote>
 <br>
 ※ 順次追加予定です。
