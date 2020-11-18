@@ -27,7 +27,7 @@
 <meta property="og:description" content="Azure Machine Learning のコスト見積もりについて、参考となる情報を紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-06-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-18T13:30:09.437Z">
+<meta property="article:modified_time" content="2020-11-18T13:32:43.244Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="価格">
 <meta name="twitter:card" content="summary">
@@ -170,11 +170,11 @@
 <li><p>参考サイト<br><a href="https://azure.microsoft.com/ja-jp/pricing/details/machine-learning/" target="_blank" rel="noopener">Azure Machine Learning の価格</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/calculator/?service=machine-learning-service" target="_blank" rel="noopener">料金計算ツール (+Azure Machine Learning)</a> </p>
 <p><font color="#FF0000"><strong>注意:</strong><br>上記金額に加え、定常的に下記のリソースの課金が発生いたします。これは、コンピューティング インスタンスで使用する VMSS (仮想マシン スケール セット) に紐づいており、コンピューティング インスタンスを停止しても VMSS は削除されないため、課金も継続いたします。  </p>
 </li>
-<li><p>Load Balancers (約 42.336 [円/日])  </p>
+<li><p>ロード バランサー (約 42.336 [円/日])  </p>
 </li>
-<li><p>Public IP Addresses (約 8.467 [円/日])  </p>
+<li><p>パブリック IP アドレス (約 8.467 [円/日])  </p>
 </li>
-<li><p>Managed Disks (VM に依って異なります 例: Standard_D11_v2 で約 4.268 [円/日])  </p>
+<li><p>マネージド ディスク (VM に依って異なります 例: Standard_D11_v2 で約 4.268 [円/日])  </p>
 </font>
 
 <p>上記を合計すると以下の通りです。  </p>
@@ -187,8 +187,6 @@
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>トレーニング ターゲットとして Azure Machine Learning コンピューティング クラスター (東日本リージョン、STANDARD_DS3_V2) を最小 0 ノード、最大 2 ノードで作成し、2 ノードで 1 日 4 時間、20 日間使用する場合  </p>
 <p> → <code>45.808 [円/時間/ノード] x 2 [ノード] x 4 [時間/日] x 20 [日] = 7329.28 [円]</code></p>
 <ul>
