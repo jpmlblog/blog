@@ -27,7 +27,7 @@
 <meta property="og:description" content="Azure Machine Learning のコスト見積もりについて、参考となる情報を紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-06-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-07T09:10:09.873Z">
+<meta property="article:modified_time" content="2020-12-10T09:27:44.447Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="価格">
 <meta name="twitter:card" content="summary">
@@ -171,9 +171,9 @@
 <li>パブリック IP アドレス (約 8.467 [円/日])</li>
 <li>マネージド ディスク (VM サイズや利用状況に依存 例: Standard_D11_v2 作成直後で約 4.268 [円/日])</li>
 </ul>
-<p>(参考) <a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-compute-instance#managing-a-compute-instance" target="_blank" rel="noopener">Managing a compute instance</a></p>
+<p>(参考) <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-compute-instance#managing-a-compute-instance" target="_blank" rel="noopener">Managing a compute instance</a>  </p>
 <blockquote>
-<p>Start, stop, and restart a compute instance. You do pay for the instance whenever it is running. Stop the compute instance when you are not using it to reduce cost. Stopping a compute instance deallocates it. Then start it again when you need it. <strong>Please note stopping the compute instance stops the billing for compute hours but you will still be billed for disk, public IP, and standard load balancer.</strong><br></font></p>
+<p>コンピューティング インスタンスを開始、停止、再起動する。 インスタンスは、実行されるたびに支払いが発生します。 コンピューティング インスタンスを使用していないときは、コストを削減するために、コンピューティング インスタンスを停止します。 <strong>コンピューティング インスタンスを停止すると、そのインスタンスは解放されます。 その後、必要なときにもう一度開始します。 コンピューティング インスタンスを停止すると、コンピューティング時間の課金は停止しますが、ディスク、パブリック IP、および Standard Load Balancer に対しては引き続き課金されます。</strong><br></font></p>
 </blockquote>
 <p>(VM)<br><code>25.648 [円/時間] x 10 [時間/日] x 20 [日] = 5129.6 [円]</code>  </p>
 <p>(関連サービス)<br><code>(42.336 + 8.467 + 4.268 [円/日]) x 30 [日] = 1652.13 [円]</code>  </p>
