@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Studio-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-14T05:50:58.223Z">
+<meta property="article:modified_time" content="2020-12-23T16:09:52.980Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -285,6 +285,10 @@
 <blockquote>
 <p>REQUEST_SEND_ERROR: Your request for data wasn’t sent. Here are some things to try: Check your network and internet connection, make sure a proxy server is not blocking your connection, follow our guidelines if you’re using a private link, and check if you have AdBlock turned on.</p>
 </blockquote>
+<p>仮想ネットワーク上からアクセスしても同様のエラーが出力する場合があります。これは、各サービスの URL アクセス時に、DNS 名前解決でプライベート IP アドレスのが返されていない可能性があります。例えば、仮想ネットワークでカスタム DNS を使用しているとこのような状態になるため、下記の情報に従い必要な設定をご検討ください。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-custom-dns?tabs=azure-portal" target="_blank" rel="noopener">カスタム DNS サーバーでワークスペースを使用する方法</a></li>
+</ul>
 <h3 id="Notebooks-アクセス時のエラー"><a href="#Notebooks-アクセス時のエラー" class="headerlink" title="Notebooks アクセス時のエラー"></a>Notebooks アクセス時のエラー</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Notebooks-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
@@ -292,19 +296,19 @@
 <blockquote>
 <p>Request authorization to storage account failed. Storage account might be behind a VNET. Please go to the Compute tab, create a compute instance, and launch Jupyter or Jupyter Lab to use your files and notebooks.</p>
 </blockquote>
-<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p>エラーは出力されますが、各コンピューティング リソースの作成、起動、停止、削除などの操作は可能です。必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
-</ul>
-<p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
+<h3 id="Compute-アクセス時"><a href="#Compute-アクセス時" class="headerlink" title="Compute アクセス時"></a>Compute アクセス時</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Compute-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>403: You are not authorized to access this resource. You are not authorized to access this resource.</p>
 </blockquote>
-<p>Vnet に配置した Compute Instance のアプリケーション URI (Jupyter および Jupyter Lab のリンク) へのアクセスも、以下のメッセージが表示され失敗します。  </p>
+<p>エラーは出力されますが、各コンピューティング リソースの作成、起動、停止、削除などの操作は可能です。必要に応じて、以下サイトを参考にロールベースでのアクセス制御 (RBAC) を実装いただくことをお勧めいたします。  </p>
+<p>なお、Vnet に配置した Compute Instance のアプリケーション URI (Jupyter および Jupyter Lab のリンク) へのアクセスも、以下のメッセージが表示され失敗します。  </p>
 <blockquote>
 <p>User &lt;User Name&gt; does not have access to compute instance &lt;Compute Instance Name&gt;.</p>
 <p>Only the creator can access a compute instance.</p>
 </blockquote>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
+</ul>
 <h3 id="Web-ブラウザのアクセス自体が失敗する場合"><a href="#Web-ブラウザのアクセス自体が失敗する場合" class="headerlink" title="Web ブラウザのアクセス自体が失敗する場合"></a>Web ブラウザのアクセス自体が失敗する場合</h3><p><img src="https://jpmlblog.github.io/images/AMS-use-behind-vnet/AML-Studio-error.png" width=400px align="left" border="1"><br clear="left"> </p>
 <p>NSG を使用してインターネット接続を制限している場合、仮想ネットワーク上のリソースからであっても Azure Machine Learning Studio へのアクセスが出来ない場合があります。下記サイトに記載されております通り、AzureFrontDoor.Frontend のサービス タグ宛の通信を許可する必要がある点についてご留意ください。  </p>
 <ul>
@@ -403,7 +407,7 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>11</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>12</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-Studio-Classic/"><div class='name'>Azure Machine Learning Studio (Classic)</div><div class='badget'>1</div></a></li>
     
@@ -418,7 +422,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E8%87%AA%E5%8B%95%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92/" style="font-size: 14px; color: #808080">自動機械学習</a>
+        <a href="/blog/tags/Automated-Machine-Learning/" style="font-size: 20px; color: #000">Automated Machine Learning</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a>
     </div>
 </div>
 

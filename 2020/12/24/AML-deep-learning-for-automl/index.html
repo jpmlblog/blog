@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Azure Machine Learning サービス宛の通信を許可する設定について | Japan Machine Learning Support Blog</title>
+  <title>自動機械学習 (AutoML) の分類タスクの &#34;ディープラーニングの有効化&#34; について | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,19 +19,20 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="オンプレミスの環境から Azure Machine Learning のサービスを利用する際、外部ネットワーク宛の通信をファイアウォールやプロキシ サーバー等によって制御している場合に、許可すべきホスト名等の情報をご紹介します。">
+  <meta name="description" content="Azure Machine Learning Studio から自動機械学習を実行する際、”ディープラーニングの有効化” のチェックを入れた場合の動作について紹介いたします。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Azure Machine Learning サービス宛の通信を許可する設定について">
-<meta property="og:url" content="https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/index.html">
+<meta property="og:title" content="自動機械学習 (AutoML) の分類タスクの &quot;ディープラーニングの有効化&quot; について">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/2020/12/24/AML-deep-learning-for-automl/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
-<meta property="og:description" content="オンプレミスの環境から Azure Machine Learning のサービスを利用する際、外部ネットワーク宛の通信をファイアウォールやプロキシ サーバー等によって制御している場合に、許可すべきホスト名等の情報をご紹介します。">
+<meta property="og:description" content="Azure Machine Learning Studio から自動機械学習を実行する際、”ディープラーニングの有効化” のチェックを入れた場合の動作について紹介いたします。">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2020-10-10T03:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-23T16:09:52.940Z">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-deep-learning-for-automl/enable-deep-learning-for-classification.png">
+<meta property="article:published_time" content="2020-12-24T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-23T16:09:52.869Z">
 <meta property="article:author" content="jpmlblog">
-<meta property="article:tag" content="ファイアウォール">
-<meta property="article:tag" content="プロキシ">
+<meta property="article:tag" content="Automated Machine Learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-deep-learning-for-automl/enable-deep-learning-for-classification.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -126,17 +127,17 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-AML-network-allow-settings"
+        <article id="post-AML-deep-learning-for-automl"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/10/10/AML-network-allow-settings/">
-    	Azure Machine Learning サービス宛の通信を許可する設定について
+  	<a href="/blog/2020/12/24/AML-deep-learning-for-automl/">
+    	自動機械学習 (AutoML) の分類タスクの &#34;ディープラーニングの有効化&#34; について
     </a>
   </h2>
 	<time>
-	  10月 10, 2020
+	  12月 24, 2020
 	</time>
 	
     
@@ -146,52 +147,43 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ホスト名ベースの許可"><span class="toc-number">1.</span> <span class="toc-text">ホスト名ベースの許可</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ポート番号の許可"><span class="toc-number">2.</span> <span class="toc-text">ポート番号の許可</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebSocket-の考慮"><span class="toc-number">3.</span> <span class="toc-text">WebSocket の考慮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP-アドレスの範囲指定で許可する場合"><span class="toc-number">4.</span> <span class="toc-text">IP アドレスの範囲指定で許可する場合</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>オンプレミスの環境から Azure Machine Learning のサービスを利用する際、外部ネットワーク宛の通信をファイアウォールやプロキシ サーバー等によって制御している場合に、許可すべきホスト名等の情報をご紹介します。  </p>
+    	<p>Azure Machine Learning Studio から自動機械学習を実行する際、”ディープラーニングの有効化” のチェックを入れた場合の動作について紹介いたします。</p>
 <a id="more"></a>
 <br>
 
 <hr>
-<h2 id="ホスト名ベースの許可"><a href="#ホスト名ベースの許可" class="headerlink" title="ホスト名ベースの許可"></a>ホスト名ベースの許可</h2><p>Azure Machine Learning で使用する通信先ホスト名の一覧は以下サイトに一覧化されております。これらのホスト名宛の送信方向の通信を許可するよう設定ください。  </p>
+<p>Azure Machine Learning Studio から、UI ベースで自動機械学習を実行することが出来ます。詳細な手順は以下の公開情報を参照ください。  </p>
 <ul>
-<li><p><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#microsoft-hosts" target="_blank" rel="noopener">ファイアウォールの内側で Azure Machine Learning のワークスペースを使用する - # Microsoft のホスト</a></p>
-<blockquote>
-<p>login.microsoftonline.com<br>management.azure.com<br>*.batchai.core.windows.net<br>ml.azure.com<br>default.exp-tas.com<br>*.azureml.ms<br>*.experiments.azureml.net<br>*.modelmanagement.azureml.net<br>mlworkspace.azure.ai<br>*.aether.ms<br>*.instances.azureml.net<br>*.instances.azureml.ms<br>windows.net<br>vault.azure.net<br>azurecr.io<br>mcr.microsoft.com<br>&lt;your-acr-server-name&gt;.azurecr.io<br>*.notebooks.azure.net<br>graph.windows.net  </p>
-</blockquote>
-<p>※ 各ホスト名宛の通信の概要は<a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#microsoft-hosts" target="_blank" rel="noopener">抜粋元</a>を参照ください。<br>※ 機能別に列挙されておりますので、一部設定上重複するものがあります。  </p>
-</li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-use-automated-ml-for-ml-models" target="_blank" rel="noopener">Azure Machine Learning を使用して自動機械学習モデルを作成、確認、デプロイする</a></li>
+</ul>
+<p>選択できるタスクは、分類、回帰、時系列の 3 つがあります。この時、分類タスクの “ディープ ラーニングの有効化” にチェックを入れることで、<strong>テキスト データの特徴付け</strong> に有効な BERT または BiLSTM を適用することが可能です。  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-deep-learning-for-automl/enable-deep-learning-for-classification.png" alt="enable-deep-learning-for-classification.png"></p>
+<p>BERT を適用する場合、コンピューティング クラスターに GPU コンピューティング (例: VM サイズ “STANDARD_NC6”、またはそれ以上の GPU) を使用する必要があります。CPU コンピューティングを使用した場合には、BiLSTM DNN 特徴抽出器が有効になります。詳細は以下サイトをご確認ください。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-configure-auto-features#bert-integration" target="_blank" rel="noopener">BERT 統合</a></li>
+</ul>
+<p>その他、参考となる公開情報をお纏めします。  </p>
+<ul>
+<li><a href="https://techcommunity.microsoft.com/t5/azure-ai/how-bert-is-integrated-into-azure-automated-machine-learning/ba-p/1194657" target="_blank" rel="noopener">How BERT is integrated into Azure automated machine learning</a></li>
+<li><a href="https://docs.microsoft.com/en-us/python/api/azureml-automl-runtime/azureml.automl.runtime.featurizer.transformer.text.pretrained_text_dnn_transformer?view=azure-ml-py" target="_blank" rel="noopener">AutoML SDK - pretrained_text_dnn_transformer Module</a></li>
+<li><a href="https://docs.microsoft.com/en-us/python/api/azureml-automl-runtime/azureml.automl.runtime.featurizer.transformer.text.bilstm_attention_transformer?view=azure-ml-py" target="_blank" rel="noopener">AutoML SDK - bilstm_attention_transformer Module</a></li>
+<li><a href="https://github.com/Microsoft/AzureML-BERT" target="_blank" rel="noopener">GitHub - microsoft/AzureML-BERT</a></li>
+<li><a href="https://github.com/google-research/bert" target="_blank" rel="noopener">GitHub - google-research/bert</a></li>
+<li><a href="https://github.com/huggingface/transformers" target="_blank" rel="noopener">GitHub - huggingface/transformers</a></li>
 </ul>
 <hr>
-<h2 id="ポート番号の許可"><a href="#ポート番号の許可" class="headerlink" title="ポート番号の許可"></a>ポート番号の許可</h2><p>HTTPS または HTTP (443 および 80) のプロトコルで通信を行います。上記したホスト名一覧に対し、送信方向のポート番号 443 および 80 宛の通信を許可するよう設定ください。  </p>
-<hr>
-<h2 id="WebSocket-の考慮"><a href="#WebSocket-の考慮" class="headerlink" title="WebSocket の考慮"></a>WebSocket の考慮</h2><p>ネットワーク機器などで WebSocket の通信をブロックしている場合、上述したホスト名一覧について許可いただくことをお勧めいたします。<br>なお、現時点 (2020/10/10) では以下のホスト名について WebSocket の通信を行うことが確認できておりますので、宛先を絞り込む必要がある場合には、最低限以下ホスト名宛の WebSocket 通信を許可するよう設定ください。  </p>
-<p>*.azureml.ms<br>*.notebooks.azure.net<br>*.instances.azureml.net<br>*.experiments.azureml.net  </p>
-<p>今後サービス側機能の変更によって別のホスト名で WebSocket 通信を必須とする場合がございますので、その際には適宜許可を追加頂くことをご検討ください。</p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-secure-training-vnet#compute-clusters--instances" target="_blank" rel="noopener">(参考情報) コンピューティング クラスターとインスタンス</a>  <blockquote>
-<p>コンピューティング インスタンスの Jupyter 機能を動作させるには、Web ソケット通信が無効になっていないことを確認してください。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="IP-アドレスの範囲指定で許可する場合"><a href="#IP-アドレスの範囲指定で許可する場合" class="headerlink" title="IP アドレスの範囲指定で許可する場合"></a>IP アドレスの範囲指定で許可する場合</h2><p>下記サイトに紹介されている IP アドレス一覧を使用して許可する方法につきましては、API で一覧を取得する方法が現時点 (2020/10/10) でプレビュー段階であるなどから、利用をお勧めいたしません。  </p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/virtual-network/service-tags-overview#service-tags-on-premises" target="_blank" rel="noopener">オンプレミスのサービス タグ</a></li>
-</ul>
-<hr>
-<p><code>変更履歴</code><br><code>2020/10/10 created by Mochizuki</code></p>
+<p><code>変更履歴</code><br><code>2020/12/24 created by Mochizuki</code></p>
 <p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/">ファイアウォール</a>
-      
-        <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/">プロキシ</a>
+        <a href="/blog/tags/Automated-Machine-Learning/">Automated Machine Learning</a>
       
 	  </div>
     
@@ -199,13 +191,9 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/10/19/AML-dataset-name/" rel="prev"  title="Azure Machine Learning の名前付け規則について">
-						Azure Machine Learning の名前付け規則について 
-					</a></span>
 				
-				
-					<span class="art-item-right">next：<a href="/blog/2020/09/24/AML-functions-autostop/" rel="next"  title="Azure Functions を使用してコンピューティング インスタンスを自動停止する方法について">
-						Azure Functions を使用してコンピューティング インスタンスを自動停止する方法について
+					<span class="art-item-right">next：<a href="/blog/2020/11/30/AML-scheduled-pipeline/" rel="next"  title="Azure Functions を使用してパイプラインを定期的に実行する方法について">
+						Azure Functions を使用してパイプラインを定期的に実行する方法について
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -215,7 +203,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'Azure Machine Learning サービス宛の通信を許可する設定について',
+		title: '自動機械学習 (AutoML) の分類タスクの &#34;ディープラーニングの有効化&#34; について',
 		tools: true
 	}
 </script>
