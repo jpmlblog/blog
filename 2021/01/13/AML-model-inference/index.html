@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Azure Machine Learning で作成したモデルの推論を実行する方法について | Japan Machine Learning Support Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="https://jpmlblog.github.io/blog/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://jpmlblog.github.io/blog/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jpmlblog.github.io/blog/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jpmlblog.github.io/blog/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://jpmlblog.github.io/blog/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://jpmlblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本記事では、Azure Machne Learning で作成したモデルを SDK を使用して推論実行する方法を紹介します。試験的に作成したモデルの評価を行う場合には、都度 Web サービスにデプロイする方法は効率的ではないため、ローカルにロードして推論実行する手順を紹介します。また、Web サービスにデプロイして推論を実行する方法についても併せて紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure Machine Learning で作成したモデルの推論を実行する方法について">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/2021/01/13/AML-model-inference/index.html">
+<meta property="og:site_name" content="Japan Machine Learning Support Blog">
+<meta property="og:description" content="本記事では、Azure Machne Learning で作成したモデルを SDK を使用して推論実行する方法を紹介します。試験的に作成したモデルの評価を行う場合には、都度 Web サービスにデプロイする方法は効率的ではないため、ローカルにロードして推論実行する手順を紹介します。また、Web サービスにデプロイして推論を実行する方法についても併せて紹介します。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-list.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-details.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png">
+<meta property="article:published_time" content="2021-01-13T03:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-13T00:48:24.995Z">
+<meta property="article:author" content="jpmlblog">
+<meta property="article:tag" content="モデル デプロイ">
+<meta property="article:tag" content="推論">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-list.png">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  
+<link rel="stylesheet" href="/blog/style.css">
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/blog/' >
+				Japan Machine Learning Support Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/blog/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/blog/archives'>
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/blog/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/blog/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-AML-model-inference"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2021/01/13/AML-model-inference/">
+    	Azure Machine Learning で作成したモデルの推論を実行する方法について
+    </a>
+  </h2>
+	<time>
+	  1月 13, 2021
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ローカルにモデルをロードして評価を行う場合"><span class="toc-number">1.</span> <span class="toc-text">ローカルにモデルをロードして評価を行う場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-サービスとしてデプロイされたモデルを使用する"><span class="toc-number">2.</span> <span class="toc-text">Web サービスとしてデプロイされたモデルを使用する</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>本記事では、Azure Machne Learning で作成したモデルを SDK を使用して推論実行する方法を紹介します。<br>試験的に作成したモデルの評価を行う場合には、都度 Web サービスにデプロイする方法は効率的ではないため、ローカルにロードして推論実行する手順を紹介します。また、Web サービスにデプロイして推論を実行する方法についても併せて紹介します。  </p>
+<a id="more"></a>
+<br>
+
+<hr>
+<h2 id="ローカルにモデルをロードして評価を行う場合"><a href="#ローカルにモデルをロードして評価を行う場合" class="headerlink" title="ローカルにモデルをロードして評価を行う場合"></a>ローカルにモデルをロードして評価を行う場合</h2><p>実験によって作成されたモデルのテストを行う場合、ローカル環境にロードして実行する方法をお勧めいたします。以下に、自動機械学習のチュートリアルの実行によって作成されたモデルを例にご紹介いたします。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/tutorial-first-experiment-automated-ml" target="_blank" rel="noopener">チュートリアル:Azure Machine Learning の自動 ML で分類モデルを作成する</a>  </li>
+</ul>
+<p>自動機械学習では、複数のアルゴリズムと前処理の組み合わせを試し、それぞれの実行でモデルを作成します。上記チュートリアルのとおりに実行すると、「my-1st-automl-experiment」 という名前の実験の中で、複数のモデルが作成されます。このうちひとつのモデルをローカルにロードして、推論実行する方法を紹介します。</p>
+<p>モデルは、VotingEnsemble を選択します。  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-list.png" align="left" border="1"><br clear="left">  </p>
+<p>「詳細」 タブより実行 ID を確認します。  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-details.png" align="left" border="1"><br clear="left">  </p>
+<p>Notebooks メニューより任意のフォルダーに新しいノートブックを作成し、以下のコードを入力、実行します。experiment_name や run_id は、ご利用環境に合わせて適宜変更ください。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 実行 ID より Run オブジェクトを作成します。</span></span><br><span class="line"><span class="keyword">from</span> azureml.core <span class="keyword">import</span> Experiment, Workspace</span><br><span class="line"><span class="keyword">from</span> azureml.core.experiment <span class="keyword">import</span> Experiment</span><br><span class="line"><span class="keyword">from</span> azureml.core.run <span class="keyword">import</span> Run</span><br><span class="line"></span><br><span class="line">workspace = Workspace.from_config()</span><br><span class="line">experiment_name = <span class="string">"my-1st-automl-experiment"</span></span><br><span class="line">experiment = Experiment(workspace, experiment_name)</span><br><span class="line">run = Run(experiment=experiment, run_id=<span class="string">'AutoML_66d0eb73-e09c-435d-ae80-da060d204b09_69'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># モデル等の情報を download フォルダー配下に格納します</span></span><br><span class="line">run.download_files(output_directory=<span class="string">'download'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ダウンロードしたモデルをローカルにロードします。</span></span><br><span class="line"><span class="keyword">from</span> sklearn.externals <span class="keyword">import</span> joblib</span><br><span class="line"><span class="keyword">from</span> azureml.core.model <span class="keyword">import</span> Model</span><br><span class="line"></span><br><span class="line">model_path = <span class="string">'download/outputs/model.pkl'</span></span><br><span class="line">model = joblib.load(model_path)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># トレーニングで使用したデータをそのままテスト用データとして使用します。</span></span><br><span class="line"><span class="keyword">from</span> azureml.core.dataset <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line">test_data = <span class="string">"https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_test.csv"</span></span><br><span class="line">test_dataset = Dataset.Tabular.from_delimited_files(test_data)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># y 列を削除して pandas のデータフレーム形式に変換します。</span></span><br><span class="line">test = test_dataset.drop_columns(columns=[<span class="string">'y'</span>])</span><br><span class="line">test_df = test.to_pandas_dataframe()</span><br><span class="line"></span><br><span class="line"><span class="comment"># predict メソッドを使用して推論を実行します。</span></span><br><span class="line">pred  = model.predict(test_df)</span><br><span class="line">pred.tolist()</span><br></pre></td></tr></table></figure>
+
+<p>以下の通り推論結果を表示できたかと思います。</p>
+<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png" align="left" border="1"><br clear="left">  </p>
+<hr>
+<h2 id="Web-サービスとしてデプロイされたモデルを使用する"><a href="#Web-サービスとしてデプロイされたモデルを使用する" class="headerlink" title="Web サービスとしてデプロイされたモデルを使用する"></a>Web サービスとしてデプロイされたモデルを使用する</h2><p>作成したモデルをローカル、ACI、AKS のいずれかに Web サービスとしてデプロイした場合、要求データを REST エンドポイントに対して送信することで推論結果を得られます。  </p>
+<p>モデルのデプロイ方法は下記公開情報に纏められています。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=azcli" target="_blank" rel="noopener">Azure Machine Learning を使用してモデルをデプロイする</a></li>
+</ul>
+<p>SDK ベースになりますが、ローカル、ACI、AKS それぞれの公開情報を抜粋します。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-local-container-notebook-vm" target="_blank" rel="noopener">Azure Machine Learning コンピューティング インスタンスへのモデルのデプロイ</a>  </li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-container-instance" target="_blank" rel="noopener">Azure Container Instances にモデルをデプロイする</a></li>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-kubernetes-service?tabs=python" target="_blank" rel="noopener">Azure Kubernetes Service クラスターにモデルをデプロイする</a></li>
+</ul>
+<p>デプロイした Web サービスの呼び出し方は、下記公開情報が参考になります。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-consume-web-service?tabs=python" target="_blank" rel="noopener">Web サービスとしてデプロイされた Azure Machine Learning モデルを使用する</a>  </li>
+</ul>
+<br>
+※ 現在更新中
+<br>
+
+
+<hr>
+<p><code>変更履歴</code><br><code>2021/01/13 created by Mochizuki</code></p>
+<p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/">モデル デプロイ</a>
+      
+        <a href="/blog/tags/%E6%8E%A8%E8%AB%96/">推論</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2020/12/24/AML-deep-learning-for-automl/" rel="next"  title="自動機械学習 (AutoML) の分類タスクのディープ ラーニング有効化について">
+						自動機械学習 (AutoML) の分類タスクのディープ ラーニング有効化について
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Azure Machine Learning で作成したモデルの推論を実行する方法について',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+<!--  -->
+<img class='avatar waves-image' src="https://jpmlblog.github.io/blog/favicon/mstile-150x150.png">
+<div class='header'>jpmlblog</div>
+<div class='content'>
+    <div class='desc'>
+        このサイトはマイクロソフトの Azure Machine Learning サポート チームによって運営されております。</br></br>
+        Powered by: 祝田、津田、ジェシー、中神、上原、カイル、チャオ</br></br>
+        Web master: 望月
+    </div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://jpaiblog.github.io/blog/">
+            <div class='name'>Japan Cognitive Service Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpiotblog.github.io/blog/">
+            <div class='name'>Japan IoT Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpmlblog.github.io/blog/">
+            <div class='name'>Japan Machine Learning Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpwdkblog.github.io/blog/">
+            <div class='name'>Japan WDK Support Blog</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>13</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-Studio-Classic/"><div class='name'>Azure Machine Learning Studio (Classic)</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"><div class='name'>Azure Machine Learning 全般</div><div class='badget'>3</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/blog/tags/Automated-Machine-Learning/" style="font-size: 20px; color: #000">Automated Machine Learning</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">モデル デプロイ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E6%8E%A8%E8%AB%96/" style="font-size: 14px; color: #808080">推論</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/stkevintan" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/kevinsfork" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+
+<script src="/blog/js/jquery.fitvids.js"></script>
+
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/blog/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+
+<script src="/blog/js/search.js"></script>
+
+
+<script src="/blog/js/app.js"></script>
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
