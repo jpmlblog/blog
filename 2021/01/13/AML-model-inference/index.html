@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-forecasting-sample.png">
 <meta property="article:published_time" content="2021-01-13T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-13T16:07:33.986Z">
+<meta property="article:modified_time" content="2021-01-13T16:18:36.508Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="モデル デプロイ">
 <meta property="article:tag" content="推論">
@@ -151,7 +151,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ローカルにモデルをロードして評価を行う場合"><span class="toc-number">1.</span> <span class="toc-text">ローカルにモデルをロードして評価を行う場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-サービスとしてデプロイされたモデルを使用する"><span class="toc-number">2.</span> <span class="toc-text">Web サービスとしてデプロイされたモデルを使用する</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ローカルにモデルをロードして評価を行う場合"><span class="toc-number">1.</span> <span class="toc-text">ローカルにモデルをロードして評価を行う場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-サービスとしてデプロイされたモデルを使用する"><span class="toc-number">2.</span> <span class="toc-text">Web サービスとしてデプロイされたモデルを使用する</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ローカル"><span class="toc-number">2.1.</span> <span class="toc-text">ローカル</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ACI"><span class="toc-number">2.2.</span> <span class="toc-text">ACI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AKS"><span class="toc-number">2.3.</span> <span class="toc-text">AKS</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -196,13 +196,20 @@
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-consume-web-service?tabs=python" target="_blank" rel="noopener">Web サービスとしてデプロイされた Azure Machine Learning モデルを使用する</a>  </li>
 </ul>
 <p>デプロイ先がローカル、ACI、AKS それぞれのドキュメントおよびサンプル ノートブックを紹介します。  </p>
-<ul>
-<li><p>ローカル<br> docs: <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-local-container-notebook-vm" target="_blank" rel="noopener">Azure Machine Learning コンピューティング インスタンスへのモデルのデプロイ</a><br> sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb" target="_blank" rel="noopener">Register model and deploy locally with advanced usages</a>  </p>
-</li>
-<li><p>ACI<br> docs: <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-container-instance" target="_blank" rel="noopener">Azure Container Instances にモデルをデプロイする</a><br> sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-cloud/model-register-and-deploy.ipynb" target="_blank" rel="noopener">Register model and deploy as webservice in ACI</a><br> sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-multi-model/multi-model-register-and-deploy.ipynb" target="_blank" rel="noopener">Deploy Multiple Models as Webservice</a>  </p>
-</li>
-<li><p>AKS<br> docs: <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-kubernetes-service?tabs=python" target="_blank" rel="noopener">Azure Kubernetes Service クラスターにモデルをデプロイする</a><br> sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks.ipynb" target="_blank" rel="noopener">Deploying a web service to Azure Kubernetes Service (AKS)</a><br> sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks-ssl.ipynb" target="_blank" rel="noopener">Deploying a web service to Azure Kubernetes Service (AKS) + SSL</a><br> sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb" target="_blank" rel="noopener">Deploying a web service to Azure Kubernetes Service (AKS) + GPU</a>  </p>
-</li>
+<h3 id="ローカル"><a href="#ローカル" class="headerlink" title="ローカル"></a>ローカル</h3><ul>
+<li>docs: <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-local-container-notebook-vm" target="_blank" rel="noopener">Azure Machine Learning コンピューティング インスタンスへのモデルのデプロイ</a>  </li>
+<li>sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb" target="_blank" rel="noopener">Register model and deploy locally with advanced usages</a>  </li>
+</ul>
+<h3 id="ACI"><a href="#ACI" class="headerlink" title="ACI"></a>ACI</h3><ul>
+<li>docs: <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-container-instance" target="_blank" rel="noopener">Azure Container Instances にモデルをデプロイする</a>  </li>
+<li>sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-cloud/model-register-and-deploy.ipynb" target="_blank" rel="noopener">Register model and deploy as webservice in ACI</a>  </li>
+<li>sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-multi-model/multi-model-register-and-deploy.ipynb" target="_blank" rel="noopener">Deploy Multiple Models as Webservice</a>  </li>
+</ul>
+<h3 id="AKS"><a href="#AKS" class="headerlink" title="AKS"></a>AKS</h3><ul>
+<li>docs: <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-kubernetes-service?tabs=python" target="_blank" rel="noopener">Azure Kubernetes Service クラスターにモデルをデプロイする</a>  </li>
+<li>sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks.ipynb" target="_blank" rel="noopener">Deploying a web service to Azure Kubernetes Service (AKS)</a>  </li>
+<li>sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks-ssl.ipynb" target="_blank" rel="noopener">Deploying a web service to Azure Kubernetes Service (AKS) + SSL</a>  </li>
+<li>sample: <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb" target="_blank" rel="noopener">Deploying a web service to Azure Kubernetes Service (AKS) + GPU</a>  </li>
 </ul>
 <hr>
 <p><code>変更履歴</code><br><code>2021/01/13 created by Mochizuki</code></p>
