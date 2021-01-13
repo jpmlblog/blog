@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-forecasting-sample.png">
 <meta property="article:published_time" content="2021-01-13T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-13T01:41:16.601Z">
+<meta property="article:modified_time" content="2021-01-13T01:43:41.016Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="モデル デプロイ">
 <meta property="article:tag" content="推論">
@@ -181,7 +181,7 @@
 <p>以下の通り推論結果を表示できたかと思います。</p>
 <p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
-<p>注意点<br>時系列予測モデルの ForecastingParameters として target_rolling_window_size パラメーターを指定していると、predict の実行が失敗することが確認できています。これは predict メソッドが target_rolling_window_size パラメーターを使用したモデルでの実行をサポートしていないためです。<br>このような場合、以下サンプル ノートブック <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb" target="_blank" rel="noopener">auto-ml-forecasting-orange-juice-sales.ipynb</a> 、にありますとおり、predict メソッドではなく forecast メソッドの利用をご検討ください。<br><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-forecasting-sample.png" width=600px align="left" border="1"><br clear="left">  </p>
+<p><strong>注意点</strong><br>時系列予測モデルの ForecastingParameters として target_rolling_window_size パラメーターを指定していると、predict の実行が失敗することが確認できています。これは predict メソッドが target_rolling_window_size パラメーターを使用したモデルでの実行をサポートしていないためです。このような場合、以下サンプル ノートブック <a href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb" target="_blank" rel="noopener">auto-ml-forecasting-orange-juice-sales.ipynb</a> 、にありますとおり、predict メソッドではなく forecast メソッドの利用をご検討ください。<br><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-forecasting-sample.png" width=800px align="left" border="1"><br clear="left">  </p>
 </blockquote>
 <hr>
 <h2 id="Web-サービスとしてデプロイされたモデルを使用する"><a href="#Web-サービスとしてデプロイされたモデルを使用する" class="headerlink" title="Web サービスとしてデプロイされたモデルを使用する"></a>Web サービスとしてデプロイされたモデルを使用する</h2><p>作成したモデルをローカル、ACI、AKS のいずれかに Web サービスとしてデプロイした場合、要求データを REST エンドポイントに対して送信することで推論結果を得られます。  </p>
