@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-details.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png">
 <meta property="article:published_time" content="2021-01-13T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-13T00:48:24.995Z">
+<meta property="article:modified_time" content="2021-01-13T00:53:48.763Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="モデル デプロイ">
 <meta property="article:tag" content="推論">
@@ -165,9 +165,9 @@
 </ul>
 <p>自動機械学習では、複数のアルゴリズムと前処理の組み合わせを試し、それぞれの実行でモデルを作成します。上記チュートリアルのとおりに実行すると、「my-1st-automl-experiment」 という名前の実験の中で、複数のモデルが作成されます。このうちひとつのモデルをローカルにロードして、推論実行する方法を紹介します。</p>
 <p>モデルは、VotingEnsemble を選択します。  </p>
-<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-list.png" align="left" border="1"><br clear="left">  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-list.png" width=500px align="left" border="1"><br clear="left">  </p>
 <p>「詳細」 タブより実行 ID を確認します。  </p>
-<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-details.png" align="left" border="1"><br clear="left">  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-algorithm-details.png" width=300px align="left" border="1"><br clear="left">  </p>
 <p>Notebooks メニューより任意のフォルダーに新しいノートブックを作成し、以下のコードを入力、実行します。experiment_name や run_id は、ご利用環境に合わせて適宜変更ください。  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 実行 ID より Run オブジェクトを作成します。</span></span><br><span class="line"><span class="keyword">from</span> azureml.core <span class="keyword">import</span> Experiment, Workspace</span><br><span class="line"><span class="keyword">from</span> azureml.core.experiment <span class="keyword">import</span> Experiment</span><br><span class="line"><span class="keyword">from</span> azureml.core.run <span class="keyword">import</span> Run</span><br><span class="line"></span><br><span class="line">workspace = Workspace.from_config()</span><br><span class="line">experiment_name = <span class="string">"my-1st-automl-experiment"</span></span><br><span class="line">experiment = Experiment(workspace, experiment_name)</span><br><span class="line">run = Run(experiment=experiment, run_id=<span class="string">'AutoML_66d0eb73-e09c-435d-ae80-da060d204b09_69'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># モデル等の情報を download フォルダー配下に格納します</span></span><br><span class="line">run.download_files(output_directory=<span class="string">'download'</span>)</span><br></pre></td></tr></table></figure>
 
@@ -178,7 +178,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># y 列を削除して pandas のデータフレーム形式に変換します。</span></span><br><span class="line">test = test_dataset.drop_columns(columns=[<span class="string">'y'</span>])</span><br><span class="line">test_df = test.to_pandas_dataframe()</span><br><span class="line"></span><br><span class="line"><span class="comment"># predict メソッドを使用して推論を実行します。</span></span><br><span class="line">pred  = model.predict(test_df)</span><br><span class="line">pred.tolist()</span><br></pre></td></tr></table></figure>
 
 <p>以下の通り推論結果を表示できたかと思います。</p>
-<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png" align="left" border="1"><br clear="left">  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png" width=400px align="left" border="1"><br clear="left">  </p>
 <hr>
 <h2 id="Web-サービスとしてデプロイされたモデルを使用する"><a href="#Web-サービスとしてデプロイされたモデルを使用する" class="headerlink" title="Web サービスとしてデプロイされたモデルを使用する"></a>Web サービスとしてデプロイされたモデルを使用する</h2><p>作成したモデルをローカル、ACI、AKS のいずれかに Web サービスとしてデプロイした場合、要求データを REST エンドポイントに対して送信することで推論結果を得られます。  </p>
 <p>モデルのデプロイ方法は下記公開情報に纏められています。  </p>
