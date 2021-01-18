@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-forecasting-sample.png">
 <meta property="article:published_time" content="2021-01-13T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-14T16:32:18.029Z">
+<meta property="article:modified_time" content="2021-01-18T07:52:16.756Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="モデル デプロイ">
 <meta property="article:tag" content="推論">
@@ -179,7 +179,7 @@
 
 <blockquote>
 <p>既存のデータセットを使用する場合、上記コード セルを以下に変更します。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment"># 既存のデータセットを読み込みます。</span></span><br><span class="line">&gt;<span class="keyword">from</span> azureml.core.dataset <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line">&gt;<span class="comment"># detaset_name をデータセット名に置き換えて実行します。</span></span><br><span class="line">&gt;test_dataset = Dataset.get_by_name(workspace, &gt;name=<span class="string">'dataset_name'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment"># 既存のデータセットを読み込みます。</span></span><br><span class="line">&gt;<span class="keyword">from</span> azureml.core.dataset <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line">&gt;<span class="comment"># detaset_name をデータセット名に置き換えて実行します。</span></span><br><span class="line">&gt;test_dataset = Dataset.get_by_name(workspace, &gt;name=<span class="string">'bankmarketing_test'</span>)</span><br></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># y 列を削除して pandas のデータフレーム形式に変換します。</span></span><br><span class="line">test = test_dataset.drop_columns(columns=[<span class="string">'y'</span>])</span><br><span class="line">test_df = test.to_pandas_dataframe()</span><br><span class="line"></span><br><span class="line"><span class="comment"># predict メソッドを使用して推論を実行します。</span></span><br><span class="line">pred  = model.predict(test_df)</span><br><span class="line">pred.tolist()</span><br></pre></td></tr></table></figure>
 
