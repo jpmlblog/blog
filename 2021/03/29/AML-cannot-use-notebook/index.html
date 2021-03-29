@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook2.jpg">
 <meta property="article:published_time" content="2021-03-28T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-29T02:20:46.042Z">
+<meta property="article:modified_time" content="2021-03-29T02:31:43.219Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Notebook">
 <meta property="article:tag" content="権限">
@@ -168,7 +168,6 @@
 <p>（コンピューティングインスタンス内部から参照した際のパス例： /mnt/batch/tasks/shared/LS_root/mounts/clusters/{コンピューティングインスタンス名}/code/Users/{ユーザー名}）　　</p>
 <p>そのため、Notebooksメニューと コンピューティング メニューのどちらのメニューを通じた利用でも、ファイルの数や内容は同じです。<br>もし、コンピューティング メニューの利用で問題が解消する場合には、こちらの回避策の利用のご検討をいただければ幸いです。  </p>
 <p>もし、コンピューティング メニュー利用による問題の回避が行えない場合には、次項の「Azure Active Directory へのネームドロケーションの登録追加」対応をご検討ください。</p>
-<hr>
 <h2 id="Azure-Active-Directory-へのネームドロケーションの登録追加"><a href="#Azure-Active-Directory-へのネームドロケーションの登録追加" class="headerlink" title="Azure Active Directory へのネームドロケーションの登録追加"></a>Azure Active Directory へのネームドロケーションの登録追加</h2><p>「アクセスできません」というエラーの権限の問題の根本的な対応として、テナント（Azure Active Directory）管理者様により、該当するコンピューティング インスタンスのIPアドレスをネームドロケーションとして追加登録していただくことで、問題が解消される可能性があります。</p>
 <p><a href="https://docs.microsoft.com/ja-jp/azure/active-directory/reports-monitoring/quickstart-configure-named-locations" target="_blank" rel="noopener">- クイック スタート:Azure Active Directory でネームド ロケーションを構成する</a></p>
 <blockquote>
