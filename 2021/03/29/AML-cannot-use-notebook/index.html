@@ -26,15 +26,16 @@
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
 <meta property="og:description" content="本記事では、Azure MachineLeaning Studio の Notebooks メニューで開いた Notebook で処理を実行した際に「現時点ではこれにはアクセスできません」とエラーメッセージが表示されてしまう場合の対応方法をご案内します。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/error_message.jpg">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook2.jpg">
 <meta property="article:published_time" content="2021-03-28T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-29T02:31:43.219Z">
+<meta property="article:modified_time" content="2021-03-29T13:17:53.061Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Notebook">
 <meta property="article:tag" content="権限">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg">
+<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/error_message.jpg">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -158,7 +159,10 @@
 <br>
 
 <hr>
-<h1 id="対応方法"><a href="#対応方法" class="headerlink" title="対応方法"></a>対応方法</h1><h2 id="Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避"><a href="#Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避" class="headerlink" title="Azure MachineLeaning Studio の Compute メニュー利用による回避"></a>Azure MachineLeaning Studio の Compute メニュー利用による回避</h2><p>Azure MachineLeaning Studio（以下 AML Studio） の Notebooks メニューで権限に関するエラーが表示された場合、コンピューティング メニュー のアプリケーション URI 配下のメニューから Notebook を開き直す対応で、問題が解消する場合があります。  </p>
+<h1 id="対応方法"><a href="#対応方法" class="headerlink" title="対応方法"></a>対応方法</h1><h2 id="Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避"><a href="#Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避" class="headerlink" title="Azure MachineLeaning Studio の Compute メニュー利用による回避"></a>Azure MachineLeaning Studio の Compute メニュー利用による回避</h2><p>Azure MachineLeaning Studio（以下 AML Studio） の Notebooks メニュー使用時に、権限に関するエラーが表示される場合があります。  </p>
+<img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/error_message.jpg" width=400px border="1">  
+
+<p>原因は Azure Active Directory 側の設定に依存する可能性がありますが、コンピューティング メニュー のアプリケーション URI 配下のメニューから Notebook を開き直す対応で、問題が解消する場合があります。  </p>
 <img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg" width=800px border="1">  
 
 <br>  
