@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook2.jpg">
 <meta property="article:published_time" content="2021-03-28T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-29T02:06:23.008Z">
+<meta property="article:modified_time" content="2021-03-29T02:20:46.042Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="Notebook">
 <meta property="article:tag" content="権限">
@@ -160,13 +160,15 @@
 <hr>
 <h1 id="対応方法"><a href="#対応方法" class="headerlink" title="対応方法"></a>対応方法</h1><h2 id="Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避"><a href="#Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避" class="headerlink" title="Azure MachineLeaning Studio の Compute メニュー利用による回避"></a>Azure MachineLeaning Studio の Compute メニュー利用による回避</h2><p>Azure MachineLeaning Studio（以下 AML Studio） の Notebooks メニューで権限に関するエラーが表示された場合、コンピューティング メニュー のアプリケーション URI 配下のメニューから Notebook を開き直す対応で、問題が解消する場合があります。  </p>
 <img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg" width=800px border="1">  
-Notebooks メニューと コンピューティング メニューにおいてはそれぞれのバックエンドの認証方法が異なります。  
-そのため、コンピューティング メニューから Notebook を実行した場合には、AML Studio への認証情報がコンピューティングインスタンスに連携されて権限エラーが生じない可能性があります。  
 
+<br>  
+
+<p>Notebooks メニューと コンピューティング メニューにおいてはそれぞれのバックエンドの認証方法が異なります。<br>そのため、コンピューティング メニューから Notebook を実行した場合には、AML Studio への認証情報がコンピューティングインスタンスに連携されて権限エラーが生じない可能性があります。  </p>
 <p>なお、AML Studio を通じて配置された Notebook などのファイルが存在する階層の実体は、AMLワークスペース既定のストレージアカウントです。　　</p>
 <p>（コンピューティングインスタンス内部から参照した際のパス例： /mnt/batch/tasks/shared/LS_root/mounts/clusters/{コンピューティングインスタンス名}/code/Users/{ユーザー名}）　　</p>
 <p>そのため、Notebooksメニューと コンピューティング メニューのどちらのメニューを通じた利用でも、ファイルの数や内容は同じです。<br>もし、コンピューティング メニューの利用で問題が解消する場合には、こちらの回避策の利用のご検討をいただければ幸いです。  </p>
 <p>もし、コンピューティング メニュー利用による問題の回避が行えない場合には、次項の「Azure Active Directory へのネームドロケーションの登録追加」対応をご検討ください。</p>
+<hr>
 <h2 id="Azure-Active-Directory-へのネームドロケーションの登録追加"><a href="#Azure-Active-Directory-へのネームドロケーションの登録追加" class="headerlink" title="Azure Active Directory へのネームドロケーションの登録追加"></a>Azure Active Directory へのネームドロケーションの登録追加</h2><p>「アクセスできません」というエラーの権限の問題の根本的な対応として、テナント（Azure Active Directory）管理者様により、該当するコンピューティング インスタンスのIPアドレスをネームドロケーションとして追加登録していただくことで、問題が解消される可能性があります。</p>
 <p><a href="https://docs.microsoft.com/ja-jp/azure/active-directory/reports-monitoring/quickstart-configure-named-locations" target="_blank" rel="noopener">- クイック スタート:Azure Active Directory でネームド ロケーションを構成する</a></p>
 <blockquote>
@@ -174,8 +176,10 @@ Notebooks メニューと コンピューティング メニューにおいて�
 </blockquote>
 <p>追加登録対象となるコンピューティングインスタンスのIPアドレスは、AMLスタジオ の Compute メニューで確認可能です。  </p>
 <img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook2.jpg" width=800px border="1">
-　　
 
+<br>
+
+<hr>
 <h1 id="エラーメッセージが表示される原因"><a href="#エラーメッセージが表示される原因" class="headerlink" title="エラーメッセージが表示される原因"></a>エラーメッセージが表示される原因</h1><h2 id="「条件付きアクセス」の設定"><a href="#「条件付きアクセス」の設定" class="headerlink" title="「条件付きアクセス」の設定"></a>「条件付きアクセス」の設定</h2><p>コンピューティングインスタンスが不詳なデバイスとして認識され、組織データである Azure ML ワークスペースへのアクセスが叶わないことが、エラーの原因となっている可能性があります。<br>「条件付きアクセス」の設定については、弊社 Azure Active Directory サポートチームがブログ記事に詳細を記載しています。</p>
 <p><a href="https://jpazureid.github.io/blog/azure-active-directory/conditional-cannot-access-rightnow/" target="_blank" rel="noopener"> - Japan Azure Identity Support Blog-「現時点ではこれにはアクセスできません」 エラーについて</a></p>
 <p>これは Azure Machine Learning の設定ではなく、テナント（Azure Active Directory）管理者による設定です。<br>そのため、まずはテナント管理者様に設定条件をご確認いただく必要があります。</p>
