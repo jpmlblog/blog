@@ -27,12 +27,12 @@
 <meta property="og:description" content="Azure Machine Learning を仮想ネットワーク環境で使用する場合に、参考となる情報を列記いたします。また、具体的な作成方法などを本記事にて紹介させていただきます。    仮想ネットワークの分離とプライバシーの概要   仮想ネットワークを使用して Azure Machine Learning ワークスペースをセキュリティで保護する   Azure 仮想ネットワークで Azure M">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/machine-learning/media/how-to-network-security-overview/secure-workspace-resources.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Studio-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Home-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Compute-menu-error.png">
-<meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Studio-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T02:25:41.307Z">
+<meta property="article:modified_time" content="2021-04-19T02:27:49.679Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -152,7 +152,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-メニュー-アクセス時のエラー"><span class="toc-number">2.1.</span> <span class="toc-text">Home メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-メニュー-アクセス時のエラー"><span class="toc-number">2.2.</span> <span class="toc-text">Notebooks メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-メニュー-アクセス時のエラー"><span class="toc-number">2.3.</span> <span class="toc-text">Compute メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-ブラウザのアクセス自体が失敗する場合"><span class="toc-number">2.4.</span> <span class="toc-text">Web ブラウザのアクセス自体が失敗する場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#カスタム-DNS-サーバーを使用している場合"><span class="toc-number">2.5.</span> <span class="toc-text">カスタム DNS サーバーを使用している場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ExpressRoute-や-Azure-VPN-経由でアクセスする場合"><span class="toc-number">2.6.</span> <span class="toc-text">ExpressRoute や Azure VPN 経由でアクセスする場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conmpte-Instance-作成時の留意点"><span class="toc-number">2.7.</span> <span class="toc-text">Conmpte Instance 作成時の留意点</span></a></li></ol></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-アクセスが失敗する場合"><span class="toc-number">2.1.</span> <span class="toc-text">Studio アクセスが失敗する場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-メニュー-アクセス時のエラー"><span class="toc-number">2.2.</span> <span class="toc-text">Home メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-メニュー-アクセス時のエラー"><span class="toc-number">2.3.</span> <span class="toc-text">Notebooks メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-メニュー-アクセス時のエラー"><span class="toc-number">2.4.</span> <span class="toc-text">Compute メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#カスタム-DNS-サーバーを使用している場合"><span class="toc-number">2.5.</span> <span class="toc-text">カスタム DNS サーバーを使用している場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ExpressRoute-や-Azure-VPN-経由でアクセスする場合"><span class="toc-number">2.6.</span> <span class="toc-text">ExpressRoute や Azure VPN 経由でアクセスする場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conmpte-Instance-作成時の留意点"><span class="toc-number">2.7.</span> <span class="toc-text">Conmpte Instance 作成時の留意点</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -281,6 +281,15 @@
 </li>
 </ul>
 <p>パブリック インターネット経由でアクセスした際に表示されるエラーメッセージを以下に紹介します。  </p>
+<h3 id="Studio-アクセスが失敗する場合"><a href="#Studio-アクセスが失敗する場合" class="headerlink" title="Studio アクセスが失敗する場合"></a>Studio アクセスが失敗する場合</h3><p><img src="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Studio-error.png" width=400px align="left" border="1"><br clear="left"> </p>
+<p>NSG を使用してインターネット接続を制限している場合、仮想ネットワーク上のリソースからであっても Azure Machine Learning Studio へのアクセスが出来ない場合があります。下記サイトに記載されております通り、AzureFrontDoor.Frontend のサービス タグ宛の通信を許可する必要がある点についてご留意ください。  </p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network#access-the-studio-from-a-resource-inside-the-vnet" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する #VNet 内のリソースから Studio にアクセスする</a>  <blockquote>
+<p>仮想ネットワーク内のリソース (コンピューティング インスタンスや仮想マシンなど) からスタジオにアクセスする場合は、仮想ネットワークからスタジオへの送信トラフィックを許可する必要があります。  </p>
+<p>たとえば、ネットワーク セキュリティ グループ (NSG) を使用して送信トラフィックを制限している場合は、 AzureFrontDoor.Frontend の サービス タグ 宛先に規則を追加します。</p>
+</blockquote>
+</li>
+</ul>
 <h3 id="Home-メニュー-アクセス時のエラー"><a href="#Home-メニュー-アクセス時のエラー" class="headerlink" title="Home メニュー アクセス時のエラー"></a>Home メニュー アクセス時のエラー</h3><p><img src="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Home-menu-error.png" width=700px align="left" border="1"><br clear="left">  </p>
 <blockquote>
 <p>REQUEST_SEND_ERROR: Your request for data wasn’t sent. Here are some things to try: Check your network and internet connection, make sure a proxy server is not blocking your connection, follow our guidelines if you’re using a private link, and check if you have AdBlock turned on.</p>
@@ -304,15 +313,6 @@
 </blockquote>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles" target="_blank" rel="noopener">Azure Machine Learning ワークスペースへのアクセスの管理</a></li>
-</ul>
-<h3 id="Web-ブラウザのアクセス自体が失敗する場合"><a href="#Web-ブラウザのアクセス自体が失敗する場合" class="headerlink" title="Web ブラウザのアクセス自体が失敗する場合"></a>Web ブラウザのアクセス自体が失敗する場合</h3><p><img src="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Studio-error.png" width=400px align="left" border="1"><br clear="left"> </p>
-<p>NSG を使用してインターネット接続を制限している場合、仮想ネットワーク上のリソースからであっても Azure Machine Learning Studio へのアクセスが出来ない場合があります。下記サイトに記載されております通り、AzureFrontDoor.Frontend のサービス タグ宛の通信を許可する必要がある点についてご留意ください。  </p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-enable-studio-virtual-network#access-the-studio-from-a-resource-inside-the-vnet" target="_blank" rel="noopener">Azure 仮想ネットワークで Azure Machine Learning Studio を使用する #VNet 内のリソースから Studio にアクセスする</a>  <blockquote>
-<p>仮想ネットワーク内のリソース (コンピューティング インスタンスや仮想マシンなど) からスタジオにアクセスする場合は、仮想ネットワークからスタジオへの送信トラフィックを許可する必要があります。  </p>
-<p>たとえば、ネットワーク セキュリティ グループ (NSG) を使用して送信トラフィックを制限している場合は、 AzureFrontDoor.Frontend の サービス タグ 宛先に規則を追加します。</p>
-</blockquote>
-</li>
 </ul>
 <h3 id="カスタム-DNS-サーバーを使用している場合"><a href="#カスタム-DNS-サーバーを使用している場合" class="headerlink" title="カスタム DNS サーバーを使用している場合"></a>カスタム DNS サーバーを使用している場合</h3><p>仮想ネットワークにカスタム DNS サーバーを設定している場合、DNS 名前解決にプライベート IP アドレスが返されず、アクセスに失敗する可能性があります。下記の情報に従い必要な設定をご検討ください。  </p>
 <ul>
