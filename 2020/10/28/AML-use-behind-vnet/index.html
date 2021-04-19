@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Notebooks-menu-error.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-use-behind-vnet/AML-Compute-menu-error.png">
 <meta property="article:published_time" content="2020-10-28T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-19T02:27:49.679Z">
+<meta property="article:modified_time" content="2021-04-19T02:32:32.183Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="仮想ネットワーク">
 <meta property="article:tag" content="Private Link">
@@ -152,7 +152,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-アクセスが失敗する場合"><span class="toc-number">2.1.</span> <span class="toc-text">Studio アクセスが失敗する場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-メニュー-アクセス時のエラー"><span class="toc-number">2.2.</span> <span class="toc-text">Home メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-メニュー-アクセス時のエラー"><span class="toc-number">2.3.</span> <span class="toc-text">Notebooks メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-メニュー-アクセス時のエラー"><span class="toc-number">2.4.</span> <span class="toc-text">Compute メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#カスタム-DNS-サーバーを使用している場合"><span class="toc-number">2.5.</span> <span class="toc-text">カスタム DNS サーバーを使用している場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ExpressRoute-や-Azure-VPN-経由でアクセスする場合"><span class="toc-number">2.6.</span> <span class="toc-text">ExpressRoute や Azure VPN 経由でアクセスする場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conmpte-Instance-作成時の留意点"><span class="toc-number">2.7.</span> <span class="toc-text">Conmpte Instance 作成時の留意点</span></a></li></ol></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#構築方法について"><span class="toc-number">1.</span> <span class="toc-text">構築方法について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用上の留意点"><span class="toc-number">2.</span> <span class="toc-text">利用上の留意点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-アクセスが失敗する場合"><span class="toc-number">2.1.</span> <span class="toc-text">Studio アクセスが失敗する場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Home-メニュー-アクセス時のエラー"><span class="toc-number">2.2.</span> <span class="toc-text">Home メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notebooks-メニュー-アクセス時のエラー"><span class="toc-number">2.3.</span> <span class="toc-text">Notebooks メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-メニュー-アクセス時のエラー"><span class="toc-number">2.4.</span> <span class="toc-text">Compute メニュー アクセス時のエラー</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#カスタム-DNS-サーバーを使用している場合"><span class="toc-number">2.5.</span> <span class="toc-text">カスタム DNS サーバーを使用している場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ExpressRoute-や-Azure-VPN-経由でアクセスする場合"><span class="toc-number">2.6.</span> <span class="toc-text">ExpressRoute や Azure VPN 経由でアクセスする場合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Compute-Instance-作成時の留意点"><span class="toc-number">2.7.</span> <span class="toc-text">Compute Instance 作成時の留意点</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -319,12 +319,14 @@
 <li><a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-custom-dns?tabs=azure-portal" target="_blank" rel="noopener">カスタム DNS サーバーでワークスペースを使用する方法</a></li>
 </ul>
 <h3 id="ExpressRoute-や-Azure-VPN-経由でアクセスする場合"><a href="#ExpressRoute-や-Azure-VPN-経由でアクセスする場合" class="headerlink" title="ExpressRoute や Azure VPN 経由でアクセスする場合"></a>ExpressRoute や Azure VPN 経由でアクセスする場合</h3><p>オンプレミスのマシンから ExpressRoute や Azure VPN 経由でワークスペースにアクセスする場合、名前解決で参照先 DNS サーバーの設定に依存してパブリック IP アドレスが返却されてしまい、アクセスが失敗する可能性があります。上述のカスタム DNS サーバーの設定をオンプレミスの DNS サーバーを対象に実施いただくことをご検討ください。</p>
-<h3 id="Conmpte-Instance-作成時の留意点"><a href="#Conmpte-Instance-作成時の留意点" class="headerlink" title="Conmpte Instance 作成時の留意点"></a>Conmpte Instance 作成時の留意点</h3><p>ワークスペースで Private Link を有効にしている場合、Compute Instance および Compute Cluster は仮想ネットワーク上にしか作成できなくなります。この時、Compute Instance を作成すると仮想ネットワーク リソースのあるリソース グループ配下に、Load Balancer、Public IP Address、Network Security Group が作成されます。これらのリソースは Compute Instance に紐づいて作成されるため、現時点で別リソース グループに移動したり、作成時点で別のリソース グループを指定できない仕様になっております。  </p>
-<p>リソース グループ単位での管理を行う必要がある場合、仮想ネットワークを Azure Machine Learning ワークスペースと同じリソース グループに作成いただく必要がございますこと、予めご竜願います。  </p>
-<p>※ 当該仕様変更リクエストを下記フィードバック サイトにて投稿しております。投票数が多いものから追加を検討される傾向にありますので、必要に応じてご投票およびコメントの追加にご協力いただけますと幸いです。  </p>
+<h3 id="Compute-Instance-作成時の留意点"><a href="#Compute-Instance-作成時の留意点" class="headerlink" title="Compute Instance 作成時の留意点"></a>Compute Instance 作成時の留意点</h3><p>ワークスペースで Private Link を有効にしている場合、Compute Instance および Compute Cluster は仮想ネットワーク上にしか作成できなくなります。この時、Compute Instance を作成すると仮想ネットワーク リソースのあるリソース グループ配下に、Load Balancer、Public IP Address、Network Security Group が作成されます。これらのリソースは Compute Instance に紐づいて作成されるため、別リソース グループに移動したり、作成時点で別のリソース グループを指定できない仕様になっております。  </p>
+<p>リソース グループ単位での管理を行う必要がある場合、仮想ネットワークを Azure Machine Learning ワークスペースと同じリソース グループに作成いただく必要がございますこと、予めご留意願います。  </p>
+<blockquote>
+<p><font color="#FF0000">当該仕様変更リクエストを下記フィードバック サイトにて投稿しております。投票数が多いものから追加を検討される傾向にありますので、必要に応じてご投票およびコメントの追加にご協力いただけますと幸いです。</font>  </p>
 <ul>
 <li><a href="https://feedback.azure.com/forums/257792-machine-learning/suggestions/43181112-change-resource-group-for-lb-public-ip-and-nsg-o" target="_blank" rel="noopener">Change resource group for LB, Public IP, and NSG of Compute Instance</a></li>
 </ul>
+</blockquote>
 <br>
 ※ 順次追加予定です。
 
