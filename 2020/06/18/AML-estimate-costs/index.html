@@ -28,7 +28,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-estimate-costs/support-request-for-billing.png">
 <meta property="article:published_time" content="2020-06-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-26T02:26:59.601Z">
+<meta property="article:modified_time" content="2021-05-26T02:40:55.014Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="価格">
 <meta name="twitter:card" content="summary">
@@ -170,17 +170,17 @@
 <p><font color="#FF0000"><strong>注意:</strong><br>VM としての料金に加えて、下記 3 つのサービスに対して課金が発生いたします。<del>これは、コンピューティング インスタンスで使用する VMSS (仮想マシン スケール セット) に紐づいており、コンピューティング インスタンスを停止しても VMSS は削除されないため、課金も継続いたします。</del>  </p>
 <p>例 (東日本リージョン):  </p>
 <ul>
-<li>スタンダード ロード バランサー (約 42.336 [円/日])</li>
-<li>スタンダード (静的) パブリック IP アドレス (約 8.467 [円/日])</li>
-<li>マネージド ディスク (VM サイズや利用状況に依存 例: Standard_D11_v2 作成直後で約 4.268 [円/日])</li>
+<li>スタンダード ロード バランサー (約 1.764 [円/時間])</li>
+<li>スタンダード (静的) パブリック IP アドレス (約 0.353 [円/時間])</li>
+<li>マネージド ディスク (VM サイズや利用状況に依存 例: Standard_D11_v2 作成直後で約 0.178 [円/時間])</li>
 </ul>
 <p><del>(参考) <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-compute-instance#managing-a-compute-instance" target="_blank" rel="noopener">Managing a compute instance</a></del>  </p>
 <blockquote>
 <p><del>コンピューティング インスタンスを開始、停止、再起動する。 インスタンスは、実行されるたびに支払いが発生します。 コンピューティング インスタンスを使用していないときは、コストを削減するために、コンピューティング インスタンスを停止します。 <strong>コンピューティング インスタンスを停止すると、そのインスタンスは解放されます。 その後、必要なときにもう一度開始します。 コンピューティング インスタンスを停止すると、コンピューティング時間の課金は停止しますが、ディスク、パブリック IP、および Standard Load Balancer に対しては引き続き課金されます。</strong></del><br></font></p>
 </blockquote>
 <p>(VM)<br><code>25.648 [円/時間] x 10 [時間/日] x 20 [日] = 5129.6 [円]</code>  </p>
-<p><del>(関連サービス)</del><br><del><code>(42.336 + 8.467 + 4.268 [円/日]) x 30 [日] = 1652.13 [円]</code></del>  </p>
-<p><del>→ 合計 <code>5129.6 + 1652.13 = 6781.73 [円]</code></del>  </p>
+<p>(関連サービス)<br><code>(1.764 + 0.353 + 0.178 [円/日])  x 10 [時間/日] x 20 [日] = 459 [円]</code>  </p>
+<p>→ 合計 <code>5129.6 + 459 = 5588.6 [円]</code>  </p>
 <ul>
 <li>参考サイト<br><a href="https://azure.microsoft.com/ja-jp/pricing/details/machine-learning/" target="_blank" rel="noopener">Azure Machine Learning の価格</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/details/load-balancer/" target="_blank" rel="noopener">Load Balancer の価格</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/details/ip-addresses/" target="_blank" rel="noopener">パブリック IP アドレスの料金</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/calculator/?service=machine-learning-service" target="_blank" rel="noopener">料金計算ツール (+Azure Machine Learning)</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/linux/" target="_blank" rel="noopener">Linux Virtual Machines の料金</a>  </li>
 </ul>
