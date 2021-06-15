@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: モデル登録 | Japan Machine Learning Support Blog</title>
+  <title>既定のストレージ アカウント上のデータ配置について | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,13 +19,25 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Machine Learning Support Blog">
-<meta property="og:url" content="https://jpmlblog.github.io/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/index.html">
+  <meta name="description" content="Azure Machine Learning ワークスペースが既定で使用するストレージ アカウントについて、作成したノートブック データや、実験時のログ、アップロードしたファイルなどの格納される場所について紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="既定のストレージ アカウント上のデータ配置について">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/2021/06/16/AML-blob-data-location/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
+<meta property="og:description" content="Azure Machine Learning ワークスペースが既定で使用するストレージ アカウントについて、作成したノートブック データや、実験時のログ、アップロードしたファイルなどの格納される場所について紹介します。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-data-location/AML-UI-notebooks.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-data-location/AML-Fileshare-code.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-data-location/AML-UI-experiment-detail.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-data-location/AML-UI-experiment-output.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML-data-location/AML-Blob-experimentrun.png">
+<meta property="article:published_time" content="2021-06-15T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-06-15T16:16:07.737Z">
 <meta property="article:author" content="jpmlblog">
+<meta property="article:tag" content="Blob コンテナー">
+<meta property="article:tag" content="ファイル共有">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-data-location/AML-UI-notebooks.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -120,57 +132,88 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Tag : モデル登録'}
-  </script>
-
-<section class="post-list">
+        <article id="post-AML-blob-data-location"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2021/06/16/AML-blob-data-location/">
+    	既定のストレージ アカウント上のデータ配置について
+    </a>
+  </h2>
+	<time>
+	  6月 16, 2021
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/08/25/AML-register-and-deploy-model/">
-        Azure Machine Learning Studio でモデル登録およびデプロイする場合の留意点について
-      </a>
-    </h2>
-    
-    <time>
-      8月 25, 2020
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>Azure Machine Learning Studio でモデル登録する場合の留意点についてお纏めします。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Notebooks-メニューから参照可能なファイル"><span class="toc-number">1.</span> <span class="toc-text">Notebooks メニューから参照可能なファイル</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#実験の成果物"><span class="toc-number">2.</span> <span class="toc-text">実験の成果物</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Azure Machine Learning ワークスペースが既定で使用するストレージ アカウントについて、作成したノートブック データや、実験時のログ、アップロードしたファイルなどの格納される場所について紹介します。  </p>
+<a id="more"></a>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/08/25/AML-register-and-deploy-model/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h2 id="Notebooks-メニューから参照可能なファイル"><a href="#Notebooks-メニューから参照可能なファイル" class="headerlink" title="Notebooks メニューから参照可能なファイル"></a>Notebooks メニューから参照可能なファイル</h2><p>Azure Machine Learning Studio の [Notebooks] メニューより参照可能なファイルやフォルダーは、ワークスペースが既定で使用するストレージ アカウントのファイル共有 <code>code-&lt;GUID&gt;/Users</code> 配下に格納されます。  </p>
+<ul>
+<li><p>例: Notebooks のフォルダー ツリー<br><img src="https://jpmlblog.github.io/images/AML-data-location/AML-UI-notebooks.png" align="left"><br clear="left">  </p>
+</li>
+<li><p>例: <code>code-&lt;GUID&gt;/Users</code> 配下<br><img src="https://jpmlblog.github.io/images/AML-data-location/AML-Fileshare-code.png" align="left"><br clear="left">  </p>
+</li>
+</ul>
+<hr>
+<h2 id="実験の成果物"><a href="#実験の成果物" class="headerlink" title="実験の成果物"></a>実験の成果物</h2><p>Azure Machine Learning Studio の [実験] メニューより参照可能な成果物 (ログ ファイルやモデル ファイル等) は、ワークスペースが既定で使用するストレージ アカウントの Blob コンテナー <code>azureml/ExperimentRun/dcid.&lt;実行 ID&gt;</code> 配下に格納されます。  </p>
+<ul>
+<li><p>例: 実験の [詳細] タブ<br><img src="https://jpmlblog.github.io/images/AML-data-location/AML-UI-experiment-detail.png" align="left"><br clear="left">  </p>
+</li>
+<li><p>例: 実験の [出力とログ] タブ<br><img src="https://jpmlblog.github.io\images\AML-data-location\AML-UI-experiment-output.png" align="left"><br clear="left">  </p>
+</li>
+<li><p>例: <code>azureml/ExperimentRun/dcid.&lt;実行 ID&gt;</code> 配下<br><img src="https://jpmlblog.github.io\images\AML-data-location\AML-Blob-experimentrun.png" align="left"><br clear="left">  </p>
+</li>
+</ul>
+<hr>
+<p>※ 適宜追加予定です。</p>
+<hr>
+<p><code>変更履歴</code><br><code>2021/6/16 created by Mochizuki</code></p>
+<p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/">モデル登録</a>
+        <a href="/blog/tags/Blob-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BC/">Blob コンテナー</a>
       
-        <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/">デプロイ</a>
+        <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%85%B1%E6%9C%89/">ファイル共有</a>
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2021/03/29/AML-cannot-use-notebook/" rel="next"  title="Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法">
+						Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: '既定のストレージ アカウント上のデータ配置について',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>

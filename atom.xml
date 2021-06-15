@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmlblog.github.io/blog/"/>
-  <updated>2021-06-11T04:08:44.913Z</updated>
+  <updated>2021-06-15T16:16:07.737Z</updated>
   <id>https://jpmlblog.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>既定のストレージ アカウント上のデータ配置について</title>
+    <link href="https://jpmlblog.github.io/blog/2021/06/16/AML-blob-data-location/"/>
+    <id>https://jpmlblog.github.io/blog/2021/06/16/AML-blob-data-location/</id>
+    <published>2021-06-15T15:00:00.000Z</published>
+    <updated>2021-06-15T16:16:07.737Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Azure Machine Learning ワークスペースが既定で使用するストレージ アカウントについて、作成したノートブック データや、実験時のログ、アップロードしたファイルなどの格納される場所について紹介します。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
+    
+    
+      <category term="Blob コンテナー" scheme="https://jpmlblog.github.io/blog/tags/Blob-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BC/"/>
+    
+      <category term="ファイル共有" scheme="https://jpmlblog.github.io/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%85%B1%E6%9C%89/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法</title>
     <link href="https://jpmlblog.github.io/blog/2021/03/29/AML-cannot-use-notebook/"/>
     <id>https://jpmlblog.github.io/blog/2021/03/29/AML-cannot-use-notebook/</id>
     <published>2021-03-28T15:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.913Z</updated>
+    <updated>2021-06-15T16:16:07.742Z</updated>
     
     <summary type="html">
     
@@ -44,7 +67,7 @@
     <link href="https://jpmlblog.github.io/blog/2021/01/13/AML-model-inference/"/>
     <id>https://jpmlblog.github.io/blog/2021/01/13/AML-model-inference/</id>
     <published>2021-01-13T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.038Z</updated>
+    <updated>2021-06-15T16:16:07.862Z</updated>
     
     <summary type="html">
     
@@ -67,7 +90,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/12/24/AML-deep-learning-for-automl/"/>
     <id>https://jpmlblog.github.io/blog/2020/12/24/AML-deep-learning-for-automl/</id>
     <published>2020-12-24T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.936Z</updated>
+    <updated>2021-06-15T16:16:07.752Z</updated>
     
     <summary type="html">
     
@@ -88,7 +111,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/11/30/AML-scheduled-pipeline/"/>
     <id>https://jpmlblog.github.io/blog/2020/11/30/AML-scheduled-pipeline/</id>
     <published>2020-11-30T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.083Z</updated>
+    <updated>2021-06-15T16:16:07.909Z</updated>
     
     <summary type="html">
     
@@ -109,7 +132,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/10/28/AML-use-behind-vnet/"/>
     <id>https://jpmlblog.github.io/blog/2020/10/28/AML-use-behind-vnet/</id>
     <published>2020-10-28T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.109Z</updated>
+    <updated>2021-06-15T16:16:07.937Z</updated>
     
     <summary type="html">
     
@@ -139,7 +162,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/"/>
     <id>https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/</id>
     <published>2020-10-19T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.930Z</updated>
+    <updated>2021-06-15T16:16:07.746Z</updated>
     
     <summary type="html">
     
@@ -162,7 +185,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/"/>
     <id>https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/</id>
     <published>2020-10-10T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.055Z</updated>
+    <updated>2021-06-15T16:16:07.879Z</updated>
     
     <summary type="html">
     
@@ -185,7 +208,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/"/>
     <id>https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/</id>
     <published>2020-09-24T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.993Z</updated>
+    <updated>2021-06-15T16:16:07.819Z</updated>
     
     <summary type="html">
     
@@ -206,7 +229,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/</id>
     <published>2020-08-31T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.124Z</updated>
+    <updated>2021-06-15T16:16:07.950Z</updated>
     
     <summary type="html">
     
@@ -227,7 +250,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/</id>
     <published>2020-08-31T00:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.012Z</updated>
+    <updated>2021-06-15T16:16:07.835Z</updated>
     
     <summary type="html">
     
@@ -248,7 +271,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/</id>
     <published>2020-08-25T08:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.060Z</updated>
+    <updated>2021-06-15T16:16:07.883Z</updated>
     
     <summary type="html">
     
@@ -271,7 +294,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/</id>
     <published>2020-08-18T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.952Z</updated>
+    <updated>2021-06-15T16:16:07.766Z</updated>
     
     <summary type="html">
     
@@ -295,7 +318,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/"/>
     <id>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</id>
     <published>2020-06-18T00:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.966Z</updated>
+    <updated>2021-06-15T16:16:07.787Z</updated>
     
     <summary type="html">
     
@@ -316,7 +339,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/"/>
     <id>https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.066Z</updated>
+    <updated>2021-06-15T16:16:07.888Z</updated>
     
     <summary type="html">
     
@@ -337,7 +360,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/04/22/reference-websites/"/>
     <id>https://jpmlblog.github.io/blog/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.167Z</updated>
+    <updated>2021-06-15T16:16:07.976Z</updated>
     
     <summary type="html">
     
@@ -358,7 +381,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/04/22/FAQ/"/>
     <id>https://jpmlblog.github.io/blog/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.143Z</updated>
+    <updated>2021-06-15T16:16:07.963Z</updated>
     
     <summary type="html">
     
@@ -379,7 +402,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
     <id>https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2021-06-11T04:08:45.017Z</updated>
+    <updated>2021-06-15T16:16:07.842Z</updated>
     
     <summary type="html">
     
@@ -400,7 +423,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/"/>
     <id>https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2021-06-11T04:08:44.907Z</updated>
+    <updated>2021-06-15T16:16:07.733Z</updated>
     
     <summary type="html">
     
