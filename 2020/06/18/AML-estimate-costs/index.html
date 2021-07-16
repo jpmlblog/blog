@@ -28,7 +28,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-estimate-costs/support-request-for-billing.png">
 <meta property="article:published_time" content="2020-06-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-14T02:19:59.385Z">
+<meta property="article:modified_time" content="2021-07-16T04:10:01.377Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="価格">
 <meta name="twitter:card" content="summary">
@@ -197,9 +197,9 @@
 <blockquote>
 <p>注意:<br>Azure Machine Learning で ACI にモデルをデプロイする場合、指定したコンテナーに加えて azureml-fe-aci (それぞれ vCPU 0.1、メモリ 0.5 GiB) が作成されます。</p>
 </blockquote>
-<p>(vCPU)<br><code>0.0015743 [円/秒/vCPU] x 1.9 [vCPU] x 3600 [秒/時間] x 24 [時間/日] x 30 [日] = 7753.11264 [円]</code>  </p>
-<p>(メモリ)<br><code>0.0001721 [円/秒/GiB] x 4.5 [Gib] x 3600 [秒/時間] x 24 [時間/日] x 30 [日] = 2007.3744 [円]</code>  </p>
-<p>→ 合計 <code>7753.11264 + 2007.3744 = 9760.48704 [円]</code></p>
+<p>(vCPU)<br><code>0.0015120 [円/秒/vCPU] x 1.9 [vCPU] x 3600 [秒/時間] x 24 [時間/日] x 30 [日] = 7446.2976 [円]</code>  </p>
+<p>(メモリ)<br><code>0.0001659 [円/秒/GiB] x 4.5 [Gib] x 3600 [秒/時間] x 24 [時間/日] x 30 [日] = 1935.0576 [円]</code>  </p>
+<p>→ 合計 <code>7446.2976 + 1935.0576 = 9381.3552 [円]</code></p>
 <ul>
 <li>参考サイト<br><a href="https://azure.microsoft.com/ja-jp/pricing/details/container-instances/" target="_blank" rel="noopener">Container Instances の価格</a><br><a href="https://azure.microsoft.com/ja-jp/pricing/calculator/?service=container-instances" target="_blank" rel="noopener">料金計算ツール (+Container Instance)</a>  </li>
 </ul>
