@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpmlblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Azure Machine Learning Studio でモデル登録する場合の留意点についてお纏めします。">
 <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-register-and-deploy-model/Deploy-model-button.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-register-and-deploy-model/Deploy-model-config.png">
 <meta property="article:published_time" content="2020-08-25T08:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-16T04:10:01.498Z">
+<meta property="article:modified_time" content="2021-07-19T06:48:03.309Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="モデル登録">
 <meta property="article:tag" content="デプロイ">
@@ -50,8 +50,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -151,19 +150,19 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#モデルの登録"><span class="toc-number">1.</span> <span class="toc-text">モデルの登録</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#モデルのデプロイ"><span class="toc-number">2.</span> <span class="toc-text">モデルのデプロイ</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E7%99%BB%E9%8C%B2"><span class="toc-number">1.</span> <span class="toc-text">モデルの登録</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4"><span class="toc-number">2.</span> <span class="toc-text">モデルのデプロイ</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Azure Machine Learning Studio でモデル登録する場合の留意点についてお纏めします。</p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
-<p>Azure Machine Learning Studio (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) のユーザー インターフェイスでは、モデル登録およびデプロイを行うことができます。この時、設定方法が誤っているとモデルのデプロイ操作が長時間完了せず、結果として登録が失敗する場合があります。  </p>
+<p>Azure Machine Learning Studio (<a target="_blank" rel="noopener" href="https://ml.azure.com/">https://ml.azure.com/</a>) のユーザー インターフェイスでは、モデル登録およびデプロイを行うことができます。この時、設定方法が誤っているとモデルのデプロイ操作が長時間完了せず、結果として登録が失敗する場合があります。  </p>
 <p>本記事では、具体的な例を挙げて手順を詳細させていただきます。  </p>
 <hr>
-<h2 id="モデルの登録"><a href="#モデルの登録" class="headerlink" title="モデルの登録"></a>モデルの登録</h2><p>Azure Machine Learning Studio (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) の [アセット] - [モデル] の [+ モデルの登録] をクリックします。  </p>
+<h2 id="モデルの登録"><a href="#モデルの登録" class="headerlink" title="モデルの登録"></a>モデルの登録</h2><p>Azure Machine Learning Studio (<a target="_blank" rel="noopener" href="https://ml.azure.com/">https://ml.azure.com/</a>) の [アセット] - [モデル] の [+ モデルの登録] をクリックします。  </p>
 <img src="https://jpmlblog.github.io/images/AML-register-and-deploy-model/Register-model-button.png" width=500px>  
 
 <p>表示された入力項目のうち、* マークのある項目を全て埋めて [登録] ボタンをクリックします。  </p>
@@ -171,13 +170,13 @@
 
 <p>この時、以下の点に留意ください。</p>
 <ul>
-<li>モデル フレームワークを誤って選択するとデプロイに失敗します。不明な場合には、[その他] を選択し、フレーム ワーク名、バージョンは空欄にします。指定するとデプロイが簡略化されますが、指定しなくても登録可能です。<br> (参考情報) <a href="https://docs.microsoft.com/ja-jp/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py" target="_blank" rel="noopener">Model class</a>  <blockquote>
+<li>モデル フレームワークを誤って選択するとデプロイに失敗します。不明な場合には、[その他] を選択し、フレーム ワーク名、バージョンは空欄にします。指定するとデプロイが簡略化されますが、指定しなくても登録可能です。<br> (参考情報) <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py">Model class</a>  <blockquote>
 <p>The framework of the registered model. Using the system-supported constants from the Framework class allows for simplified deployment for some popular frameworks.</p>
 </blockquote>
 </li>
 </ul>
 <hr>
-<h2 id="モデルのデプロイ"><a href="#モデルのデプロイ" class="headerlink" title="モデルのデプロイ"></a>モデルのデプロイ</h2><p>Azure Machine Learning Studio (<a href="https://ml.azure.com/" target="_blank" rel="noopener">https://ml.azure.com/</a>) の [アセット] - [モデル] より、登録されているモデルをクリックします。  </p>
+<h2 id="モデルのデプロイ"><a href="#モデルのデプロイ" class="headerlink" title="モデルのデプロイ"></a>モデルのデプロイ</h2><p>Azure Machine Learning Studio (<a target="_blank" rel="noopener" href="https://ml.azure.com/">https://ml.azure.com/</a>) の [アセット] - [モデル] より、登録されているモデルをクリックします。  </p>
 <img src="https://jpmlblog.github.io/images/AML-register-and-deploy-model/Deploy-model-button.png" width=500px>  
 
 <p>表示された入力項目のうち、* マークのある項目を全て埋めて [登録] ボタンをクリックします。  </p>
@@ -185,12 +184,12 @@
 
 <p>この時、以下の点に留意ください。  </p>
 <ul>
-<li><p>エントリ スクリプト ファイルおよび Conda 依存関係ファイルは下記サイトを参考にご準備ください。<br> (参考情報) <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=python#define-an-entry-script" target="_blank" rel="noopener">エントリ スクリプトを定義する</a><br> (参考情報) <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=python#define-an-inference-configuration" target="_blank" rel="noopener">推論構成を定義する</a>  </p>
+<li><p>エントリ スクリプト ファイルおよび Conda 依存関係ファイルは下記サイトを参考にご準備ください。<br> (参考情報) <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=python#define-an-entry-script">エントリ スクリプトを定義する</a><br> (参考情報) <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-and-where?tabs=python#define-an-inference-configuration">推論構成を定義する</a>  </p>
 </li>
 <li><p>エントリ スクリプト ファイルのモデル指定に誤りがあったり、Conda 依存関係ファイルが誤っていると、デプロイ操作がエラーの表示なく長時間完了しない場合があります。デプロイ先のリソースにエラーが記録されている場合がありますので、厳密な調査が必要となりましたら、モデルファイル、エントリ スクリプト ファイル、Conda 依存関係ファイルと共にサポート リクエストを発行ください。  </p>
 </li>
 </ul>
-<p><b><u>(参考) 自動 ML (Automated Machine Learning) のモデルのデプロイ</b></u><br>自動 ML の実行結果からモデルをデプロイする場合、エントリ スクリプト ファイルおよび Conda 依存関係ファイルを指定する必要はありません。具体的な操作内容は下記サイトを参照ください。<br>(参考情報) <a href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-use-automated-ml-for-ml-models#deploy-your-model" target="_blank" rel="noopener">モデルをデプロイする</a></p>
+<p><b><u>(参考) 自動 ML (Automated Machine Learning) のモデルのデプロイ</b></u><br>自動 ML の実行結果からモデルをデプロイする場合、エントリ スクリプト ファイルおよび Conda 依存関係ファイルを指定する必要はありません。具体的な操作内容は下記サイトを参照ください。<br>(参考情報) <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-use-automated-ml-for-ml-models#deploy-your-model">モデルをデプロイする</a></p>
 <hr>
 <p><code>変更履歴</code><br><code>2020/08/25 created by Mochizuki</code>  </p>
 
@@ -319,7 +318,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 

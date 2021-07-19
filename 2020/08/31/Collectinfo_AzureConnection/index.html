@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpmlblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Azure Machine Learning サービスのご利用時に、HTTP ステータス コードなどネットワーク関連のエラーが表示される場合があります。問題の調査にはネットワーク関連の情報が必要となります。以下に、汎用的な情報採取手順を紹介します。">
 <meta property="og:type" content="article">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
 <meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-16T04:10:01.579Z">
+<meta property="article:modified_time" content="2021-07-19T06:48:03.363Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
@@ -51,8 +51,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -152,12 +151,12 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#対象"><span class="toc-number">1.</span> <span class="toc-text">対象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事前準備"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#影響"><span class="toc-number">3.</span> <span class="toc-text">影響</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#実行手順"><span class="toc-number">4.</span> <span class="toc-text">実行手順</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BE%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">対象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%B1%E9%9F%BF"><span class="toc-number">3.</span> <span class="toc-text">影響</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9F%E8%A1%8C%E6%89%8B%E9%A0%86"><span class="toc-number">4.</span> <span class="toc-text">実行手順</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Azure Machine Learning サービスのご利用時に、HTTP ステータス コードなどネットワーク関連のエラーが表示される場合があります。問題の調査にはネットワーク関連の情報が必要となります。以下に、汎用的な情報採取手順を紹介します。  </p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
@@ -168,7 +167,7 @@
 <h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。<br>(3) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>1</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
 <p>※ CollectInfo_AzureConnection.bat のコマンド プロンプトは起動したままにしておきます。  </p>
 <p>(4) Microsoft Edge (Chromium) または Chrome を起動し、問題が再現する操作の直前まで画面を進めます。  </p>
-<p>※ (5) ～ (11) の手順は 「<a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace" target="_blank" rel="noopener">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
+<p>※ (5) ～ (11) の手順は 「<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
 <p>(5) F12 キーを押下し、デベロッパー ツールを起動します。<br>(6) [Network]タブを選択し、[Preserve log] を選択します。  </p>
 <p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png" alt="chromium-network-preserve-log.png">  </p>
 <p>(7) [Console] タブを選択し、[Console settings] を選択してから、[Preserve Log] を選択します。[Console settings] をもう一度選択して、設定ペインを閉じます。  </p>
@@ -180,11 +179,11 @@
 <p>※ 事象の再現を確認、そのまま十数秒ほど待ちます。  </p>
 <p>(10) [Stop recording network log] を選択し、 [Export HAR] を選択して任意の場所に .har ファイルを保存します。  </p>
 <p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png" alt="chromium-network-export-har.png">  </p>
-<p>(11) <a href="コンソール">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。  </p>
+<p>(11) <a href="%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。  </p>
 <p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png" alt="chromium-console-select.png">  </p>
 <p>※ 以下、CollectInfo_AzureConnection.bat のコマンド プロンプトにて再度操作を実施します。  </p>
 <p>(12) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>2</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(13) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>3</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(14) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>q</code> を入力、リターン キーを押下してツールを終了します。<br>(15) 手順 (10) および (11) で保存したファイル (拡張子 .har および .log のファイル) と、デスクトップ上 <code>&lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info</code> フォルダーをまとめて ZIP 圧縮し、お問い合わせいただく際にご提供ください。  </p>
-<p>※ サポート リクエストに関する参考情報<br>・ <a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request" target="_blank" rel="noopener">Azure サポート要求を作成する</a><br>・ <a href="https://azure.microsoft.com/ja-jp/support/create-ticket/" target="_blank" rel="noopener">サポート チケットの作成</a></p>
+<p>※ サポート リクエストに関する参考情報<br>・ <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a><br>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/support/create-ticket/">サポート チケットの作成</a></p>
 <hr>
 <p>本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。  </p>
 <p><code>変更履歴</code><br><code>2020/08/31 created by Mochizuki</code></p>
@@ -312,7 +311,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 
