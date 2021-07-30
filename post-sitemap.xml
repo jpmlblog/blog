@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</loc>
+        <lastmod>2021-07-30T02:48:44.092Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://jpmlblog.github.io/blog/2020/04/22/reference-websites/</loc>
         <lastmod>2021-07-29T00:56:41.243Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -106,14 +114,6 @@
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/</loc>
         <lastmod>2021-07-29T00:56:41.135Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</loc>
-        <lastmod>2021-07-29T00:56:41.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
