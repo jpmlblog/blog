@@ -28,7 +28,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-estimate-costs/support-request-for-billing.png">
 <meta property="article:published_time" content="2020-06-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-19T13:54:56.857Z">
+<meta property="article:modified_time" content="2021-10-20T16:53:56.386Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="価格">
 <meta name="twitter:card" content="summary">
@@ -146,7 +146,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%B3%E3%82%B9%E3%83%88%E8%A6%8B%E7%A9%8D%E3%82%82%E3%82%8A%E4%BE%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">コスト見積もり例について</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">コンピューティング インスタンス</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC"><span class="toc-number">1.2.</span> <span class="toc-text">コンピューティング クラスター</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%AB%96%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC-Azure-Kubernetes-Service-AKS"><span class="toc-number">1.3.</span> <span class="toc-text">推論クラスター (Azure Kubernetes Service, AKS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Azure-Container-Instance-ACI"><span class="toc-number">1.4.</span> <span class="toc-text">Azure Container Instance (ACI)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%8B%E7%A9%8D%E3%82%82%E3%82%8A%E3%81%8C%E9%9B%A3%E3%81%97%E3%81%84%E3%82%B3%E3%82%B9%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">見積もりが難しいコストについて</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%B5%E3%83%96-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.1.</span> <span class="toc-text">サブ リソースについて</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4%E6%99%82%E3%81%AE%E7%95%99%E6%84%8F%E7%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">3.</span> <span class="toc-text">ワークスペース削除時の留意点について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%8B%E7%A9%8D%E3%82%82%E3%82%8A%E3%81%AE%E4%BE%9D%E9%A0%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">4.</span> <span class="toc-text">見積もりの依頼について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9F%E9%9A%9B%E3%81%AB%E3%81%8B%E3%81%8B%E3%81%A3%E3%81%9F%E3%82%B3%E3%82%B9%E3%83%88%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"><span class="toc-number">5.</span> <span class="toc-text">実際にかかったコストに関する問い合わせ</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%B3%E3%82%B9%E3%83%88%E8%A6%8B%E7%A9%8D%E3%82%82%E3%82%8A%E4%BE%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">コスト見積もり例について</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">コンピューティング インスタンス</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC"><span class="toc-number">1.2.</span> <span class="toc-text">コンピューティング クラスター</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%AB%96%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC-Azure-Kubernetes-Service-AKS"><span class="toc-number">1.3.</span> <span class="toc-text">推論クラスター (Azure Kubernetes Service, AKS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Azure-Container-Instance-ACI"><span class="toc-number">1.4.</span> <span class="toc-text">Azure Container Instance (ACI)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%8B%E7%A9%8D%E3%82%82%E3%82%8A%E3%81%8C%E9%9B%A3%E3%81%97%E3%81%84%E3%82%B3%E3%82%B9%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">見積もりが難しいコストについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%B5%E3%83%96-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">3.</span> <span class="toc-text">サブ リソースについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4"><span class="toc-number">4.</span> <span class="toc-text">ワークスペース削除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E4%BE%A1%E6%A0%BC%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"><span class="toc-number">5.</span> <span class="toc-text">サービスの価格に関する問い合わせ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%8B%E7%A9%8D%E3%82%82%E3%82%8A%E3%81%AE%E4%BE%9D%E9%A0%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">6.</span> <span class="toc-text">見積もりの依頼について</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -157,10 +157,8 @@
 <hr>
 <p>本記事では具体的なコストの見積もり例を紹介します。<br>コストの管理に関する基本的な考え方は、下記サイトの内容を参照ください。  </p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-plan-manage-cost">Azure Machine Learning のコストを計画して管理する</a>  </p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-manage-optimize-cost">Azure Machine Learning のコストを管理して最適化する</a>  </p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-plan-manage-cost">Azure Machine Learning のコストを計画して管理する</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-manage-optimize-cost">Azure Machine Learning のコストを管理して最適化する</a>  </li>
 </ul>
 <hr>
 <h2 id="コスト見積もり例について"><a href="#コスト見積もり例について" class="headerlink" title="コスト見積もり例について"></a>コスト見積もり例について</h2><p>Azure Machine Learning のワークスペース自体には課金は発生しません。ワークスペースで作成したリソースに課金が発生します。  </p>
@@ -231,7 +229,7 @@
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-network-security-overview">仮想ネットワークの分離とプライバシーの概要</a></li>
 </ul>
 <hr>
-<h3 id="サブ-リソースについて"><a href="#サブ-リソースについて" class="headerlink" title="サブ リソースについて"></a>サブ リソースについて</h3><p>Azure Machine Learning では、コンピューティング リソース作成時に VM の料金に加えてネットワークに関連したリソースが作成されます。作成されたノードとの通信を維持するために必要であり、現時点 (2021/10/15 現在) ではこれらの課金を回避する方法はございません。  </p>
+<h2 id="サブ-リソースについて"><a href="#サブ-リソースについて" class="headerlink" title="サブ リソースについて"></a>サブ リソースについて</h2><p>コンピューティング インスタンスおよびコンピューティング クラスターを作成すると、VM の料金に加えてネットワークに関連したリソースが併せて作成されます。これらは作成されたノードとの通信を維持するために使用され、課金の対象になります。  </p>
 <p>参考: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-workspace#sub-resources">サブ リソース</a></p>
 <blockquote>
 <p>これらのサブ リソースは、AML ワークスペースで作成される主要なリソースです。</p>
@@ -254,7 +252,7 @@
 <p>VM はそれぞれ、実行している時間ごとに課金されます。 コストは VM の仕様によって異なります。 実行中であっても、データセットに対してアクティブに動作していない VM については、ロード バランサー経由で課金されます。 コンピューティング インスタンスごとに、1 日あたり 1 つのロード バランサーに対して請求が発生します。 コンピューティング クラスターの 50 ノードごとに、1 つの Standard ロード バランサーが課金されます。 ロード バランサーあたりの課金額は 1 日あたり約 0.33 ドルです。 停止しているコンピューティング インスタンスとコンピューティング クラスターに対してロード バランサーのコストが発生するのを回避するには、コンピューティング リソースを削除します。 サブスクリプションごと、およびリージョンごとに 1 つの仮想ネットワークが課金されます。 仮想ネットワークは、複数のリージョンまたはサブスクリプションにまたがることはできません。 vNet 設定内でプライベート エンドポイントを設定しても、料金が発生することがあります。 帯域幅は使用量に基づいて課金されます。転送データが多いほど、料金は高くなります。</p>
 </blockquote>
 <hr>
-<h2 id="ワークスペース削除時の留意点について"><a href="#ワークスペース削除時の留意点について" class="headerlink" title="ワークスペース削除時の留意点について"></a>ワークスペース削除時の留意点について</h2><p>Azure ポータルまたは Azure CLI で Azure Machine Learning ワークスペースを削除した後も、次のリソースは引き続き存在します。 これらを削除するまで、これらのコストは発生し続けます。  </p>
+<h2 id="ワークスペース削除"><a href="#ワークスペース削除" class="headerlink" title="ワークスペース削除"></a>ワークスペース削除</h2><p>Azure ポータルまたは Azure CLI で Azure Machine Learning ワークスペースを削除した後も、次のリソースは引き続き存在します。これらは削除されるまでコストが発生し続けます。  </p>
 <ul>
 <li>Azure Container Registry</li>
 <li>Azure Storage Account</li>
@@ -269,14 +267,14 @@
 <li>参考サイト<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-plan-manage-cost#costs-might-accrue-after-resource-deletion">リソースの削除後にコストが発生する可能性がある</a><br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-workspace#associated-resources">関連するリソース</a></li>
 </ul>
 <hr>
-<h2 id="見積もりの依頼について"><a href="#見積もりの依頼について" class="headerlink" title="見積もりの依頼について"></a>見積もりの依頼について</h2><p>弊社より見積もりの回答が必要な場合、営業担当のタスクとして対応しております。下記サイトよりご依頼ください。  </p>
+<h2 id="サービスの価格に関する問い合わせ"><a href="#サービスの価格に関する問い合わせ" class="headerlink" title="サービスの価格に関する問い合わせ"></a>サービスの価格に関する問い合わせ</h2><p>各サービスの価格に関するご質問 (Azure Machine Learning で発生する費用の内訳を知りたい、または発生したコストがどのリソースで消費しているか、など) は、弊社課金サポートで承っております。以下の画像を参考に、サポート リクエストを発行いただきお問い合わせください。  </p>
+<p><img src="https://jpmlblog.github.io/images/AML-estimate-costs/support-request-for-billing.png" width=600px align="left"><br clear="left"></p>
+<hr>
+<h2 id="見積もりの依頼について"><a href="#見積もりの依頼について" class="headerlink" title="見積もりの依頼について"></a>見積もりの依頼について</h2><p>貴社ご利用方法における見積もりの回答が必要な場合、営業担当のタスクとして対応させていただいております。下記サイトを参考によりご依頼ください。  </p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/pricing/contact-sales/">Azure 価格について 1 対 1 でのガイダンスを受ける</a></li>
 <li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/overview/sales-number/">Azure 営業担当者に問い合わせる</a>  </li>
 </ul>
-<hr>
-<h2 id="実際にかかったコストに関する問い合わせ"><a href="#実際にかかったコストに関する問い合わせ" class="headerlink" title="実際にかかったコストに関する問い合わせ"></a>実際にかかったコストに関する問い合わせ</h2><p>各製品サポート担当では請求書情報を参照することができないため、発生したコストがどのリソースで消費しているかなどを調査することができません。お手数ですが、以下の通りサポート リクエストを発行いただきお問い合わせください。  </p>
-<p><img src="https://jpmlblog.github.io/images/AML-estimate-costs/support-request-for-billing.png" width=600px align="left"><br clear="left"></p>
 <hr>
 <p><code>変更履歴</code><br><code>2020/06/18 created by Mochizuki</code><br><code>2020/11/12 modified by Mochizuki</code><br><code>2020/11/18 modified by Mochizuki</code><br><code>2020/11/27 modified by Mochizuki</code><br><code>2021/05/26 modified by Mochizuki</code><br><code>2021/06/07 modified by Mochizuki</code><br><code>2021/07/20 modified by Mochizuki</code><br><code>2021/07/28 modified by Mochizuki</code><br><code>2021/10/15 modified by Mochizuki</code> </p>
 <p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
