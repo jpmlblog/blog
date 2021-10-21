@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について | Japan Machine Learning Support Blog</title>
+  <title>Tag: パイプライン | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,25 +19,13 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Azure Machine Learning サービスのご利用時に、HTTP ステータス コードなどネットワーク関連のエラーが表示される場合があります。問題の調査にはネットワーク関連の情報が必要となります。以下に、汎用的な情報採取手順を紹介します。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について">
-<meta property="og:url" content="https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Japan Machine Learning Support Blog">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
-<meta property="og:description" content="Azure Machine Learning サービスのご利用時に、HTTP ステータス コードなどネットワーク関連のエラーが表示される場合があります。問題の調査にはネットワーク関連の情報が必要となります。以下に、汎用的な情報採取手順を紹介します。">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png">
-<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-preserve-log.png">
-<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-stop-clear-session.png">
-<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-start-session.png">
-<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
-<meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
-<meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-21T12:44:30.793Z">
 <meta property="article:author" content="jpmlblog">
-<meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -131,95 +119,62 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-Collectinfo_AzureConnection"
-  class="post white-box article-type-post"
-  itemscope itemprop="blogPost">
-	<section class='meta'>
-	<h2 class="title">
-  	<a href="/blog/2020/08/31/Collectinfo_AzureConnection/">
-    	Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について
-    </a>
-  </h2>
-	<time>
-	  8月 31, 2020
-	</time>
+        
+  <script>
+    window.subData= { title:'Tag : パイプライン'}
+  </script>
+
+<section class="post-list">
 	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/blog/2021/10/21/AML_example_pipeline_lifecycle/">
+        Azure Machine Learning パイプラインを使用した自動機械学習ライフサイクルの例
+      </a>
+    </h2>
+    
+    <time>
+      10月 21, 2021
+    </time>
+		
     
     <div class='cats'>
         <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
     </div>
 
-	</section>
-	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BE%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">対象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99"><span class="toc-number">2.</span> <span class="toc-text">事前準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%B1%E9%9F%BF"><span class="toc-number">3.</span> <span class="toc-text">影響</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9F%E8%A1%8C%E6%89%8B%E9%A0%86"><span class="toc-number">4.</span> <span class="toc-text">実行手順</span></a></li></ol></section>
-	
-	<section class="article typo">
-  	<div class="article-entry" itemprop="articleBody">
-    	<p>Azure Machine Learning サービスのご利用時に、HTTP ステータス コードなどネットワーク関連のエラーが表示される場合があります。問題の調査にはネットワーク関連の情報が必要となります。以下に、汎用的な情報採取手順を紹介します。  </p>
-<span id="more"></span>
-<br>
+  </section>
+  <section class="article typo">
+	  <p>Azure Machine Learning のライフサイクルを実現する Azure Machine Learning パイプラインの利用例について紹介させていただきます。今回紹介するライフサイクルは次の通りです。  </p>
+<ul>
+<li>ストレージ アカウント上の csv ファイル読み込み  </li>
+<li>自動機械学習を実行</li>
+<li>ベスト モデルを選択して ACI にデプロイ</li>
+</ul>
 
-<hr>
-<h2 id="対象"><a href="#対象" class="headerlink" title="対象"></a>対象</h2><p>事象の再現が可能な端末 (OS: Windows 10 の各バージョン)</p>
-<h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p><a href="https://jpmlblog.github.io//files/CollectInfo_AzureConnection.txt" title="CollectInfo_AzureConnection.txt">こちら</a> から CollectInfo_AzureConnection.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  </p>
-<p>&lt;実施対象に以下が存在する状態&gt;<br>・ [任意の場所]\CollectInfo_AzureConnection.bat ファイル</p>
-<h2 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h2><p>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。 </p>
-<h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。<br>(3) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>1</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
-<p>※ CollectInfo_AzureConnection.bat のコマンド プロンプトは起動したままにしておきます。  </p>
-<p>(4) Microsoft Edge (Chromium) または Chrome を起動し、問題が再現する操作の直前まで画面を進めます。  </p>
-<p>※ (5) ～ (11) の手順は 「<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
-<p>(5) F12 キーを押下し、デベロッパー ツールを起動します。<br>(6) [Network]タブを選択し、[Preserve log] を選択します。  </p>
-<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-preserve-log.png" alt="chromium-network-preserve-log.png">  </p>
-<p>(7) [Console] タブを選択し、[Console settings] を選択してから、[Preserve Log] を選択します。[Console settings] をもう一度選択して、設定ペインを閉じます。  </p>
-<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-preserve-log.png" alt="chromium-console-preserve-log.png">  </p>
-<p>(8) [Network] タブを選択し、 [Stop recording network log] と [Clear] を選択します。  </p>
-<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-stop-clear-session.png" alt="chromium-stop-clear-session.png">  </p>
-<p>(9) [Record network log] を選択して、問題を再現します。  </p>
-<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-start-session.png" alt="chromium-start-session.png">  </p>
-<p>※ 事象の再現を確認、そのまま十数秒ほど待ちます。  </p>
-<p>(10) [Stop recording network log] を選択し、 [Export HAR] を選択して任意の場所に .har ファイルを保存します。  </p>
-<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png" alt="chromium-network-export-har.png">  </p>
-<p>(11) <a href="%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB">Console</a> タブを選択します。いずれかのメッセージを右クリックし、 [Save as…] を選択して、任意の場所に .log ファイルを保存します。  </p>
-<p><img src="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png" alt="chromium-console-select.png">  </p>
-<p>※ 以下、CollectInfo_AzureConnection.bat のコマンド プロンプトにて再度操作を実施します。  </p>
-<p>(12) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>2</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(13) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>3</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。<br>(14) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>q</code> を入力、リターン キーを押下してツールを終了します。<br>(15) 手順 (10) および (11) で保存したファイル (拡張子 .har および .log のファイル) と、デスクトップ上 <code>&lt;YYYYMMDD 形式の年月日&gt;_&lt;ホスト名&gt;_info</code> フォルダーをまとめて ZIP 圧縮し、お問い合わせいただく際にご提供ください。  </p>
-<p>※ サポート リクエストに関する参考情報<br>・ <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a><br>・ <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/support/create-ticket/">サポート チケットの作成</a></p>
-<hr>
-<p>本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。  </p>
-<p><code>変更履歴</code><br><code>2020/08/31 created by Mochizuki</code></p>
-
-  	</div>
-	  
-	  <div class="article-tags tags">
+    
+	  <div class="readmore">
+      <a href="/blog/2021/10/21/AML_example_pipeline_lifecycle/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
       
-        <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/">情報採取手順</a>
+        <a href="/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/">パイプライン</a>
+      
+        <a href="/blog/tags/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/">ライフサイクル</a>
       
 	  </div>
     
-		
-	
-		<div class="art-item-footer">
-				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/09/24/AML-functions-autostop/" rel="prev"  title="Azure Functions を使用してコンピューティング インスタンスを自動停止する方法について">
-						Azure Functions を使用してコンピューティング インスタンスを自動停止する方法について 
-					</a></span>
-				
-				
-					<span class="art-item-right">next：<a href="/blog/2020/08/31/AML-IE11/" rel="next"  title="Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する">
-						Azure Machine Learning ワークスペースの作成が Internet Explorer 11 で失敗する
-					</a><i class="icon icon-chevron-thin-right"></i></span>
-				
-		</div>
-	
-	</section>
-	
+  </section>
 </article>
-<script>
-	window.subData = {
-		title: 'Azure Machine Learning におけるネットワーク関連エラー発生時の情報採取について',
-		tools: true
-	}
-</script>
+    </div>
+  
+</section>
+
 
       </div>
       <aside class='l_side'>
