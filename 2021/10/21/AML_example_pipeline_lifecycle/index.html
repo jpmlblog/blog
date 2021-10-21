@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline-REST.png">
 <meta property="article:published_time" content="2021-10-20T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-21T13:10:35.862Z">
+<meta property="article:modified_time" content="2021-10-21T13:35:54.994Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="パイプライン">
 <meta property="article:tag" content="ライフサイクル">
@@ -172,7 +172,7 @@
 <li><a href="https://jpmlblog.github.io/files/AML_example_pipeline_lifecycle/aml-pipeline-sample_1.ipynb" title="aml-pipeline-sample_1.ipynb">aml-pipeline-sample_1.ipynb</a>  </li>
 <li><a target="_blank" rel="noopener" href="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/machineData.csv" title="machineData.csv">machineData.csv</a>  </li>
 </ul>
-<p>// 以下のようなパイプラインを作成する。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/pipeline-image.png" width=700px align="left" border="1"><br clear="left">  </p>
+<p>// 上記を使って以下のような処理を行うパイプラインを作成します。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/pipeline-image.png" width=700px align="left" border="1"><br clear="left">  </p>
 <h3 id="データの配置"><a href="#データの配置" class="headerlink" title="データの配置"></a>データの配置</h3><p>ダウンロードした machineData.csv ファイルを、Azure Machine Learning ワークスペースの既定のストレージ アカウントのコンテナー <code>azureml-blobstore-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (xxx 部分はランダムな英数字)</code> 配下に <code>Datasets</code> フォルダーを作成し、アップロードしておきます。  </p>
 <p><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-blobstore-container.png" width=700px align="left" border="1"><br clear="left">  </p>
 <h3 id="ノートブックの実行"><a href="#ノートブックの実行" class="headerlink" title="ノートブックの実行"></a>ノートブックの実行</h3><p>aml-pipeline-sample_1.ipynb ファイルは、以下の通り Azure Machine Learning Studio の Notebooks のフォルダーにアップロードし、<code>[カーネルを再起動し、すべてのセルを実行する]</code> をクリックします。(実行時に cpu-cluster という名前の STANDARD_DS12_V2 のコンピューティング クラスターが作成されます。既に存在する場合はそのコンピューティング クラスターを使用します。)</p>
