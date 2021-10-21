@@ -9,7 +9,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/04/22/reference-websites/</loc>
-        <lastmod>2021-10-20T16:53:56.561Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.086Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/04/22/FAQ/</loc>
-        <lastmod>2021-10-20T16:53:56.547Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.076Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/</loc>
-        <lastmod>2021-10-20T16:53:56.534Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.067Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +33,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/10/28/AML-use-behind-vnet/</loc>
-        <lastmod>2021-10-20T16:53:56.521Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,7 +41,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2021/06/16/AML-storage-data-location/</loc>
-        <lastmod>2021-10-20T16:53:56.509Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,7 +49,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2021/08/25/AMLSC-service-retirement/</loc>
-        <lastmod>2021-10-20T16:53:56.505Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.045Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -57,7 +57,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/11/30/AML-scheduled-pipeline/</loc>
-        <lastmod>2021-10-20T16:53:56.488Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.030Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +65,15 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/</loc>
-        <lastmod>2021-10-20T16:53:56.475Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.018Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpmlblog.github.io/blog/2021/10/16/AML-resourcegroup-name/</loc>
+        <lastmod>2021-10-21T05:34:41.015Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -73,7 +81,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/</loc>
-        <lastmod>2021-10-20T16:53:56.465Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.012Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -81,7 +89,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/</loc>
-        <lastmod>2021-10-20T16:53:56.460Z</lastmod>
+        <lastmod>2021-10-21T05:34:41.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +97,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2021/01/13/AML-model-inference/</loc>
-        <lastmod>2021-10-20T16:53:56.447Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.998Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,7 +105,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/</loc>
-        <lastmod>2021-10-20T16:53:56.432Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.988Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -105,7 +113,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/</loc>
-        <lastmod>2021-10-20T16:53:56.422Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.985Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -113,7 +121,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/</loc>
-        <lastmod>2021-10-20T16:53:56.407Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.974Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -121,7 +129,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</loc>
-        <lastmod>2021-10-20T16:53:56.386Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.959Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -129,7 +137,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/</loc>
-        <lastmod>2021-10-20T16:53:56.362Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.940Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -137,7 +145,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/12/24/AML-deep-learning-for-automl/</loc>
-        <lastmod>2021-10-20T16:53:56.349Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.925Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -145,7 +153,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/</loc>
-        <lastmod>2021-10-20T16:53:56.345Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.921Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -153,7 +161,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2021/03/29/AML-cannot-use-notebook/</loc>
-        <lastmod>2021-10-20T16:53:56.341Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.917Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -161,7 +169,7 @@
 
     <url>
         <loc>https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/</loc>
-        <lastmod>2021-10-20T16:53:56.337Z</lastmod>
+        <lastmod>2021-10-21T05:34:40.913Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

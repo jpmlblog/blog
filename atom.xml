@@ -6,7 +6,7 @@
   <link href="https://jpmlblog.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmlblog.github.io/blog/"/>
-  <updated>2021-10-20T16:53:56.505Z</updated>
+  <updated>2021-10-21T05:34:41.015Z</updated>
   <id>https://jpmlblog.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>名前に日本語を含むリソースグループを使用する場合の注意点について</title>
+    <link href="https://jpmlblog.github.io/blog/2021/10/16/AML-resourcegroup-name/"/>
+    <id>https://jpmlblog.github.io/blog/2021/10/16/AML-resourcegroup-name/</id>
+    <published>2021-10-15T15:00:00.000Z</published>
+    <updated>2021-10-21T05:34:41.015Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;リソースグループ名に日本語 (例: 機械学習用リソースグループ) など 2 バイト文字が含まれる場合、当該リソースグループに Azure Machine Learning ワークスペースを作るといくつかの管理操作がエラーとなる場合がございます。これらの事例と、推奨する設定をお纏めいたします。 &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Azure Machine Learning" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning/"/>
+    
+    
+    <category term="日本語" scheme="https://jpmlblog.github.io/blog/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/"/>
+    
+    <category term="リソースグループ" scheme="https://jpmlblog.github.io/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97/"/>
+    
+    <category term="コンピューティング インスタンス" scheme="https://jpmlblog.github.io/blog/tags/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Azure Machine Learning Studio (classic) のサービス終了について</title>
     <link href="https://jpmlblog.github.io/blog/2021/08/25/AMLSC-service-retirement/"/>
     <id>https://jpmlblog.github.io/blog/2021/08/25/AMLSC-service-retirement/</id>
     <published>2021-08-24T15:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.505Z</updated>
+    <updated>2021-10-21T05:34:41.045Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning Studio (classic) は、2024 年 8 月 31 日を持ちましてサービスを終了いたします。関連する公開情報や留意事項についてご紹介させていただきます。  &lt;/p&gt;
@@ -43,7 +66,7 @@
     <link href="https://jpmlblog.github.io/blog/2021/06/16/AML-storage-data-location/"/>
     <id>https://jpmlblog.github.io/blog/2021/06/16/AML-storage-data-location/</id>
     <published>2021-06-15T15:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.509Z</updated>
+    <updated>2021-10-21T05:34:41.049Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning Studio で作成した実験用ノートブック ファイルやスクリプト、実験時のログ、アップロードしたファイルなどは、Azure Machine Learning ワークスペース既定のストレージ アカウントに格納されます。お問い合わせをいただくことが多い格納先について紹介します。  &lt;/p&gt;</summary>
@@ -64,7 +87,7 @@
     <link href="https://jpmlblog.github.io/blog/2021/03/29/AML-cannot-use-notebook/"/>
     <id>https://jpmlblog.github.io/blog/2021/03/29/AML-cannot-use-notebook/</id>
     <published>2021-03-28T15:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.341Z</updated>
+    <updated>2021-10-21T05:34:40.917Z</updated>
     
     
     <summary type="html">&lt;p&gt;本記事では、Azure MachineLeaning Studio の Notebooks メニューで開いた Notebook で処理を実行した際に「現時点ではこれにはアクセスできません」とエラーメッセージが表示されてしまう場合の対応方法をご案内します。&lt;/p&gt;</summary>
@@ -85,7 +108,7 @@
     <link href="https://jpmlblog.github.io/blog/2021/01/13/AML-model-inference/"/>
     <id>https://jpmlblog.github.io/blog/2021/01/13/AML-model-inference/</id>
     <published>2021-01-13T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.447Z</updated>
+    <updated>2021-10-21T05:34:40.998Z</updated>
     
     
     <summary type="html">&lt;p&gt;本記事では、Azure Machne Learning で作成したモデルを SDK を使用して推論実行する方法を紹介します。&lt;br&gt;試験的に作成したモデルの評価を行う場合には、都度 Web サービスにデプロイする方法は効率的ではないため、ローカルにロードして推論実行する手順を紹介します。また、Web サービスにデプロイして推論を実行する方法についても併せて紹介します。  &lt;/p&gt;</summary>
@@ -106,7 +129,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/12/24/AML-deep-learning-for-automl/"/>
     <id>https://jpmlblog.github.io/blog/2020/12/24/AML-deep-learning-for-automl/</id>
     <published>2020-12-24T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.349Z</updated>
+    <updated>2021-10-21T05:34:40.925Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning Studio から自動機械学習を実行する際、”ディープ ラーニングの有効化” のチェックを入れた場合の動作について紹介いたします。&lt;/p&gt;</summary>
@@ -125,7 +148,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/11/30/AML-scheduled-pipeline/"/>
     <id>https://jpmlblog.github.io/blog/2020/11/30/AML-scheduled-pipeline/</id>
     <published>2020-11-30T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.488Z</updated>
+    <updated>2021-10-21T05:34:41.030Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Functions のタイマー トリガーを使用して、Azure Machine Learning で発行されたパイプラインを定期的に実行する方法を紹介します。&lt;/p&gt;</summary>
@@ -144,7 +167,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/10/28/AML-use-behind-vnet/"/>
     <id>https://jpmlblog.github.io/blog/2020/10/28/AML-use-behind-vnet/</id>
     <published>2020-10-28T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.521Z</updated>
+    <updated>2021-10-21T05:34:41.058Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning を仮想ネットワーク環境で使用する場合に、参考となる情報を列記いたします。また、具体的な作成方法などを本記事にて紹介させていただきます。  &lt;/p&gt;
@@ -172,7 +195,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/"/>
     <id>https://jpmlblog.github.io/blog/2020/10/19/AML-dataset-name/</id>
     <published>2020-10-19T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.345Z</updated>
+    <updated>2021-10-21T05:34:40.921Z</updated>
     
     
     <summary type="html">&lt;p&gt;データセットの名前に漢字などの全角文字を使用した場合、登録後に Azure Machine Learning スタジオから参照できなくなる事象が報告されています。Azure Machine Learning の利用における名前付け規則などを踏まえ、現在確認されている事象について紹介いたします。  &lt;/p&gt;</summary>
@@ -193,7 +216,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/"/>
     <id>https://jpmlblog.github.io/blog/2020/10/10/AML-network-allow-settings/</id>
     <published>2020-10-10T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.460Z</updated>
+    <updated>2021-10-21T05:34:41.009Z</updated>
     
     
     <summary type="html">&lt;p&gt;オンプレミスの環境から Azure Machine Learning のサービスを利用する際、外部ネットワーク宛の通信をファイアウォールやプロキシ サーバー等によって制御している場合に、許可すべきホスト名等の情報をご紹介します。  &lt;/p&gt;</summary>
@@ -214,7 +237,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/"/>
     <id>https://jpmlblog.github.io/blog/2020/09/24/AML-functions-autostop/</id>
     <published>2020-09-24T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.407Z</updated>
+    <updated>2021-10-21T05:34:40.974Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Functions のタイマー トリガーを使用して、Azure Machine Learning のコンピューティング インスタンスを自動停止する方法を紹介します。&lt;/p&gt;</summary>
@@ -233,7 +256,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/31/Collectinfo_AzureConnection/</id>
     <published>2020-08-31T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.534Z</updated>
+    <updated>2021-10-21T05:34:41.067Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning サービスのご利用時に、HTTP ステータス コードなどネットワーク関連のエラーが表示される場合があります。問題の調査にはネットワーク関連の情報が必要となります。以下に、汎用的な情報採取手順を紹介します。  &lt;/p&gt;</summary>
@@ -252,7 +275,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/31/AML-IE11/</id>
     <published>2020-08-31T00:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.422Z</updated>
+    <updated>2021-10-21T05:34:40.985Z</updated>
     
     
     <summary type="html">&lt;p&gt;Internet Explorer 11 (IE11) 利用時に発生する現象について紹介します。&lt;/p&gt;</summary>
@@ -271,7 +294,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/25/AML-register-and-deploy-model/</id>
     <published>2020-08-25T08:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.465Z</updated>
+    <updated>2021-10-21T05:34:41.012Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning Studio でモデル登録する場合の留意点についてお纏めします。&lt;/p&gt;</summary>
@@ -292,7 +315,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/"/>
     <id>https://jpmlblog.github.io/blog/2020/08/18/AML-deploy-aci-vnet/</id>
     <published>2020-08-18T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.362Z</updated>
+    <updated>2021-10-21T05:34:40.940Z</updated>
     
     
     <summary type="html">&lt;p&gt;モデルを仮想ネットワーク上の ACI にデプロイする方法について紹介します。  &lt;/p&gt;
@@ -314,7 +337,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/"/>
     <id>https://jpmlblog.github.io/blog/2020/06/18/AML-estimate-costs/</id>
     <published>2020-06-18T00:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.386Z</updated>
+    <updated>2021-10-21T05:34:40.959Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning のコスト見積もりについて、参考となる情報を紹介します。&lt;/p&gt;</summary>
@@ -333,7 +356,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/"/>
     <id>https://jpmlblog.github.io/blog/2020/06/09/AMLSC-cannot-delete/</id>
     <published>2020-06-09T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.475Z</updated>
+    <updated>2021-10-21T05:34:41.018Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learning Studio (Classic) のワークスペース削除後も、課金が継続していたり、ポータルからワークスペースにアクセスできてしまう場合の対処方法をご紹介します。  &lt;/p&gt;</summary>
@@ -352,7 +375,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/04/22/reference-websites/"/>
     <id>https://jpmlblog.github.io/blog/2020/04/22/reference-websites/</id>
     <published>2020-04-22T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.561Z</updated>
+    <updated>2021-10-21T05:34:41.086Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Machine Learninig のご利用にあたり、参考となる公開情報を紹介します。&lt;/p&gt;</summary>
@@ -371,7 +394,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/04/22/FAQ/"/>
     <id>https://jpmlblog.github.io/blog/2020/04/22/FAQ/</id>
     <published>2020-04-22T01:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.547Z</updated>
+    <updated>2021-10-21T05:34:41.076Z</updated>
     
     
     <summary type="html">&lt;p&gt;よくあるご質問とその回答をまとめております。&lt;br&gt;併せて &lt;a href=&quot;https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/&quot;&gt;本サイトについて&lt;/a&gt; 、 &lt;a href=&quot;https://jpmlblog.github.io/blog/&quot;&gt;ホームページ&lt;/a&gt; および &lt;a href=&quot;https://jpmlblog.github.io/blog/archives/&quot;&gt;記事一覧&lt;/a&gt; もご参照いただければ幸いです。  &lt;/p&gt;</summary>
@@ -390,7 +413,7 @@
     <link href="https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/"/>
     <id>https://jpmlblog.github.io/blog/2020/04/06/AML-limitation-of-AutoML-concurrency/</id>
     <published>2020-04-06T03:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.432Z</updated>
+    <updated>2021-10-21T05:34:40.988Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://ml.azure.com/&quot;&gt;Microsoft Azure Machine Learning ポータル&lt;/a&gt; より Automated Machine Learninig (以降、AutoML と記載) を複数同時実行する際の制限事項について紹介します。  &lt;/p&gt;</summary>
@@ -401,32 +424,6 @@
     
     
     <category term="Automated Machine Learning" scheme="https://jpmlblog.github.io/blog/tags/Automated-Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jpmlblog について</title>
-    <link href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/"/>
-    <id>https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/</id>
-    <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2021-10-20T16:53:56.337Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;日本マイクロソフトの Azure Machine Learning に関するサポート情報のブログです。&lt;/p&gt;
-&lt;h3 id=&quot;公開日&quot;&gt;&lt;a href=&quot;#公開日&quot; class=&quot;headerlink&quot; title=&quot;公開日&quot;&gt;&lt;/a&gt;公開日&lt;/h3&gt;&lt;p&gt;2020 年</summary>
-        
-      
-    
-    
-    
-    <category term="Azure Machine Learning 全般" scheme="https://jpmlblog.github.io/blog/categories/Azure-Machine-Learning-%E5%85%A8%E8%88%AC/"/>
-    
-    
-    <category term="はじめに" scheme="https://jpmlblog.github.io/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
     
   </entry>
   
