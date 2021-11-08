@@ -27,7 +27,7 @@
 <meta property="og:description" content="リソースグループ名に日本語 (例: 機械学習用リソースグループ) など 2 バイト文字が含まれる場合、当該リソースグループに Azure Machine Learning ワークスペースを作るといくつかの管理操作がエラーとなる場合がございます。これらの事例と、推奨する設定をお纏めいたします。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2021-10-15T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-21T13:35:55.115Z">
+<meta property="article:modified_time" content="2021-11-08T09:01:38.318Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="日本語">
 <meta property="article:tag" content="リソースグループ">
@@ -156,10 +156,10 @@
 
 <hr>
 <h2 id="確認できている事象について"><a href="#確認できている事象について" class="headerlink" title="確認できている事象について"></a>確認できている事象について</h2><p>日本語を含んだ名前のリソースグループを使用する場合、コントロール プレーン操作 (管理操作) や一部の UI 機能の実行がエラーとなることを確認しております。これは、操作の実行時に行われる認証処理など内部通信において、日本語を含むリソース ID を正しく認識できないことに起因して発生いたします。  </p>
-<p>現在 (2021/10/19)、確認できている事象は以下の通りです。</p>
+<p>現在 (2021/11/08)、確認できている事象は以下の通りです。</p>
 <ul>
-<li>コンピューティング インスタンス起動 / 停止が失敗する</li>
-<li>コンピューティング インスタンスのスケジュール起動 / 停止が動作しない</li>
+<li>コンピューティング インスタンス起動 / 停止が失敗する (※ 2021/11/08 修正済み)</li>
+<li>コンピューティング インスタンスのスケジュール起動 / 停止が動作しない (※ 2021/11/08 修正済み)</li>
 <li>自動機械学習の DNN オプションを使用できない (※ 2021/10/19 修正済み)</li>
 </ul>
 <p>また、ノートブックで Python コードを実行する際、こうしたリソース ID が使用されるような処理においても失敗する可能性がございます。オープンソースのモジュールで日本語など 2 バイト文字に対応していない場合、弊社にて修正および回避策を提示できない場合もございます。</p>
@@ -192,7 +192,7 @@
 </tbody></table>
 </blockquote>
 <hr>
-<p><code>変更履歴</code><br><code>2021/10/16 created by Mochizuki</code><br><code>2021/10/19 modified by Mochizuki</code>  </p>
+<p><code>変更履歴</code><br><code>2021/10/16 created by Mochizuki</code><br><code>2021/10/19 modified by Mochizuki</code><br><code>2021/11/08 modified by Mochizuki</code>  </p>
 <p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
 
   	</div>
