@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
 <meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-01T01:59:22.383Z">
+<meta property="article:modified_time" content="2022-02-10T01:50:19.064Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,9 @@
 <h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p><a href="https://jpmlblog.github.io//files/CollectInfo_AzureConnection.txt" title="CollectInfo_AzureConnection.txt">こちら</a> から CollectInfo_AzureConnection.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  </p>
 <p>&lt;実施対象に以下が存在する状態&gt;<br>・ [任意の場所]\CollectInfo_AzureConnection.bat ファイル</p>
 <h2 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h2><p>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。 </p>
-<h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。<br>(3) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>1</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
+<h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。  </p>
+<p><font color="#FF0000">※ 実行時、Microsoft Defender SmartScreen によって実行確認のメッセージが表示される可能性があります。<br>　 [詳細情報] をクリックいただくと実行ボタンが表示されますので、[実行] を選択ください。<br></font></p>
+<p>(3) “Please enter the number you want to execute. Enter q to quit tool.” メッセージに <code>1</code> を入力、リターン キーを押下し、表示に従いメニューに戻ります。  </p>
 <p>※ CollectInfo_AzureConnection.bat のコマンド プロンプトは起動したままにしておきます。  </p>
 <p>(4) Microsoft Edge (Chromium) または Chrome を起動し、問題が再現する操作の直前まで画面を進めます。  </p>
 <p>※ (5) ～ (11) の手順は 「<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-portal/capture-browser-trace">トラブルシューティングのためにブラウザー トレースをキャプチャする</a>」 の内容を参考にしています。上記以外のブラウザーを使用する場合、こちらのサイトを参考に実行ください。  </p>
