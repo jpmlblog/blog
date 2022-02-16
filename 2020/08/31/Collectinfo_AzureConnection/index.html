@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-network-export-har.png">
 <meta property="og:image" content="https://docs.microsoft.com/ja-jp/azure/azure-portal/media/capture-browser-trace/chromium-console-select.png">
 <meta property="article:published_time" content="2020-08-31T03:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-10T01:50:19.064Z">
+<meta property="article:modified_time" content="2022-02-16T05:07:48.528Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="情報採取手順">
 <meta name="twitter:card" content="summary">
@@ -161,7 +161,8 @@
 
 <hr>
 <h2 id="対象"><a href="#対象" class="headerlink" title="対象"></a>対象</h2><p>事象の再現が可能な端末 (OS: Windows 10 の各バージョン)</p>
-<h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p><a href="https://jpmlblog.github.io//files/CollectInfo_AzureConnection.txt" title="CollectInfo_AzureConnection.txt">こちら</a> から CollectInfo_AzureConnection.txt ファイルをダウンロードし、拡張子を .txt から .bat に変更、実施対象の任意の場所に格納します。  </p>
+<h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p><a href="https://jpmlblog.github.io//files/CollectInfo_AzureConnection.txt" title="CollectInfo_AzureConnection.txt">こちら</a> から CollectInfo_AzureConnection.txt ファイルをダウンロードします。ローカルに保存後、拡張子を .txt から .bat に変更し、任意の場所に移します。  </p>
+<p><font color="#FF0000">※ ダウンロード時に拡張子を .bat に変更して保存すると、ダウンロード自体がブロックされる可能性があります。<br>　 ローカルに保存後に拡張子を変更ください。<br></font></p>
 <p>&lt;実施対象に以下が存在する状態&gt;<br>・ [任意の場所]\CollectInfo_AzureConnection.bat ファイル</p>
 <h2 id="影響"><a href="#影響" class="headerlink" title="影響"></a>影響</h2><p>ログを採取することで負荷が上がる可能性は考えられますが、基本的に OS リソースや処理への影響はありません。 </p>
 <h2 id="実行手順"><a href="#実行手順" class="headerlink" title="実行手順"></a>実行手順</h2><p>(1) 再現確認用マシンに管理者アカウントでログオンします。<br>(2) CollectInfo_AzureConnection.bat ファイルを右クリックし、[管理者として実行] を選択します。  </p>
