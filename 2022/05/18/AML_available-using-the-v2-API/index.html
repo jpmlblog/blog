@@ -27,7 +27,7 @@
 <meta property="og:description" content="件名 「Network Isolation Change with Our New API Platform on Azure Resource Manager」 の電子メールにて、Action Required to use new API platform with private link enabled workspace といった内容が通知されています。 このメールにおいて実際に必要な対">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2022-05-17T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-18T16:24:35.620Z">
+<meta property="article:modified_time" content="2022-05-18T16:29:05.380Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="v2 API">
 <meta property="article:tag" content="Private Endpoint">
@@ -170,12 +170,12 @@
 </thead>
 <tbody><tr>
 <td align="left">v1</td>
-<td align="left">ワークスペースおよびコンピューティング リソースの作成、&nbsp;&nbsp;&nbsp;<br>更新、削除操作</td>
+<td align="left">ワークスペースおよびコンピューティング リソースの作成、<br>更新、削除操作</td>
 <td align="left">実験などその他の操作</td>
 </tr>
 <tr>
 <td align="left">v2</td>
-<td align="left">ワークスペース、コンピューティング、データストア、<br>データセット、ジョブ、環境、コード、コンポーネント、<br>エンドポイントなど、ほとんどの操作</td>
+<td align="left">ワークスペース、コンピューティング、データストア、データセット、ジョブ、環境、コード、&nbsp;&nbsp;&nbsp;<br>コンポーネント、エンドポイントなど、ほとんどの操作</td>
 <td align="left">残りの操作</td>
 </tr>
 </tbody></table>
@@ -183,11 +183,11 @@
 <p>v2 API を使用することで、RBAC を使用したアクセス制御や Azure Policy の適用が使い易くなる見込みです。 また、Azure Machine Learning のマネージド オンライン エンドポイントなどの新機能は v2 API でしか使用できないため、これらが利用できるといったメリットもあります。  </p>
 <hr>
 <h2 id="v2-API-によって発生するネットワーク分離への影響について"><a href="#v2-API-によって発生するネットワーク分離への影響について" class="headerlink" title="v2 API によって発生するネットワーク分離への影響について"></a>v2 API によって発生するネットワーク分離への影響について</h2><p>前項で述べたように、API 操作には ARM を使用するものとワークスペースを使用するものがあり、v2 になることでその多くが ARM を使用するように変更されます。 プライベート エンドポイントを持たないワークスペースでは、ARM 宛とワークペース宛のいずれもパブリック ネットワークを経由して通信を行っているため、影響はありません。 プライベート エンドポイントを持つワークスペースでは、ワークスペース宛の通信は仮想ネットワーク内に閉じた通信になっていましたが、ARM 宛となることでほとんどの操作がパブリック ネットワーク経由となります。  </p>
-<p>Azure のサービスから発信する ARM 宛の通信は、基本的に Azure Global Network 内には閉じています。 また、送信される情報はメタデータ (リソース ID など) やパラメータです。 例えば、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/rest/api/azureml/jobs/create-or-update">ジョブの作成や更新</a> で送信されるのは <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/reference-yaml-job-command">パラメータ</a> のみとなります。 ストレージ アカウント上の情報が含まれることは無く、また TLS 1.2 を使用して暗号化されているため読み取られる危険も低いです。  </p>
+<p>Azure のサービスから発信する ARM 宛の通信は、基本的に Azure Global Network 内には閉じています。 また、送信される情報はメタデータ (リソース ID など) やパラメータです。 例えば、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/rest/api/azureml/jobs/create-or-update">ジョブの作成や更新</a> で送信されるのは <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/reference-yaml-job-command">パラメーター</a> のみとなります。 ストレージ アカウント上の情報が含まれることは無く、また TLS 1.2 を使用して暗号化されているため読み取られる危険も低いです。  </p>
 <p>基本的にこの変更がセキュリティに影響をあたえることは無いものと考えていますが、プライベート エンドポイントを持つ <strong>“既存の”</strong> ワークスペースについては影響の有無の判断の時間を設けるため、<code>v1_legacy_mode</code> パラメーターを用意し、予め True がセットされています。 これにより、v1 API の操作が継続されます。 なお、v2 API を使用する場合には <code>v1_legacy_mode</code> パラメーターを False にセットする必要があります。  </p>
 <p>※ プライベート エンドポイントを持たない <strong>“既存の”</strong> ワークスペースは <code>v1_legacy_mode</code> パラメーターはセットされません (v2 API が使用される設定になります)。</p>
 <hr>
-<h2 id="v1-legacy-mode-パラメーターの設定値について"><a href="#v1-legacy-mode-パラメーターの設定値について" class="headerlink" title="v1_legacy_mode パラメーターの設定値について"></a>v1_legacy_mode パラメーターの設定値について</h2><p>基本的に <code>v1_legacy_mode</code> パラメーターの設定条件は以下の通りです。 各シナリオとは異なるバージョンの API を使用したい場合には、後述の手順で変更ください。</p>
+<h2 id="v1-legacy-mode-パラメーターの設定値について"><a href="#v1-legacy-mode-パラメーターの設定値について" class="headerlink" title="v1_legacy_mode パラメーターの設定値について"></a><code>v1_legacy_mode</code> パラメーターの設定値について</h2><p>基本的に <code>v1_legacy_mode</code> パラメーターの設定条件は以下の通りです。 各シナリオとは異なるバージョンの API を使用したい場合には、後述の手順で変更ください。</p>
 <h3 id="2022-4-30-以前に作成されたワークスペースの場合"><a href="#2022-4-30-以前に作成されたワークスペースの場合" class="headerlink" title="2022/4/30 以前に作成されたワークスペースの場合"></a><code>2022/4/30</code> 以前に作成されたワークスペースの場合</h3><ul>
 <li>プライベート エンドポイントを持つ <strong>“既存の”</strong> ワークスペースでは <code>v1_legacy_mode</code> パラメーターに True がセット ⇒ v1 API</li>
 <li>プライベート エンドポイントを持たない <strong>“既存の”</strong> ワークスペースでは <code>v1_legacy_mode</code> パラメーターはセットされない ⇒ v2 API</li>
