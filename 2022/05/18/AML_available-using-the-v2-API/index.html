@@ -27,7 +27,7 @@
 <meta property="og:description" content="件名 「Network Isolation Change with Our New API Platform on Azure Resource Manager」 の電子メールにて、Action Required to use new API platform with private link enabled workspace といった内容が通知されています。 このメールにおいて実際に必要な対">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2022-05-17T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-18T12:00:41.922Z">
+<meta property="article:modified_time" content="2022-05-18T12:50:02.929Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="v2 API">
 <meta property="article:tag" content="Private Endpoint">
@@ -159,6 +159,7 @@
 
 <hr>
 <h2 id="v2-API-とは"><a href="#v2-API-とは" class="headerlink" title="v2 API とは"></a>v2 API とは</h2><p>Azure Machine Learning サービスで使用される API は、ARM 宛に要求を発行するもの、ワークスペース リソース宛に要求を発行するものの 2 種類が存在します。 これまでの API (v1 API) は、ワークスペースやコンピューティング リソースに対する操作以外は基本的にワークスペース宛に要求を送っていました。 新しい API (v2 API) では、それらの多くが ARM 宛に要求を送る様に変更されます。  </p>
+<blockquote>
 <table>
 <thead>
 <tr>
@@ -178,6 +179,7 @@
 <td align="left">残りの操作</td>
 </tr>
 </tbody></table>
+</blockquote>
 <p>v2 API を使用することで、RBAC を使用したアクセス制御や Azure Policy の適用が使い易くなる見込みです。 また、Azure Machine Learning のマネージド オンライン エンドポイントなどの新機能は v2 API でしか使用できないため、これらが利用できるといったメリットもあります。  </p>
 <hr>
 <h2 id="v2-API-によって発生するネットワーク分離への影響について"><a href="#v2-API-によって発生するネットワーク分離への影響について" class="headerlink" title="v2 API によって発生するネットワーク分離への影響について"></a>v2 API によって発生するネットワーク分離への影響について</h2><p>前項で述べたように、API 操作には ARM を使用するものとワークスペースを使用するものがあり、v2 になることでその多くが ARM を使用するように変更されます。 プライベート エンドポイントを持たないワークスペースでは、ARM 宛とワークペース宛のいずれもパブリック ネットワークを経由して通信を行っているため、影響はありません。 プライベート エンドポイントを持つワークスペースでは、ワークスペース宛の通信は仮想ネットワーク内に閉じた通信になっていましたが、ARM 宛となることでほとんどの操作がパブリック ネットワーク経由となります。  </p>
