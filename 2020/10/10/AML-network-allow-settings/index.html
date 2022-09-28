@@ -27,7 +27,7 @@
 <meta property="og:description" content="オンプレミスの環境から Azure Machine Learning のサービスを利用する際、外部ネットワーク宛の通信をファイアウォールやプロキシ サーバー等によって制御している場合に、許可すべきホスト名等の情報をご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-10-10T03:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-30T00:48:29.558Z">
+<meta property="article:modified_time" content="2022-09-28T02:05:17.483Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="ファイアウォール">
 <meta property="article:tag" content="プロキシ">
@@ -145,7 +145,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%9B%E3%82%B9%E3%83%88%E5%90%8D%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E8%A8%B1%E5%8F%AF"><span class="toc-number">1.</span> <span class="toc-text">ホスト名ベースの許可</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%9D%E3%83%BC%E3%83%88%E7%95%AA%E5%8F%B7%E3%81%AE%E8%A8%B1%E5%8F%AF"><span class="toc-number">2.</span> <span class="toc-text">ポート番号の許可</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebSocket-%E3%81%AE%E8%80%83%E6%85%AE"><span class="toc-number">3.</span> <span class="toc-text">WebSocket の考慮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%AE%E7%AF%84%E5%9B%B2%E6%8C%87%E5%AE%9A%E3%81%A7%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88"><span class="toc-number">4.</span> <span class="toc-text">IP アドレスの範囲指定で許可する場合</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%9B%E3%82%B9%E3%83%88%E5%90%8D%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E8%A8%B1%E5%8F%AF"><span class="toc-number">1.</span> <span class="toc-text">ホスト名ベースの許可</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebSocket-%E3%81%AE%E8%80%83%E6%85%AE"><span class="toc-number">2.</span> <span class="toc-text">WebSocket の考慮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%AE%E7%AF%84%E5%9B%B2%E6%8C%87%E5%AE%9A%E3%81%A7%E8%A8%B1%E5%8F%AF%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88"><span class="toc-number">3.</span> <span class="toc-text">IP アドレスの範囲指定で許可する場合</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -156,27 +156,16 @@
 <hr>
 <h2 id="ホスト名ベースの許可"><a href="#ホスト名ベースの許可" class="headerlink" title="ホスト名ベースの許可"></a>ホスト名ベースの許可</h2><p>Azure Machine Learning で使用する通信先ホスト名の一覧は以下サイトに一覧化されております。これらのホスト名宛の送信方向の通信を許可するよう設定ください。(2022/1/13 時点)  </p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#microsoft-hosts">ファイアウォールの内側で Azure Machine Learning のワークスペースを使用する - # Microsoft のホスト</a><blockquote>
-<p>*.aznbcontent.net<br>*.azureml.ms<br>*.blob.core.windows.net<br>*.in.applicationinsights.azure.com<br>*.instances.azureml.ms<br>*.instances.azureml.net<br>*.notebooks.azure.net<br>*.queue.core.windows.net<br>*.table.core.windows.net<br>*.vault.azure.net<br>&lt;storage&gt;.blob.core.windows.net<br>&lt;storage&gt;.dfs.core.windows.net<br>&lt;storage&gt;.file.core.windows.net<br>dc.applicationinsights.azure.com<br>dc.applicationinsights.microsoft.com<br>dc.services.visualstudio.com<br>graph.microsoft.com<br>graph.windows.net<br>login.microsoftonline.com<br>management.azure.com<br>mcr.microsoft.com<br>ml.azure.com<br>viennaglobal.azurecr.io   </p>
-</blockquote>
-※ &lt;storage&gt; を、使用している Azure Machine Learning ワークスペースの既定のストレージ アカウント名に置き換えてください。</li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#microsoft-hosts">ネットワークの着信トラフィックおよび送信トラフィックを構成する - # Microsoft のホスト</a>※ &lt;storage&gt; を、使用している Azure Machine Learning ワークスペースの既定のストレージ アカウント名に置き換えてください。</li>
 </ul>
 <p>Python パッケージをインストールして使用する要件がある場合、下記のようなホスト名宛の通信を許可する必要があります。なお、下記はインターネット上のすべての Python リソースに必要なホストの完全な一覧ではなく、最も一般的に使用されているもののみを取り上げています。たとえば、GitHub リポジトリまたはその他のホストにアクセスする必要がある場合は、そのシナリオに必要なホストを特定して追加する必要があることをご留意ください。  </p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#python-hosts">ファイアウォールの内側で Azure Machine Learning のワークスペースを使用する - # Python のホスト</a><blockquote>
-<p>anaconda.com<br>*.anaconda.com<br>*.anaconda.org<br>pypi.org<br>*.pytorch.org<br>*.tensorflow.org  </p>
-</blockquote>
-</li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#python-hosts">ネットワークの着信トラフィックおよび送信トラフィックを構成する - # Python のホスト</a></li>
 </ul>
 <p>R パッケージをインストールして使用する要件がある場合、下記のようなホスト名宛の通信を許可する必要があります。こちらも、必要なホストの完全な一覧ではない点についてご留意ください。  </p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#r-hosts">ファイアウォールの内側で Azure Machine Learning のワークスペースを使用する - # R のホスト</a><blockquote>
-<p>cloud.r-project.org  </p>
-</blockquote>
-</li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-access-azureml-behind-firewall#r-hosts">ネットワークの着信トラフィックおよび送信トラフィックを構成する - # R のホスト</a></li>
 </ul>
-<hr>
-<h2 id="ポート番号の許可"><a href="#ポート番号の許可" class="headerlink" title="ポート番号の許可"></a>ポート番号の許可</h2><p>HTTPS または HTTP (443 および 80) のプロトコルで通信を行います。上記したホスト名一覧に対し、送信方向のポート番号 443 および 80 宛の通信を許可するよう設定ください。  </p>
 <hr>
 <h2 id="WebSocket-の考慮"><a href="#WebSocket-の考慮" class="headerlink" title="WebSocket の考慮"></a>WebSocket の考慮</h2><p>ネットワーク機器などで WebSocket の通信をブロックしている場合、上述したホスト名一覧について許可いただくことをお勧めいたします。<br>以下のホスト名について WebSocket の通信を許可するよう設定ください。  </p>
 <p><del>*.azureml.ms</del> (2021/6/17 削除)<br><del>*.notebooks.azure.net</del> (2021/6/17 削除)<br><del>*.experiments.azureml.net</del>  (2022/1/13 削除)<br>*.instances.azureml.net<br>*.instances.azureml.ms  </p>
@@ -188,12 +177,12 @@
 </li>
 </ul>
 <hr>
-<h2 id="IP-アドレスの範囲指定で許可する場合"><a href="#IP-アドレスの範囲指定で許可する場合" class="headerlink" title="IP アドレスの範囲指定で許可する場合"></a>IP アドレスの範囲指定で許可する場合</h2><p>下記サイトに紹介されている IP アドレス一覧を使用して許可する方法につきましては、API で一覧を取得する方法が現時点 (2020/10/10) でプレビュー段階であるなどから、利用をお勧めいたしません。  </p>
+<h2 id="IP-アドレスの範囲指定で許可する場合"><a href="#IP-アドレスの範囲指定で許可する場合" class="headerlink" title="IP アドレスの範囲指定で許可する場合"></a>IP アドレスの範囲指定で許可する場合</h2><p>下記サイトに紹介されている IP アドレス一覧を使用して許可する方法につきましては、以下サイトの機能をご利用いただける可能性がございます。実装方法などの確認が必要な場合、 Azure Network 観点にてお問い合わせください。  </p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/virtual-network/service-tags-overview#service-tags-on-premises">オンプレミスのサービス タグ</a></li>
 </ul>
 <hr>
-<p><code>変更履歴</code><br><code>2020/10/10 created by Mochizuki</code><br><code>2021/06/17 modified by Mochizuki</code><br><code>2021/07/13 modified by Mochizuki</code><br><code>2022/01/13 modified by Uehara</code>  </p>
+<p><code>変更履歴</code><br><code>2020/10/10 created by Mochizuki</code><br><code>2021/06/17 modified by Mochizuki</code><br><code>2021/07/13 modified by Mochizuki</code><br><code>2022/01/13 modified by Uehara</code><br><code>2022/08/02 modified by Mochizuki</code>  </p>
 <p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
 
   	</div>
