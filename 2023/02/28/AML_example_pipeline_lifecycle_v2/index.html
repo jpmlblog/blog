@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2020/12 | Japan Machine Learning Support Blog</title>
+  <title>Azure Machine Learning パイプラインを使用した自動機械学習ライフサイクルの例 (SDK v2) | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,13 +19,28 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Machine Learning Support Blog">
-<meta property="og:url" content="https://jpmlblog.github.io/blog/archives/2020/12/index.html">
+  <meta name="description" content="Azure Machine Learning SDK v2 を使用し、以下の Azure Machine Learning パイプラインの利用例について紹介させていただきます。今回紹介するライフサイクルは次の通りです。    自動機械学習を実行 ベスト モデルを選択して Managed Online Endpoint にデプロイ  今後、以下が実行できるよう更新予定です。  公開したパイプライン実">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure Machine Learning パイプラインを使用した自動機械学習ライフサイクルの例 (SDK v2)">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/2023/02/28/AML_example_pipeline_lifecycle_v2/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
+<meta property="og:description" content="Azure Machine Learning SDK v2 を使用し、以下の Azure Machine Learning パイプラインの利用例について紹介させていただきます。今回紹介するライフサイクルは次の通りです。    自動機械学習を実行 ベスト モデルを選択して Managed Online Endpoint にデプロイ  今後、以下が実行できるよう更新予定です。  公開したパイプライン実">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/lifecycle-image.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/folder_upload.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/pipeline-image.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/execute-notebook.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/created_pipeline.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/published-pipeline.png">
+<meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/created_endpoint.png">
+<meta property="article:published_time" content="2023-02-27T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-02T08:42:12.925Z">
 <meta property="article:author" content="jpmlblog">
+<meta property="article:tag" content="パイプライン">
+<meta property="article:tag" content="ライフサイクル">
+<meta property="article:tag" content="SDK v2">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/lifecycle-image.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -119,57 +134,96 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-AML_example_pipeline_lifecycle_v2"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2023/02/28/AML_example_pipeline_lifecycle_v2/">
+    	Azure Machine Learning パイプラインを使用した自動機械学習ライフサイクルの例 (SDK v2)
+    </a>
+  </h2>
+	<time>
+	  2月 28, 2023
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 2020.12'}
-  </script>
-
-<section class="post-list">
-	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/12/24/AML-deep-learning-for-automl/">
-        自動機械学習 (AutoML) の分類タスクのディープ ラーニング有効化について
-      </a>
-    </h2>
-    
-    <time>
-      12月 24, 2020
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>Azure Machine Learning Studio から自動機械学習を実行する際、”ディープ ラーニングの有効化” のチェックを入れた場合の動作について紹介いたします。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8"><span class="toc-number">1.</span> <span class="toc-text">イメージ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99"><span class="toc-number">2.</span> <span class="toc-text">準備</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%8E%E3%83%BC%E3%83%88%E3%83%96%E3%83%83%E3%82%AF%E3%81%AE%E5%AE%9F%E8%A1%8C"><span class="toc-number">3.</span> <span class="toc-text">ノートブックの実行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%AE%E5%85%AC%E9%96%8B"><span class="toc-number">4.</span> <span class="toc-text">パイプラインの公開</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%AE%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">パイプラインの使用</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Azure Machine Learning SDK v2 を使用し、以下の Azure Machine Learning パイプラインの利用例について紹介させていただきます。今回紹介するライフサイクルは次の通りです。  </p>
+<ul>
+<li>自動機械学習を実行</li>
+<li>ベスト モデルを選択して Managed Online Endpoint にデプロイ</li>
+</ul>
+<p>今後、以下が実行できるよう更新予定です。</p>
+<ul>
+<li>公開したパイプライン実行時に、データ アセットの最新バージョンを使用して AutoML が実行されるようにする</li>
+<li>パイプライン実行毎に既存のエンドポイントが更新されるようにする</li>
+</ul>
+<span id="more"></span>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/12/24/AML-deep-learning-for-automl/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h2 id="イメージ"><a href="#イメージ" class="headerlink" title="イメージ"></a>イメージ</h2><p>&#x2F;&#x2F; ライフサイクルは以下のようなイメージです。これを参考に後述の手順をご確認ください。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/lifecycle-image.png" width=900px align="left" border="1"><br clear="left">  </p>
+<h2 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h2><p>以下リンクより sample-pipeline-sdkv2.zip ファイルをダウンロードし、ローカル上で解凍します。解凍後のフォルダーを、Azure Machine Learning Studio の Notebooks メニューのファイル ツリーのうち、任意の場所にアップロードします。</p>
+<ul>
+<li><a href="https://jpmlblog.github.io/files/AML_example_pipeline_lifecycle_v2/sample-pipeline-sdkv2.zip" title="sample-pipeline-sdkv2.zip">sample-pipeline-sdkv2.zip</a></li>
+</ul>
+<p>※ 保存されているファイル一覧<br>　・ data フォルダー<br>　　 ├ MLTable ファイル<br>　　 └ training-machine-dataset.csv ファイル<br>　・ aml-pipeline-sample-sdkv2.ipynb ファイル<br>　・ test.json ファイル  </p>
+<p>&#x2F;&#x2F; フォルダーを配置した状態<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/folder_upload.png" width=700px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; 上記ファイルを使って以下のような処理を行うパイプラインを作成します。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/pipeline-image.png" width=700px align="left" border="1"><br clear="left">  </p>
+<h2 id="ノートブックの実行"><a href="#ノートブックの実行" class="headerlink" title="ノートブックの実行"></a>ノートブックの実行</h2><p> sample-pipeline-sdkv2.zip の解凍後、aml-pipeline-sample-sdkv2.ipynb を選択し <code>[カーネルを再起動し、すべてのセルを実行する]</code> をクリックします。実行時には cpu-cluster という名前の STANDARD_DS3_V2 のコンピューティング クラスターが作成されます。既に存在する場合はそのコンピューティング クラスターを使用します。また、AutoML によって生成されたモデルをデプロイしたマネージド オンライン エンドポイントが作成されます。</p>
+<p><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/execute-notebook.png" width=700px align="left" border="1"><br clear="left">  </p>
+<h2 id="パイプラインの公開"><a href="#パイプラインの公開" class="headerlink" title="パイプラインの公開"></a>パイプラインの公開</h2><p>実行が終了すると、以下の通りエンドポイントとパイプラインが作成されるため、正常に実行が終了していることを確認して <code>[公開]</code> ボタンをクリックし、任意の名前で実行します。実行後、パイプライン エンドポイントが作成されます。(サンプル では automl_regression_and_deployment という名前になります。)  </p>
+<p>&#x2F;&#x2F; ノートブックで定義したパイプラインの実行結果 (この画面で [公開] ボタンを押す)<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/created_pipeline.png" width=600px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; 外部から呼び出せるように公開されたパイプラインのエンドポイント<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/published-pipeline.png" width=600px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; 自動機械学習によって作成されたモデルをデプロイしたリアルタイム エンドポイント<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle_v2/created_endpoint.png" width=600px align="left" border="1"><br clear="left">  </p>
+<hr>
+<h2 id="パイプラインの使用"><a href="#パイプラインの使用" class="headerlink" title="パイプラインの使用"></a>パイプラインの使用</h2><p>※ 現在作成中となります。</p>
+<hr>
+<p><code>変更履歴</code><br><code>2023/02/28 created by Narita</code><br><code>2023/03/01 modified by Mochizuki</code>  </p>
+<p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/blog/tags/Automated-Machine-Learning/">Automated Machine Learning</a>
+        <a href="/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/">パイプライン</a>
+      
+        <a href="/blog/tags/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/">ライフサイクル</a>
+      
+        <a href="/blog/tags/SDK-v2/">SDK v2</a>
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2022/05/18/AML_available-using-the-v2-API/" rel="next"  title="v2 API の有効化に伴う Azure Machine Learning Workspace への影響について">
+						v2 API の有効化に伴う Azure Machine Learning Workspace への影響について
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: 'Azure Machine Learning パイプラインを使用した自動機械学習ライフサイクルの例 (SDK v2)',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>

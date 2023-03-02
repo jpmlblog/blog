@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-inference-result.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-model-inference/AML-forecasting-sample.png">
 <meta property="article:published_time" content="2021-01-13T03:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-28T02:05:17.467Z">
+<meta property="article:modified_time" content="2023-03-02T08:42:12.991Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="モデル デプロイ">
 <meta property="article:tag" content="推論">
@@ -50,7 +50,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -161,7 +161,7 @@
 <hr>
 <h2 id="ローカルにモデルをロードして評価を行う場合"><a href="#ローカルにモデルをロードして評価を行う場合" class="headerlink" title="ローカルにモデルをロードして評価を行う場合"></a>ローカルにモデルをロードして評価を行う場合</h2><p>実験によって作成されたモデルのテストを行う場合、ローカル環境にロードして実行する方法をお勧めいたします。以下に、自動機械学習のチュートリアルの実行によって作成されたモデルを例にご紹介いたします。  </p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/tutorial-first-experiment-automated-ml">チュートリアル:Azure Machine Learning の自動 ML で分類モデルを作成する</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/tutorial-first-experiment-automated-ml">チュートリアル:Azure Machine Learning の自動 ML で分類モデルを作成する</a></li>
 </ul>
 <p>自動機械学習では、複数のアルゴリズムと前処理の組み合わせを試し、それぞれの実行でモデルを作成します。上記チュートリアルのとおりに実行すると、「my-1st-automl-experiment」 という名前の実験の中で、複数のモデルが作成されます。このうちひとつのモデルをローカルにロードして、推論実行する方法を紹介します。  </p>
 <p>モデルは、VotingEnsemble を選択します。  </p>
@@ -196,23 +196,23 @@
 </ul>
 <p>デプロイした Web サービスの呼び出し方は、下記公開情報が参考になります。  </p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-consume-web-service?tabs=python">Web サービスとしてデプロイされた Azure Machine Learning モデルを使用する</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-consume-web-service?tabs=python">Web サービスとしてデプロイされた Azure Machine Learning モデルを使用する</a></li>
 </ul>
 <p>デプロイ先がローカル、ACI、AKS それぞれのドキュメントおよびサンプル ノートブックを紹介します。  </p>
 <h3 id="ローカル"><a href="#ローカル" class="headerlink" title="ローカル"></a>ローカル</h3><ul>
 <li>docs: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-local-container-notebook-vm">Azure Machine Learning コンピューティング インスタンスへのモデルのデプロイ</a>  </li>
-<li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb">Register model and deploy locally with advanced usages</a>  </li>
+<li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local-advanced.ipynb">Register model and deploy locally with advanced usages</a></li>
 </ul>
 <h3 id="ACI-Azure-Container-Instance"><a href="#ACI-Azure-Container-Instance" class="headerlink" title="ACI (Azure Container Instance)"></a>ACI (Azure Container Instance)</h3><ul>
 <li>docs: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-container-instance">Azure Container Instances にモデルをデプロイする</a>  </li>
 <li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-cloud/model-register-and-deploy.ipynb">Register model and deploy as webservice in ACI</a>  </li>
-<li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-multi-model/multi-model-register-and-deploy.ipynb">Deploy Multiple Models as Webservice</a>  </li>
+<li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-multi-model/multi-model-register-and-deploy.ipynb">Deploy Multiple Models as Webservice</a></li>
 </ul>
 <h3 id="AKS-Azure-Kubernetes-Service"><a href="#AKS-Azure-Kubernetes-Service" class="headerlink" title="AKS (Azure Kubernetes Service)"></a>AKS (Azure Kubernetes Service)</h3><ul>
 <li>docs: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-deploy-azure-kubernetes-service?tabs=python">Azure Kubernetes Service クラスターにモデルをデプロイする</a>  </li>
 <li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks.ipynb">Deploying a web service to Azure Kubernetes Service (AKS)</a>  </li>
 <li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks/production-deploy-to-aks-ssl.ipynb">Deploying a web service to Azure Kubernetes Service (AKS) + SSL</a>  </li>
-<li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb">Deploying a web service to Azure Kubernetes Service (AKS) + GPU</a>  </li>
+<li>sample: <a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb">Deploying a web service to Azure Kubernetes Service (AKS) + GPU</a></li>
 </ul>
 <hr>
 <h2 id="そのほか参考となる情報"><a href="#そのほか参考となる情報" class="headerlink" title="そのほか参考となる情報"></a>そのほか参考となる情報</h2><h3 id="Web-サービスの入力データについて"><a href="#Web-サービスの入力データについて" class="headerlink" title="Web サービスの入力データについて"></a>Web サービスの入力データについて</h3><p>Web サービスを呼び出す Json データは、{“data”: [[ 数値,数値, … ], [ 数値,数値, … ]]} という形式である必要があります。または、辞書形式で {“data”: [{ “列名”:数値, “列名”:数値, … }, { “列名”:数値, “列名”:数値, … }]} としても推論を実行可能です。  </p>
@@ -278,7 +278,7 @@
 <div class='content'>
     <div class='desc'>
         このサイトはマイクロソフトの Azure Machine Learning サポート チームによって運営されております。</br></br>
-        Powered by: 祝田、津田、ジェシー、中神、上原、カイル</br></br>
+        Powered by: 祝田、津田、ジェシー、中神、上原、カイル、成田</br></br>
         Web master: 望月
     </div>
 </div>
@@ -315,7 +315,7 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>18</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>19</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-Studio-Classic/"><div class='name'>Azure Machine Learning Studio (Classic)</div><div class='badget'>1</div></a></li>
     
@@ -332,7 +332,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/Automated-Machine-Learning/" style="font-size: 20px; color: #000">Automated Machine Learning</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Blob-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BC/" style="font-size: 14px; color: #808080">Blob コンテナー</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Notebook/" style="font-size: 14px; color: #808080">Notebook</a> <a href="/blog/tags/Private-Endpoint/" style="font-size: 14px; color: #808080">Private Endpoint</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/v2-API/" style="font-size: 14px; color: #808080">v2 API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9/" style="font-size: 14px; color: #808080">コンピューティング インスタンス</a> <a href="/blog/tags/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E7%B5%82%E4%BA%86/" style="font-size: 14px; color: #808080">サービス終了</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/" style="font-size: 14px; color: #808080">パイプライン</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%85%B1%E6%9C%89/" style="font-size: 14px; color: #808080">ファイル共有</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">モデル デプロイ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/" style="font-size: 14px; color: #808080">ライフサイクル</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97/" style="font-size: 14px; color: #808080">リソースグループ</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E6%8E%A8%E8%AB%96/" style="font-size: 14px; color: #808080">推論</a> <a href="/blog/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/" style="font-size: 14px; color: #808080">日本語</a> <a href="/blog/tags/%E6%A8%A9%E9%99%90/" style="font-size: 14px; color: #808080">権限</a>
+        <a href="/blog/tags/Automated-Machine-Learning/" style="font-size: 20px; color: #000">Automated Machine Learning</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Blob-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BC/" style="font-size: 14px; color: #808080">Blob コンテナー</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Notebook/" style="font-size: 14px; color: #808080">Notebook</a> <a href="/blog/tags/Private-Endpoint/" style="font-size: 14px; color: #808080">Private Endpoint</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/SDK-v2/" style="font-size: 14px; color: #808080">SDK v2</a> <a href="/blog/tags/v2-API/" style="font-size: 14px; color: #808080">v2 API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9/" style="font-size: 14px; color: #808080">コンピューティング インスタンス</a> <a href="/blog/tags/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E7%B5%82%E4%BA%86/" style="font-size: 14px; color: #808080">サービス終了</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/" style="font-size: 20px; color: #000">パイプライン</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%85%B1%E6%9C%89/" style="font-size: 14px; color: #808080">ファイル共有</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">モデル デプロイ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/" style="font-size: 20px; color: #000">ライフサイクル</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97/" style="font-size: 14px; color: #808080">リソースグループ</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E6%8E%A8%E8%AB%96/" style="font-size: 14px; color: #808080">推論</a> <a href="/blog/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/" style="font-size: 14px; color: #808080">日本語</a> <a href="/blog/tags/%E6%A8%A9%E9%99%90/" style="font-size: 14px; color: #808080">権限</a>
     </div>
 </div>
 

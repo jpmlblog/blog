@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline-REST.png">
 <meta property="article:published_time" content="2021-10-20T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-28T02:05:17.370Z">
+<meta property="article:modified_time" content="2023-03-02T08:42:12.907Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="パイプライン">
 <meta property="article:tag" content="ライフサイクル">
@@ -54,7 +54,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -168,24 +168,24 @@
 <br>
 
 <hr>
-<h2 id="イメージ"><a href="#イメージ" class="headerlink" title="イメージ"></a>イメージ</h2><p>// ライフサイクルは以下のようなイメージです。これを参考に後述の手順をご確認ください。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/lifecycle-image.png" width=900px align="left" border="1"><br clear="left">  </p>
+<h2 id="イメージ"><a href="#イメージ" class="headerlink" title="イメージ"></a>イメージ</h2><p>&#x2F;&#x2F; ライフサイクルは以下のようなイメージです。これを参考に後述の手順をご確認ください。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/lifecycle-image.png" width=900px align="left" border="1"><br clear="left">  </p>
 <h2 id="パイプラインの作成"><a href="#パイプラインの作成" class="headerlink" title="パイプラインの作成"></a>パイプラインの作成</h2><p>以下の図のように、データセットを入力として自動機械学習を実行し、作成されたモデルを登録、ACI Web エンドポイントを作成または更新するパイプラインを作成します。パイプラインの作成は、ノートブック ファイルの実行により行います。実行するノートブック ファイルと、使用するデータを以下リンクからダウンロードください。  </p>
 <ul>
 <li><a href="https://jpmlblog.github.io/files/AML_example_pipeline_lifecycle/aml-pipeline-sample_1.ipynb" title="aml-pipeline-sample_1.ipynb">aml-pipeline-sample_1.ipynb</a>  </li>
-<li><a target="_blank" rel="noopener" href="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/machineData.csv" title="machineData.csv">machineData.csv</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/machineData.csv" title="machineData.csv">machineData.csv</a></li>
 </ul>
-<p>// 上記ファイルを使って以下のような処理を行うパイプラインを作成します。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/pipeline-image.png" width=700px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; 上記ファイルを使って以下のような処理を行うパイプラインを作成します。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/pipeline-image.png" width=700px align="left" border="1"><br clear="left">  </p>
 <h3 id="データの配置"><a href="#データの配置" class="headerlink" title="データの配置"></a>データの配置</h3><p>ダウンロードした machineData.csv ファイルを、Azure Machine Learning ワークスペースの既定のストレージ アカウントのコンテナー <code>azureml-blobstore-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (xxx 部分はランダムな英数字)</code> 配下に <code>Datasets</code> フォルダーを作成し、アップロードしておきます。  </p>
 <p><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-blobstore-container.png" width=700px align="left" border="1"><br clear="left">  </p>
 <h3 id="ノートブックの実行"><a href="#ノートブックの実行" class="headerlink" title="ノートブックの実行"></a>ノートブックの実行</h3><p>aml-pipeline-sample_1.ipynb ファイルは、以下の通り Azure Machine Learning Studio の Notebooks のフォルダーにアップロードし、<code>[カーネルを再起動し、すべてのセルを実行する]</code> をクリックします。(実行時に cpu-cluster という名前の STANDARD_DS12_V2 のコンピューティング クラスターが作成されます。既に存在する場合はそのコンピューティング クラスターを使用します。)</p>
 <p><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-notebook.png" width=700px align="left" border="1"><br clear="left">  </p>
 <h3 id="パイプラインの公開"><a href="#パイプラインの公開" class="headerlink" title="パイプラインの公開"></a>パイプラインの公開</h3><p>実行が終了すると、以下の通りエンドポイントとパイプラインが作成されるため、正常に実行が終了していることを確認して <code>[公開]</code> ボタンをクリックし、任意の名前で実行します。実行後、パイプライン エンドポイントが作成されます。(サンプル では pipeline_with_automlstep という名前になります。)  </p>
-<p>// 自動機械学習によって作成されたモデルをデプロイしたリアルタイム エンドポイント<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-endpoint.png" width=600px align="left" border="1"><br clear="left">  </p>
-<p>// ノートブックで定義したパイプラインの実行結果 (この画面で [公開] ボタンを押す)<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-pipeline.png" width=600px align="left" border="1"><br clear="left">  </p>
-<p>// 外部から呼び出せるように公開されたパイプラインのエンドポイント<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline.png" width=600px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; 自動機械学習によって作成されたモデルをデプロイしたリアルタイム エンドポイント<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-endpoint.png" width=600px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; ノートブックで定義したパイプラインの実行結果 (この画面で [公開] ボタンを押す)<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-pipeline.png" width=600px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; 外部から呼び出せるように公開されたパイプラインのエンドポイント<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline.png" width=600px align="left" border="1"><br clear="left">  </p>
 <hr>
 <h2 id="パイプラインの使用"><a href="#パイプラインの使用" class="headerlink" title="パイプラインの使用"></a>パイプラインの使用</h2><p>公開したパイプライン エンドポイントの REST エンドポイントに対し、POST メソッドで要求を送信するとパイプラインを実行されます。これにより、<code>azureml-blobstore-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (xxx 部分はランダムな英数字) / Datasets</code> フォルダー配下の machineData.csv ファイルを新しいファイルに変更してパイプラインを実行するだけで、新しいファイルを使用した自動機械学習、モデルの登録、ACI エンドポイントの作成を簡単に行うことが可能になります。  </p>
-<p>// REST エンドポイントは、公開されたパイプラインの概要ページより確認できます。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline-REST.png" width=850px align="left" border="1"><br clear="left">  </p>
+<p>&#x2F;&#x2F; REST エンドポイントは、公開されたパイプラインの概要ページより確認できます。<br><img src="https://jpmlblog.github.io/images/AML_example_pipeline_lifecycle/azureml-studio-published-pipeline-REST.png" width=850px align="left" border="1"><br clear="left">  </p>
 <p>REST エンドポイントへの要求送信方法は多種ありますが、後述に Python および PowherShell を使用した実行方法を紹介させていただきます。  </p>
 <h3 id="Python-での実行"><a href="#Python-での実行" class="headerlink" title="Python での実行"></a>Python での実行</h3><p>下記コードの &lt;公開したパイプラインの REST エンドポイント&gt; を上述の REST エンドポイント URL に置き換えて　Notebook 上から実行するだけで、パイプラインをトリガーすることが可能です。  </p>
 <p>json 形式で実験名やパイプライン パラメーターを引数として渡すことが可能です。ただし、primary_metric は作りこみは不十分なので、変更する際には aml-pipeline-sample_1.ipynb ファイル側のロジックも含めて変更をご検討ください。  </p>
@@ -212,7 +212,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/manage-azureml-service/authentication-in-azureml/authentication-in-azureml.ipynb">Authentication in Azure Machine Learning</a> ※ Service Principal Authentication セクションを参照ください。</li>
 </ul>
 <p>上述のコマンドのうち 1 行目を以下の通り変更して実行ください。  </p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">az login -<span class="literal">-service</span><span class="literal">-principal</span> <span class="literal">-u</span> <span class="string">&quot;&lt;アプリケーション (クライアント) ID&gt;&quot;</span> <span class="literal">-p</span> <span class="string">&quot;&lt;クライアント シークレット&gt;&quot;</span> -<span class="literal">-tenant</span> <span class="string">&quot;&lt;ディレクトリ (テナント) ID&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">az login <span class="literal">--service-principal</span> <span class="literal">-u</span> <span class="string">&quot;&lt;アプリケーション (クライアント) ID&gt;&quot;</span> <span class="literal">-p</span> <span class="string">&quot;&lt;クライアント シークレット&gt;&quot;</span> <span class="literal">--tenant</span> <span class="string">&quot;&lt;ディレクトリ (テナント) ID&gt;&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -264,7 +264,7 @@
 <div class='content'>
     <div class='desc'>
         このサイトはマイクロソフトの Azure Machine Learning サポート チームによって運営されております。</br></br>
-        Powered by: 祝田、津田、ジェシー、中神、上原、カイル</br></br>
+        Powered by: 祝田、津田、ジェシー、中神、上原、カイル、成田</br></br>
         Web master: 望月
     </div>
 </div>
@@ -301,7 +301,7 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>18</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning/"><div class='name'>Azure Machine Learning</div><div class='badget'>19</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Azure-Machine-Learning-Studio-Classic/"><div class='name'>Azure Machine Learning Studio (Classic)</div><div class='badget'>1</div></a></li>
     
@@ -318,7 +318,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/Automated-Machine-Learning/" style="font-size: 20px; color: #000">Automated Machine Learning</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Blob-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BC/" style="font-size: 14px; color: #808080">Blob コンテナー</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Notebook/" style="font-size: 14px; color: #808080">Notebook</a> <a href="/blog/tags/Private-Endpoint/" style="font-size: 14px; color: #808080">Private Endpoint</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/v2-API/" style="font-size: 14px; color: #808080">v2 API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9/" style="font-size: 14px; color: #808080">コンピューティング インスタンス</a> <a href="/blog/tags/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E7%B5%82%E4%BA%86/" style="font-size: 14px; color: #808080">サービス終了</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/" style="font-size: 14px; color: #808080">パイプライン</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%85%B1%E6%9C%89/" style="font-size: 14px; color: #808080">ファイル共有</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">モデル デプロイ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/" style="font-size: 14px; color: #808080">ライフサイクル</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97/" style="font-size: 14px; color: #808080">リソースグループ</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E6%8E%A8%E8%AB%96/" style="font-size: 14px; color: #808080">推論</a> <a href="/blog/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/" style="font-size: 14px; color: #808080">日本語</a> <a href="/blog/tags/%E6%A8%A9%E9%99%90/" style="font-size: 14px; color: #808080">権限</a>
+        <a href="/blog/tags/Automated-Machine-Learning/" style="font-size: 20px; color: #000">Automated Machine Learning</a> <a href="/blog/tags/Azure-Container-Instances/" style="font-size: 14px; color: #808080">Azure Container Instances</a> <a href="/blog/tags/Azure-Functions/" style="font-size: 20px; color: #000">Azure Functions</a> <a href="/blog/tags/Blob-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%83%BC/" style="font-size: 14px; color: #808080">Blob コンテナー</a> <a href="/blog/tags/Dataset/" style="font-size: 14px; color: #808080">Dataset</a> <a href="/blog/tags/FAQ/" style="font-size: 14px; color: #808080">FAQ</a> <a href="/blog/tags/Internet-Explorer-11/" style="font-size: 14px; color: #808080">Internet Explorer 11</a> <a href="/blog/tags/Notebook/" style="font-size: 14px; color: #808080">Notebook</a> <a href="/blog/tags/Private-Endpoint/" style="font-size: 14px; color: #808080">Private Endpoint</a> <a href="/blog/tags/Private-Link/" style="font-size: 14px; color: #808080">Private Link</a> <a href="/blog/tags/SDK-v2/" style="font-size: 14px; color: #808080">SDK v2</a> <a href="/blog/tags/v2-API/" style="font-size: 14px; color: #808080">v2 API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9/" style="font-size: 14px; color: #808080">コンピューティング インスタンス</a> <a href="/blog/tags/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E7%B5%82%E4%BA%86/" style="font-size: 14px; color: #808080">サービス終了</a> <a href="/blog/tags/%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">デプロイ</a> <a href="/blog/tags/%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3/" style="font-size: 20px; color: #000">パイプライン</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/" style="font-size: 14px; color: #808080">ファイアウォール</a> <a href="/blog/tags/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%85%B1%E6%9C%89/" style="font-size: 14px; color: #808080">ファイル共有</a> <a href="/blog/tags/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7/" style="font-size: 14px; color: #808080">プロキシ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4/" style="font-size: 14px; color: #808080">モデル デプロイ</a> <a href="/blog/tags/%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E9%8C%B2/" style="font-size: 14px; color: #808080">モデル登録</a> <a href="/blog/tags/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB/" style="font-size: 20px; color: #000">ライフサイクル</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97/" style="font-size: 14px; color: #808080">リソースグループ</a> <a href="/blog/tags/%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E5%89%8A%E9%99%A4/" style="font-size: 14px; color: #808080">リソース削除</a> <a href="/blog/tags/%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/" style="font-size: 20px; color: #000">仮想ネットワーク</a> <a href="/blog/tags/%E4%BE%A1%E6%A0%BC/" style="font-size: 14px; color: #808080">価格</a> <a href="/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/" style="font-size: 14px; color: #808080">参考情報</a> <a href="/blog/tags/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%91%E8%A6%8F%E5%89%87/" style="font-size: 14px; color: #808080">名前付け規則</a> <a href="/blog/tags/%E6%83%85%E5%A0%B1%E6%8E%A1%E5%8F%96%E6%89%8B%E9%A0%86/" style="font-size: 14px; color: #808080">情報採取手順</a> <a href="/blog/tags/%E6%8E%A8%E8%AB%96/" style="font-size: 14px; color: #808080">推論</a> <a href="/blog/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/" style="font-size: 14px; color: #808080">日本語</a> <a href="/blog/tags/%E6%A8%A9%E9%99%90/" style="font-size: 14px; color: #808080">権限</a>
     </div>
 </div>
 
