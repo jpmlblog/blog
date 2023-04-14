@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-automl-issue/azureml-parquet-featurization.png">
 <meta property="og:image" content="https://jpmlblog.github.io/images/AML-automl-issue/azureml-csv-featurization.png">
 <meta property="article:published_time" content="2023-04-12T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-14T04:04:49.863Z">
+<meta property="article:modified_time" content="2023-04-14T04:14:46.745Z">
 <meta property="article:author" content="jpmlblog">
 <meta property="article:tag" content="AutoML">
 <meta name="twitter:card" content="summary">
@@ -159,8 +159,8 @@
 <br>
 
 <hr>
-<h2 id="既知の問題の概要"><a href="#既知の問題の概要" class="headerlink" title="既知の問題の概要"></a>既知の問題の概要</h2><p>Azure Machine Learning Studio から AutoML ジョブを作成する際に、parquet ファイルを使用したデータ アセットを選択した場合に [タスクと設定の選択] における [特徴量化の表示] 画面において表示されるカラムがデータ アセットのものではなく、作成に使用した parquet ファイルにおけるすべてのカラム表示されてしまう問題が確認されております。<br><br></p>
-<h2 id="問題の詳細"><a href="#問題の詳細" class="headerlink" title="問題の詳細"></a>問題の詳細</h2><p>問題の詳細について具体的な例を挙げてご紹介いたします (※ 使用するデータは Scikit Learn Toy Datasets の 1 つである <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">Diabetes dataset</a> を使用しています)。 Azure Machine Learning Studio の [自動 ML] より画面にしたがって、自動 ML ジョブの作成を進めていきます。以下の例では、S4, S5, S6 および Y の 4 つのカラムを選択してデータ アセットを作成しています。  </p>
+<h2 id="既知の問題の概要"><a href="#既知の問題の概要" class="headerlink" title="既知の問題の概要"></a>既知の問題の概要</h2><p>Azure Machine Learning Studio から AutoML ジョブを作成する際に、parquet ファイルを使用したデータ アセットを選択した場合に [タスクと設定の選択] における [特徴量化の表示] 画面において表示されるカラムがデータ アセットのものではなく、作成に使用した parquet ファイルにおけるすべてのカラム表示されてしまう問題が確認されています。<br><br></p>
+<h2 id="問題の詳細"><a href="#問題の詳細" class="headerlink" title="問題の詳細"></a>問題の詳細</h2><p>問題の詳細について具体的な例を挙げてご紹介します (※ 使用するデータは Scikit Learn Toy Datasets の 1 つである <a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">Diabetes dataset</a> を使用しています)。 Azure Machine Learning Studio の [自動 ML] より画面にしたがって、自動 ML ジョブの作成を進めていきます。以下の例では、S4, S5, S6 および Y の 4 つのカラムを選択してデータ アセットを作成しています。  </p>
 <p>&#x2F;&#x2F; parquet ファイルからカラムを選択してデータ アセットを作成<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-parquet.png" width=500px align="left" border="1"><br clear="left"><br></p>
 <p>preview を確認すると、作成時に選択した 4 つのカラム (S4, S5, S6 および Y) でデータ アセットが作成されていることが確認できます。  </p>
 <p>&#x2F;&#x2F; parquet ファイルから作成したデータ アセットのプレビュー<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-parquet-preview.png" width=500px align="left" border="1"><br clear="left"><br></p>
@@ -169,13 +169,16 @@
 <p>なお、csv ファイルを使用して同様な操作により作成したデータ アセットを使用した場合には、データ アセットのカラムのみ (S4, S5, S6 および Y) が表示されています。</p>
 <p>&#x2F;&#x2F; csv ファイルから作成したデータ アセットによる [特徴量化の表示] の設定画面<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-csv-featurization.png" width=500px align="left" border="1"><br clear="left"><br><br></p>
 <h2 id="対応状況"><a href="#対応状況" class="headerlink" title="対応状況"></a>対応状況</h2><p>現在、本事象は Azure Machine Learning の修正予定の項目となっております。 しかしながら、現時点ではトレーニング自体は実施可能であるため、ご利用いただく際の運用によって対応していただく必要があります。  </p>
-<p>また、本事象を原因としてお客様のビジネス インパクトが多大なものである場合には、幣サポート チームより製品開発部門に対して、本機能の開発優先度をあげるようプッシュさせていただくことも可能です。その際には具体的な損失金額や被害人数等の情報をご記載いただいたうえで、サポート リクエスト発行いただきご相談ください。</p>
+<p>また、本事象を原因としてお客様のビジネス インパクトが多大なものである場合には、技術サポート チームより製品開発部門に対して、本機能の開発優先度をあげるようプッシュさせていただくことも可能です。 その際には具体的な損失金額や影響を受けるユーザー数等の情報をご記載いただいたうえで、サポート リクエスト発行いただきご相談ください。  </p>
 <p>Azure サポート リクエストは下記サイトの情報を参考に発行いただけます。 一般的に、<a target="_blank" rel="noopener" href="https://portal.azure.com/">Azure portal</a> の [ヘルプとサポート] から [新しいサポート リクエスト] を作成頂くことをお勧めいたします。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a></li>
 </ul>
-<hr>
-<p><code>変更履歴</code><br><code>2023/04/** created by Narita</code></p>
+<br>
+***
+`変更履歴`  
+`2023/04/** created by Narita`
+
 <p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。 </p>
 
   	</div>
