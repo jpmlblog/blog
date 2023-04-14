@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法 | Japan Machine Learning Support Blog</title>
+  <title>Tag: AutoML | Japan Machine Learning Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,23 +19,13 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Machine Learning Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本記事では、Azure MachineLeaning Studio の Notebooks メニューで開いた Notebook で処理を実行した際に「現時点ではこれにはアクセスできません」とエラーメッセージが表示されてしまう場合の対応方法をご案内します。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法">
-<meta property="og:url" content="https://jpmlblog.github.io/blog/2021/03/29/AML-cannot-use-notebook/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Japan Machine Learning Support Blog">
+<meta property="og:url" content="https://jpmlblog.github.io/blog/tags/AutoML/index.html">
 <meta property="og:site_name" content="Japan Machine Learning Support Blog">
-<meta property="og:description" content="本記事では、Azure MachineLeaning Studio の Notebooks メニューで開いた Notebook で処理を実行した際に「現時点ではこれにはアクセスできません」とエラーメッセージが表示されてしまう場合の対応方法をご案内します。">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/error_message.jpg">
-<meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg">
-<meta property="og:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook2.jpg">
-<meta property="article:published_time" content="2021-03-28T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-14T03:01:16.699Z">
 <meta property="article:author" content="jpmlblog">
-<meta property="article:tag" content="Notebook">
-<meta property="article:tag" content="権限">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmlblog.github.io/images/AML-cannot-use-notebook/error_message.jpg">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -129,100 +119,55 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-AML-cannot-use-notebook"
-  class="post white-box article-type-post"
-  itemscope itemprop="blogPost">
-	<section class='meta'>
-	<h2 class="title">
-  	<a href="/blog/2021/03/29/AML-cannot-use-notebook/">
-    	Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法
-    </a>
-  </h2>
-	<time>
-	  3月 29, 2021
-	</time>
+        
+  <script>
+    window.subData= { title:'Tag : AutoML'}
+  </script>
+
+<section class="post-list">
 	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/blog/2023/04/13/AML-automl-issue/">
+        Azure Machine Learning Studio の parquet ファイルから作成したデータ アセットによる AutoML ジョブの [特徴量化の表示] における既知の問題について
+      </a>
+    </h2>
+    
+    <time>
+      4月 13, 2023
+    </time>
+		
     
     <div class='cats'>
         <a href="/blog/categories/Azure-Machine-Learning/">Azure Machine Learning</a>
     </div>
 
-	</section>
-	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%BE%E5%BF%9C%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">対応方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-MachineLeaning-Studio-%E3%81%AE-Compute-%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E5%88%A9%E7%94%A8%E3%81%AB%E3%82%88%E3%82%8B%E5%9B%9E%E9%81%BF"><span class="toc-number">1.1.</span> <span class="toc-text">Azure MachineLeaning Studio の Compute メニュー利用による回避</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-Active-Directory-%E3%81%B8%E3%81%AE%E3%83%8D%E3%83%BC%E3%83%A0%E3%83%89%E3%83%AD%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%99%BB%E9%8C%B2%E8%BF%BD%E5%8A%A0"><span class="toc-number">1.2.</span> <span class="toc-text">Azure Active Directory へのネームドロケーションの登録追加</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%8C%E8%A1%A8%E7%A4%BA%E3%81%95%E3%82%8C%E3%82%8B%E5%8E%9F%E5%9B%A0"><span class="toc-number">2.</span> <span class="toc-text">エラーメッセージが表示される原因</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8C%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%80%8D%E3%81%AE%E8%A8%AD%E5%AE%9A"><span class="toc-number">2.1.</span> <span class="toc-text">「条件付きアクセス」の設定</span></a></li></ol></li></ol></section>
-	
-	<section class="article typo">
-  	<div class="article-entry" itemprop="articleBody">
-    	<p>本記事では、Azure MachineLeaning Studio の Notebooks メニューで開いた Notebook で処理を実行した際に「現時点ではこれにはアクセスできません」とエラーメッセージが表示されてしまう場合の対応方法をご案内します。</p>
-<span id="more"></span>
-<br>
+  </section>
+  <section class="article typo">
+	  <p>Azure Machine Learning Studio の AutoML ジョブにおいて確認されている既知の問題についてご紹介いたします。</p>
 
-<hr>
-<h1 id="対応方法"><a href="#対応方法" class="headerlink" title="対応方法"></a>対応方法</h1><h2 id="Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避"><a href="#Azure-MachineLeaning-Studio-の-Compute-メニュー利用による回避" class="headerlink" title="Azure MachineLeaning Studio の Compute メニュー利用による回避"></a>Azure MachineLeaning Studio の Compute メニュー利用による回避</h2><p>Azure MachineLeaning Studio（以下 AML Studio） の Notebooks メニュー使用時に、権限に関するエラーが表示される場合があります。  </p>
-<img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/error_message.jpg" width=400px border="1">  
-
-<p>原因は Azure Active Directory 側の設定に依存する可能性がありますが、コンピューティング メニュー のアプリケーション URI 配下のメニューから Notebook を開き直す対応で、問題が解消する場合があります。  </p>
-<img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook1.jpg" width=800px border="1">  
-
-<br>  
-
-<p>Notebooks メニューと コンピューティング メニューにおいてはそれぞれのバックエンドの認証方法が異なります。<br>そのため、コンピューティング メニューから Notebook を実行した場合には、AML Studio への認証情報がコンピューティングインスタンスに連携されて権限エラーが生じない可能性があります。  </p>
-<p>なお、AML Studio を通じて配置された Notebook などのファイルが存在する階層の実体は、AMLワークスペース既定のストレージアカウントです。　　</p>
-<p>（コンピューティングインスタンス内部から参照した際のパス例： &#x2F;mnt&#x2F;batch&#x2F;tasks&#x2F;shared&#x2F;LS_root&#x2F;mounts&#x2F;clusters&#x2F;{コンピューティングインスタンス名}&#x2F;code&#x2F;Users&#x2F;{ユーザー名}）　　</p>
-<p>そのため、Notebooksメニューと コンピューティング メニューのどちらのメニューを通じた利用でも、ファイルの数や内容は同じです。<br>もし、コンピューティング メニューの利用で問題が解消する場合には、こちらの回避策の利用のご検討をいただければ幸いです。  </p>
-<p>もし、コンピューティング メニュー利用による問題の回避が行えない場合には、次項の「Azure Active Directory へのネームドロケーションの登録追加」対応をご検討ください。</p>
-<h2 id="Azure-Active-Directory-へのネームドロケーションの登録追加"><a href="#Azure-Active-Directory-へのネームドロケーションの登録追加" class="headerlink" title="Azure Active Directory へのネームドロケーションの登録追加"></a>Azure Active Directory へのネームドロケーションの登録追加</h2><p>「アクセスできません」というエラーの権限の問題の根本的な対応として、テナント（Azure Active Directory）管理者様により、該当するコンピューティング インスタンスのIPアドレスをネームドロケーションとして追加登録していただくことで、問題が解消される可能性があります。</p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/reports-monitoring/quickstart-configure-named-locations">- クイック スタート:Azure Active Directory でネームド ロケーションを構成する</a></p>
-<blockquote>
-<p>ネームド ロケーションを使うと、組織内の信頼できる IP アドレス範囲にラベルを付けることができます。Azure AD では、次のためにネームド ロケーションを使用します。<br>　・リスク検出で誤判定を検出する。 信頼できる場所からサインインすることで、ユーザーのサインイン リスクが低下します。<br>　・場所ベースの条件付きアクセスを構成する。<br>このクイック スタートでは、環境内でネームド ロケーションを構成する方法について説明します。</p>
-</blockquote>
-<p>追加登録対象となるコンピューティングインスタンスのIPアドレスは、AMLスタジオ の Compute メニューで確認可能です。  </p>
-<img src="https://jpmlblog.github.io/images/AML-cannot-use-notebook/notebook2.jpg" width=800px border="1">
-  
-<br>
-
-<hr>
-<h1 id="エラーメッセージが表示される原因"><a href="#エラーメッセージが表示される原因" class="headerlink" title="エラーメッセージが表示される原因"></a>エラーメッセージが表示される原因</h1><h2 id="「条件付きアクセス」の設定"><a href="#「条件付きアクセス」の設定" class="headerlink" title="「条件付きアクセス」の設定"></a>「条件付きアクセス」の設定</h2><p>コンピューティングインスタンスが不詳なデバイスとして認識され、組織データである Azure ML ワークスペースへのアクセスが叶わないことが、エラーの原因となっている可能性があります。<br>「条件付きアクセス」の設定については、弊社 Azure Active Directory サポートチームがブログ記事に詳細を記載しています。</p>
-<p><a target="_blank" rel="noopener" href="https://jpazureid.github.io/blog/azure-active-directory/conditional-cannot-access-rightnow/"> - Japan Azure Identity Support Blog-「現時点ではこれにはアクセスできません」 エラーについて</a></p>
-<p>これは Azure Machine Learning の設定ではなく、テナント（Azure Active Directory）管理者による設定です。<br>そのため、まずはテナント管理者様に設定条件をご確認いただく必要があります。</p>
-<hr>
-<p><code>変更履歴</code><br><code>2021/03/29 created by Uehara</code></p>
-<p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
-
-  	</div>
-	  
-	  <div class="article-tags tags">
+    
+	  <div class="readmore">
+      <a href="/blog/2023/04/13/AML-automl-issue/">Read More</a>
+    </div>
+    
+    
+    
+	  <div class="full-width auto-padding tags">
       
-        <a href="/blog/tags/Notebook/">Notebook</a>
-      
-        <a href="/blog/tags/%E6%A8%A9%E9%99%90/">権限</a>
+        <a href="/blog/tags/AutoML/">AutoML</a>
       
 	  </div>
     
-		
-	
-		<div class="art-item-footer">
-				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2021/06/16/AML-storage-data-location/" rel="prev"  title="Azure Machine Learning Studio で参照可能なデータの格納場所について">
-						Azure Machine Learning Studio で参照可能なデータの格納場所について 
-					</a></span>
-				
-				
-					<span class="art-item-right">next：<a href="/blog/2021/01/13/AML-model-inference/" rel="next"  title="Azure Machine Learning で作成したモデルの推論を実行する方法について">
-						Azure Machine Learning で作成したモデルの推論を実行する方法について
-					</a><i class="icon icon-chevron-thin-right"></i></span>
-				
-		</div>
-	
-	</section>
-	
+  </section>
 </article>
-<script>
-	window.subData = {
-		title: 'Azure MachineLeaning Studio の Notebooks メニューにおける「現時点ではこれにはアクセスできません」エラーへの対応方法',
-		tools: true
-	}
-</script>
+    </div>
+  
+</section>
+
 
       </div>
       <aside class='l_side'>

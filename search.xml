@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Azure Machine Learning Studio の parquet ファイルから作成したデータ アセットによる AutoML ジョブの [特徴量化の表示] における既知の問題について</title>
+      <link href="/blog/2023/04/13/AML-automl-issue/"/>
+      <url>/blog/2023/04/13/AML-automl-issue/</url>
+      
+        <content type="html"><![CDATA[<p>Azure Machine Learning Studio の AutoML ジョブにおいて確認されている既知の問題についてご紹介いたします。</p><span id="more"></span><br><hr><h2 id="既知の問題の概要"><a href="#既知の問題の概要" class="headerlink" title="既知の問題の概要"></a>既知の問題の概要</h2><p>Azure Machine Learning Studio から AutoML ジョブを作成する際に、parquet ファイルを使用したデータ アセットを選択した場合に [タスクと設定の選択] における [特徴量化の表示] 画面において表示されるカラムがデータ アセットのものではなく、作成に使用した parquet ファイルにおけるすべてのカラム表示されてしまう問題が確認されております。<br><br></p><h2 id="問題の詳細"><a href="#問題の詳細" class="headerlink" title="問題の詳細"></a>問題の詳細</h2><p>問題の詳細について具体的な例を挙げてご紹介いたします。<br>※ 使用するデータは Scikit Learn Toy Datasets の 1 つである <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset">Diabetes dataset</a> を使用しています。  </p><p>Azure Machine Learning Studio の [自動 ML] より画面にしたがって、自動 ML ジョブの作成を進めていきます。  </p><p>以下の例では、S4, S5, S6 および Y の 4 つのカラムを選択してデータ アセットを作成しています。  </p><p>&#x2F;&#x2F; parquet ファイルからカラムを選択してデータ アセットを作成<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-parquet.png" width=500px align="left" border="1"><br clear="left"></p><p>preview を確認すると、作成時に選択した 4 つのカラム (S4, S5, S6 および Y) でデータ アセットが作成されていることが確認できます。</p><p>&#x2F;&#x2F; parquet ファイルから作成したデータ アセットのプレビュー<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-parquet-preview.png" width=500px align="left" border="1"><br clear="left"></p><p>AutoML ジョブの設定を進めていくと [タスクと設定の選択] の [特徴量化の表示] を開くと、データ アセット作成時に選択したカラム (S4, S5, S6 および Y) 以外のカラムも表示されています。( parquet ファイルのすべてのカラムが表示されています。)</p><p>こちらが、本記事にてご紹介している不具合となります。</p><p>&#x2F;&#x2F; AutoML ジョブの [特徴量化の表示] の設定画面<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-parquet-featurization.png" width=500px align="left" border="1"><br clear="left"></p><p>なお、csv ファイルを使用して同様な操作により作成したデータ アセットを使用した場合には、データ アセットのカラムのみ (S4, S5, S6 および Y) が表示されています。</p><p>&#x2F;&#x2F; csv ファイルから作成したデータ アセットによる [特徴量化の表示] の設定画面<br><img src="https://jpmlblog.github.io/images/AML-automl-issue/azureml-csv-featurization.png" width=500px align="left" border="1"><br clear="left"><br><br></p><h2 id="対応状況"><a href="#対応状況" class="headerlink" title="対応状況"></a>対応状況</h2><p>現在、本事象は Azure Machine Learning の修正予定の項目となっております。<br>しかしながら、現時点ではトレーニング自体は実施可能であるため、ご利用いただく際の運用によって対応していただく必要がございます。<br>大変恐れ入りますが、ご了承のほど何卒お願いいたします。</p><p>また、本事象が原因としたお客様のビジネス インパクトが多大なものである場合には、幣サポート チームより製品開発部門に対して、本機能の開発優先度をあげるようプッシュさせていただくことも可能です。<br>その際には具体的な損失金額や被害人数等の情報をご記載いただいたうえで、サポート リクエスト発行いただきご相談いただけますと幸いです。</p><p>Azure サポート リクエストを発行いただける際には 下記サイトをご参考いただけますと幸いです。</p><ul><li><a href="https://docs.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート要求を作成する</a>  <br></li></ul><p>※ 一般的に、<a href="https://portal.azure.com/">Azure portal</a> の [ヘルプとサポート] から [新しいサポート リクエスト] を作成頂くことをお勧めいたします。</p><hr><p><code>変更履歴</code><br><code>2023/04/** created by Narita</code></p><p>※ 本記事は 「<a href="https://jpmlblog.github.io/blog/2020/01/01/about-jpmlblog/">jpmlblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpmlblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpmlblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Azure Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AutoML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Azure Machine Learning パイプラインを使用した自動機械学習ライフサイクルの例 (SDK v2)</title>
       <link href="/blog/2023/02/28/AML_example_pipeline_lifecycle_v2/"/>
       <url>/blog/2023/02/28/AML_example_pipeline_lifecycle_v2/</url>
